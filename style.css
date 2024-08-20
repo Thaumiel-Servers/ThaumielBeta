@@ -18,4 +18,11 @@ body {
     clear: both;
     display: table;
 }
-
+.header-container {
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    position: absolute;
+    top: 310px;
+}
