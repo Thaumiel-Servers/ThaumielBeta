@@ -28,6 +28,11 @@ body {
     flex-direction: column;
 }
 
+.gif1 {
+    position: relative;
+    top: 20px;
+}
+
 .oxanium-<Oxanium > {
     font-family: "Oxanium", sans-serif;
     font-optical-sizing: auto;
