@@ -10,7 +10,6 @@ body {
     color: white;
     font-size: 25px;
 }
-
 .column {
     float: left;
     width: 50%;
@@ -32,28 +31,48 @@ body {
     position: relative;
     top: 20px;
 }
+.bagtitle {
+    position: relative;
+    top: -35px;
+    left: 200px;
+}
+.bagtext {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.bag {
+    left: 200px;
+    position: relative;
+}
+.BagPFP {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    align-items: left;
+}
 
 .oxanium-<Oxanium> {
     font-family: "Oxanium", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 }
-.button1:hover {
+.buttonstaff:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
 }
-.button2:hover {
+.buttonsupport:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
 }
-.button3:hover {
+.buttoncontact:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
 }
-.button4:hover {
+.buttoncredits:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
@@ -64,7 +83,7 @@ body {
     transform: scale(1.02);
 }
 .buttonbacktop {
-    position: absolute; top: 0; <!-- sets the button to the top of the page -->
+    position: absolute; top: 0; /* sets the button to the top of the page */
 }
 .buttonbackbottom:hover {
     background-color: #1982EA;
@@ -72,7 +91,23 @@ body {
     transform: scale(1.02);
 }
 .buttonbackbottom {
-    position: absolute; bottom: 0; <!-- sets the button to the bottom of the page -->
+    position: absolute; bottom: 0; /* sets the button to the bottom of the page */
+}
+.buttonbacktopstaff:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+.buttonbacktopstaff {
+    position: absolute; top: 0; /* sets the button to the top of the page */
+}
+.buttonbackbottomstaff:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+.buttonbackbottomstaff {
+    position: absolute; bottom: 0; /* sets the button to the bottom of the page */
 }
 html 
 {
@@ -80,6 +115,49 @@ html
 }
 
 button {
-    font-family: "Oxanium", sans-serif;
+    font-family: bold "Oxanium", sans-serif;
     font-weight: 600;
 }
+.buttonbaguetter {
+    color: orangered;
+
+}
+.buttonstaff {
+    color: rgb(72, 255, 0);
+}
+.buttonsupport {
+    color: rgb(255, 0, 0);
+}
+.buttoncontact {
+    color: rgb(230, 0, 255);
+}
+.buttoncredits {
+    color: rgb(0, 255, 162);
+}
+
+/* Staff buttons */
+.buttonhome:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+.buttonstaffback:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    /* Light mode styles */
+    body.light-mode {
+        background-color: white;
+        color: black;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+        background-color: black;
+        color: white;
+    }
