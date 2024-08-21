@@ -11,6 +11,14 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --color-bg: #000000;
+        --color-fg: #ffffff;
+    }
+}
+
 body {
     margin: 0;
     box-sizing: border-box;
