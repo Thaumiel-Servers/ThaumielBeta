@@ -4,7 +4,7 @@ body {
     height: 100%;
     justify-content: center;
     align-items: center;
-    /* TODO: make the text look better */
+    /* TODO: make the text look better */ /* Yes do that */
     padding: 0px;
     background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F);
     color: white;
@@ -33,10 +33,9 @@ body {
     top: 20px;
 }
 
-.oxanium-<Oxanium > {
+.oxanium-<Oxanium> {
     font-family: "Oxanium", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <2>;
     font-style: normal;
 }
 .button1:hover {
@@ -59,7 +58,22 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
 }
-
+.buttonbacktop:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+.buttonbacktop {
+    position: absolute; top: 0; <!-- sets the button to the top of the page -->
+}
+.buttonbackbottom:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+.buttonbackbottom {
+    position: absolute; bottom: 0; <!-- sets the button to the bottom of the page -->
+}
 html 
 {
   min-height: 100%;
