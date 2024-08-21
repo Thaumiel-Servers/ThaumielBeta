@@ -6,12 +6,12 @@
 # Planned Additions:
 * Finish the support page
 * Finish the staff page
-* Finish the discord page
-* Credits to editors
+* ~~Finish the discord page~~ (Deleted)
+* ~~Credits to editors~~ (finished)
 
 # Possible Additions:
 * Thaumiel AI
 * Dark mode selector
 * Suggestion page
 * Google Analytics
-* Add notes for editors
+* Add notes for editors (Partly done)
