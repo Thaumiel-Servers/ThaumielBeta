@@ -1,4 +1,3 @@
-const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 const colorSchemeMetaTag = document.querySelector('meta[name="color-scheme"]');
 
@@ -21,10 +20,19 @@ function setTheme(isDark) {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
-themeToggle.addEventListener('click', () => {
-    const isDarkMode = body.classList.contains('dark-mode');
-    setTheme(!isDarkMode);
-});
+function applyTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    setTheme(savedTheme === 'dark');
+}
 
-const savedTheme = localStorage.getItem('theme');
-setTheme(savedTheme === 'dark');
+applyTheme();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = body.classList.contains('dark-mode');
+            setTheme(!isDarkMode);
+        });
+    }
+});
