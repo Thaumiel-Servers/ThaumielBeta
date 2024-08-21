@@ -13,3 +13,4 @@ Hello this is a open source website any additions would be welcome.
 * Thaumiel AI
 * Dark mode selector
 * Suggestion page
+* Google Analytics
