@@ -4,7 +4,7 @@
 * Hello this is an open source website any additions would be welcome.
 
 # Planned Additions:
-* Finish the support page
+* ~~Finish the support page~~ (finished)
 * Finish the staff page
 * ~~Finish the discord page~~ (Deleted)
 * ~~Credits to editors~~ (finished)
