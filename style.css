@@ -1,3 +1,8 @@
+:root {
+    --default: white;
+    --dark: black;
+}
+
 body {
     margin: 0;
     box-sizing: border-box;
