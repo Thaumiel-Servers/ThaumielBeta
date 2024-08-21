@@ -6,32 +6,57 @@ body {
     justify-content: center;
     align-items: center;
     padding: 25px;
-    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF);
+    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F);
     color: white;
     font-size: 25px;
     overflow: hidden;
 }
+
 .column {
     float: left;
     width: 50%;
     padding: 10px;
 }
+
 .row::after {
     content: "";
     clear: both;
     display: table;
 }
+
 .header-container {
     display: flex;
     flex-direction: column;
 }
+
 .content {
     position: absolute;
     top: 350px;
 }
-.oxanium-<Oxanium> {
+
+.oxanium-<Oxanium > {
     font-family: "Oxanium", sans-serif;
     font-optical-sizing: auto;
     font-weight: <2>;
     font-style: normal;
+}
+.button1:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+.button2:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+.button3:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+.button4:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
 }
