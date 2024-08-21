@@ -26,13 +26,3 @@ function applyTheme() {
 }
 
 applyTheme();
-
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const isDarkMode = body.classList.contains('dark-mode');
-            setTheme(!isDarkMode);
-        });
-    }
-});
