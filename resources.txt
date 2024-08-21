@@ -2,10 +2,6 @@
 <a href="index.html">
     <button class="buttonbackbottom">Back</button>
     </a>
-<meta
-        name    = "color-scheme"
-        content = "dark"
-/>
 <style>
     .buttonbackbottom {
         width: %;
