@@ -15,6 +15,9 @@ body {
     color: white;
     font-size: 25px;
 }
+div {
+;
+}
 .column {
     float: left;
     width: 50%;
@@ -32,14 +35,15 @@ body {
     flex-direction: column;
 }
 
-.gif1 {
+.ThaumielGif {
     position: relative;
     top: 20px;
+    border-radius: 30%;
 }
 .bagtitle {
     position: relative;
     top: -35px;
-    left: 200px;
+    left: 205px;
 }
 .bagtext {
     position: relative;
@@ -63,7 +67,34 @@ body {
     top: 95%;
     right: 94%;
 }
-
+.cas {
+    left: 200px;
+    position: relative;
+}
+.castitle {
+    position: relative;
+    top: -35px;
+    left: 205px;
+}
+.casPFP {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    align-items: left;
+    border-radius: 20%;
+}
+.casfade1 {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    opacity: 0.5;
+    border-radius: 20%;
+}
+.castext {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
 @media only screen and (max-width: 600px) {
     .theme-toggle {
         right: 77%;
@@ -156,7 +187,9 @@ button {
 }
 .buttonbaguetter {
     color: orangered;
-
+}
+.buttoncassie {
+    color: #3498db;
 }
 .buttonstaff {
     color: rgb(72, 255, 0);
