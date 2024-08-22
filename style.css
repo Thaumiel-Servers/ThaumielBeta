@@ -58,6 +58,13 @@ body {
     border-radius: 20%;
 }
 
+.theme-toggle {
+    position: absolute;
+    top: 95%;
+    right: 96%;
+
+}
+
 .oxanium-<Oxanium> {
     font-family: "Oxanium", sans-serif;
     font-optical-sizing: auto;
