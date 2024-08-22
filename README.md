@@ -11,7 +11,7 @@
 
 # Possible Additions:
 * Thaumiel AI
-* Dark mode selector
+* ~~Dark mode selector~~ (finished)
 * Suggestion page
 * Google Analytics
 * Add notes for editors (Partly done)
