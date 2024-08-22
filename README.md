@@ -13,6 +13,6 @@
 # Possible Additions:
 * Thaumiel AI
 * ~~Dark mode selector~~ (finished)
-* Suggestion page
+* ~~Suggestion page~~ (not possible on github)
 * Google Analytics
 * Add notes for editors (Partly done)
