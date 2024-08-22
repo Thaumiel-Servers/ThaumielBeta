@@ -59,10 +59,15 @@ body {
 }
 
 .theme-toggle {
-    position: absolute;
+    position: fixed;
     top: 95%;
-    right: 96%;
+    right: 94%;
+}
 
+@media only screen and (max-width: 600px) {
+    .theme-toggle {
+        right: 77%;
+    }
 }
 
 .oxanium-<Oxanium> {
