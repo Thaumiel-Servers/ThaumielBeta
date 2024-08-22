@@ -70,6 +70,23 @@ body {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    p {
+        font-size: 90%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 170%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h2 {
+        font-size: 140%;
+    }
+}
 .oxanium-<Oxanium> {
     font-family: "Oxanium", sans-serif;
     font-optical-sizing: auto;
