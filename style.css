@@ -114,11 +114,6 @@ body {
     top: 100px;
     left: 20px;
 }
-@media only screen and (max-width: 600px) {
-    .theme-toggle {
-        right: 77%;
-    }
-}
 
 @media only screen and (max-width: 600px) {
     p {
