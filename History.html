@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Dont touch-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Home - Thaumiel</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+</head> <!--Button names and redirects-->
+<a href="index.html">
+    <button class="buttonbacktop">Back</button>
+</a>
+</a>
+<!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
+<style>
+    .buttonbacktop {
+        width: 24.2%;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .buttonbacktop {
+            width: 23.4%
+        }
+    }
+</style>
+<body>
+<div style="display: flex; align-items: center;" class="header-container">
+    <h1 class="historytitle" style="color: DodgerBlue; display: flex; font-family: Oxanium;" ><b>Thaumiel: History</b></h1>
+</div>
+<h2 class="history" style="text-align: center; font-family: Oxanium;"></h2>
+<p class="history" style="font-family: Oxanium; text-align: center;"></p>
+
+<h2 class="history" style="text-align: center; font-family: Oxanium;"></h2>
+
+<p class="history" style="text-align: center; font-family: Oxanium;"></p>
+</body>
+<body>
+<button  class="theme-toggle" id="theme-toggle" onclick="toggleImage()">
+    <picture>
+        <img src="light.png" alt="Button Image" width="75" height="75" id="buttonImage" >
+    </picture>
+</button>
+<script src="Javascript.js"></script>
+</body>
+</html>

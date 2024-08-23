@@ -40,6 +40,9 @@
     .buttoncredits {
         width: 24.2%;
     }
+    .buttonSuggestion {
+        position: relative;
+    }
     
     @media only screen and (max-width: 600px) {
         .buttonstaff {
@@ -118,6 +121,8 @@
         Appeal requests, reports, and staff applications are all held in the Discord server. If you find a player or staff member acting unjustly or making you uncomfortable, please report them in the server for both your fun & safety and ours. All staff reports are only seen by our Staff Manager Jurgen and the Server Owner Mr. Baguetter, A.K.A. Ender.
     </p>
     <p class="index" style="text-align: center; font-family: Oxanium;">This is a open source website contributions can be made <a href="https://github.com/Thaumiel-Servers/Thaumiel/tree/Developer">here</a>.</p>
+    <button class="buttonSuggestion"onclick="toggleIframe()">Submit feedback</button>
+    <iframe id="iframe-display" src="https://forms.gle/kyjRRA4xEhLH1s3Z8" frameborder="0" style="display: none;"></iframe>
 </body>
 <body>
     <button  class="theme-toggle" id="theme-toggle" onclick="toggleImage()">

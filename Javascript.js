@@ -116,3 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('theme-toggle').addEventListener('click', checkAndShowImages);
 
         checkAndShowImages();
+function toggleIframe() {
+    var iframe = document.getElementById('iframe-display');
+    if (iframe.style.display === 'none') {
+        iframe.style.display = 'block';
+    } else {
+        iframe.style.display = 'none';
+    }
+}

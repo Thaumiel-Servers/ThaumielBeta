@@ -54,7 +54,7 @@ body {
 }
 .index {
     position: relative;
-    top: 130px;
+    top: 100px;
 }
 .title {
     position: relative;
@@ -270,3 +270,10 @@ body {
         background-color: black;
         color: white;
     }
+
+#iframe-display {
+    width: 450px;
+    height: 270px;
+    border: none;
+    margin-top: 10px;
+}
