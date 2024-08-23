@@ -23,7 +23,7 @@
 <a href="credits.html">
     <button class="buttoncredits">Credits</button>
 </a>
-<!--Button layouts and other style things for this page only, % of width. added buttons percentage must below 98.4% to not create a new line-->
+<!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
 <style>
     .buttonstaff { 
         width: 24.2%;
@@ -71,6 +71,7 @@
             height: 150px;
         }
     }
+    
 </style>
 <body>
     <div style="display: flex; align-items: center;" class="header-container">
@@ -93,9 +94,11 @@
     </p>
 </body>
 <body>
-    <button  class="theme-toggle" id="theme-toggle">
-        <img src="light.png" alt="Button Image" width="75" height="75">
-      </button>
+    <button  class="theme-toggle" id="theme-toggle" onclick="toggleImage()">
+        <picture>
+        <img src="light.png" alt="Button Image" width="75" height="75" id="buttonImage">
+        </picture>
+    </button>
     <script src="Javascript.js"></script>
 </body>
 </html>

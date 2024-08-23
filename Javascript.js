@@ -68,3 +68,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+ const button = document.getElementById('theme-toggle');
+ const buttonImage = document.getElementById('buttonImage');
+
+ const originalImage = 'light.png';
+ const toggledImage = 'Dark.png';
+
+ const savedImageState = localStorage.getItem('buttonImageState');
+
+        if (savedImageState) {
+            buttonImage.src = savedImageState;
+        } else {
+            buttonImage.src = originalImage;
+        }
+
+        button.addEventListener('click', () => {
+            let currentImage = buttonImage.src.includes(originalImage) ? toggledImage : originalImage;
+
+            buttonImage.src = currentImage;
+
+            localStorage.setItem('buttonImageState', currentImage);
+        });
