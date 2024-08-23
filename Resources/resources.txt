@@ -1,0 +1,25 @@
+﻿For a bottom back button you can use this
+<a href="index.html">
+    <button class="buttonbackbottom">Back</button>
+    </a>
+<style>
+    .buttonbackbottom {
+        width: %;
+        
+    }
+For a top back button you can use this
+<a href="index.html">
+    <button class="buttonbacktop">Back</button>
+    </a>
+<meta
+        name    = "color-scheme"
+        content = "dark"
+/>
+<style>
+    .buttonbacktop {
+        width: %;
+        
+    }
+</style>
+Todo:
+Expand resources.txt

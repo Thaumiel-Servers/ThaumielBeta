@@ -89,12 +89,6 @@ body {
     align-items: left;
     border-radius: 20%;
 }
-.Steam-Legal {
-    position: absolute;
-    bottom: -15%;
-    left: 1%;
-    font-size: 10px;
-}
 .theme-toggle {
     position: fixed;
     top: 89%;

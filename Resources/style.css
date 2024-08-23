@@ -1,0 +1,97 @@
+﻿/* Template css file add template stuff to this */
+:root {
+    --default: white;
+    --dark: black;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    /* TODO: make the text look better */ /* Yes do that */
+    padding: 0px;
+    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F);
+    color: white;
+    font-size: 24px;
+}
+.nametitle {
+    position: relative;
+    top: -35px;
+    left: 205px;
+}
+.nametext {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.name {
+    left: 200px;
+    position: relative;
+}
+.TemplatePFP {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    align-items: left;
+    border-radius: 20%;
+}
+.theme-toggle {
+    position: fixed;
+    top: 89%;
+    right: 1%;
+    background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    p {
+        font-size: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 155%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h2 {
+        font-size: 125%;
+    }
+}
+
+.oxanium-<Oxanium> {
+              font-family: "Oxanium", sans-serif;
+              font-optical-sizing: auto;
+              font-style: normal;
+          }
+html
+{
+    min-height: 100%;
+}
+
+button {
+    font-family: bold "Oxanium", sans-serif;
+    font-weight: 1000;
+}
+}
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
