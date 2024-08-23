@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const blackSquare1 = document.getElementById('blackSquare1');
         const blackSquare2 = document.getElementById('blackSquare2');
 
-        const darkImage = 'light.png';
+        const darkImage = 'dark.png';
 
         function checkAndShowImages() {
             const currentImage = buttonImage.src.split('/').pop();
