@@ -13,13 +13,13 @@ body {
     padding: 0px;
     background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F);
     color: white;
-    font-size: 25px;
+    font-size: 24px;
 }
 .cass{
     color: #0099ff;
     position: fixed;
     font-size: 15px;
-    top: 209px;
+    top: 198px;
     left: 30px
     
 }
@@ -42,13 +42,31 @@ body {
 
 .header-container {
     display: flex;
-    flex-direction: column;
+
 }
 
 .ThaumielGif {
-    position: relative;
-    top: 20px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    align-items: left;
     border-radius: 30%;
+}
+.index {
+    position: relative;
+    top: 130px;
+}
+.title {
+    position: relative;
+    top: 30px;
+    left: 225px;
+    font-size: 45px;    
+}
+.title2 {
+    position: relative;
+    top: 70px;
+    left: 40px;
+
 }
 .bagtitle {
     position: relative;
@@ -109,6 +127,7 @@ body {
     opacity: 0.5;
     border-radius: 20%;
 }
+
 .castext {
     position: relative;
     top: 100px;
