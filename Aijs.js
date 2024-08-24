@@ -3,14 +3,14 @@ function initializeChatbot() {
     const preloadCloseIcon = document.createElement("link");
     preloadCloseIcon.rel = "preload";
     preloadCloseIcon.href =
-      "close.png";
+      "casPFP.png";
     preloadCloseIcon.as = "image";
     document.head.appendChild(preloadCloseIcon);
   
     const preloadPickaxeIcon = document.createElement("link");
     preloadPickaxeIcon.rel = "preload";
     preloadPickaxeIcon.href =
-      "caspfp.png";
+      "casPFP.png";
     preloadPickaxeIcon.as = "image";
     document.head.appendChild(preloadPickaxeIcon);
 
@@ -47,10 +47,10 @@ function initializeChatbot() {
     // Set default icon on page load
     const fabIcon = document.getElementById("pickaxe-fabIcon");
     fabIcon.src =
-      `caspfp.png`;
+      `casPFP.png`;
     fabIcon.onerror = function () {
       this.onerror = null;
-      this.src = "caspfp.png";
+      this.src = "casPFP.png";
     };
   
     // Button click event listener
@@ -64,7 +64,7 @@ function initializeChatbot() {
         container.classList.remove("pickaxe-hidden");
         container.classList.add("pickaxe-visible");
         fabIcon.src =
-          "caspfp.png";
+          "casPFP.png";
         fabButtonElement.classList.add("pickaxe-active");
       } else {
         container.classList.remove("pickaxe-visible");
@@ -73,7 +73,7 @@ function initializeChatbot() {
         fabIcon.style.color = "black";
         fabIcon.onerror = function () {
           this.onerror = null;
-          this.src = "caspfp.png";
+          this.src = "casPFP.png";
         };
         fabButtonElement.classList.remove("pickaxe-active");
       }
