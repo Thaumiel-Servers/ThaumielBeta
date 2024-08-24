@@ -44,6 +44,10 @@ body {
     display: flex;
 
 }
+.Ai {
+    position: relative;
+    bottom: 100px;
+}
 
 .ThaumielGif {
     position: fixed;
@@ -101,8 +105,8 @@ body {
 }
 .theme-toggle {
     position: fixed;
-    top: 89%;
-    right: 1%;
+    top: 91%;
+    right: 5%;
     background: none; 
             border: none; 
             padding: 0; 
