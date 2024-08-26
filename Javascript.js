@@ -42,8 +42,8 @@ function setTheme(isDark) {
     const defaultVar = 'var(--default)';
     const darkVar = 'var(--dark)';
     const gradient = isDark
-        ? `linear-gradient(to bottom, ${darkVar}, ${darkVar}, #1E90FF, #5F005F, #5F005F)`
-        : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F, #5F005F)`;
+        ? `linear-gradient(to bottom, ${darkVar}, ${darkVar}, #1E90FF, #5F005F)`
+        : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F)`;
 
     body.style.background = gradient;
 
@@ -116,14 +116,23 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('theme-toggle').addEventListener('click', checkAndShowImages);
 
         checkAndShowImages();
-function toggleIframe() {
-    var iframe = document.getElementById('iframe-display');
-    if (iframe.style.display === 'none') {
-        iframe.style.display = 'block';
-    } else {
-        iframe.style.display = 'none';
-    }
-}
+        function toggleIframe() {
+            var iframe = document.getElementById('iframe-display');
+            
+            // Check if the user is on a mobile device
+            if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                // Redirect to a different URL if on a phone
+                window.location.href = 'https://forms.gle/kyjRRA4xEhLH1s3Z8'; // Replace with the desired URL
+            } else {
+                // Toggle iframe display for non-mobile devices
+                if (iframe.style.display === 'none') {
+                    iframe.style.display = 'block';
+                } else {
+                    iframe.style.display = 'none';
+                }
+            }
+        }
+        
 function adjustZoom() {
     const targetWidth = 1920;
     const targetHeight = 1010;
