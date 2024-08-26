@@ -50,7 +50,8 @@ function setTheme(isDark) {
     body.style.backgroundSize = 'cover';
     body.style.backgroundRepeat = 'no-repeat';
     body.style.minHeight = '100vh';
-    
+    body.style.margin = '0'; 
+
     adjustParagraphColors(isDark);
     adjustButtonStyle(isDark);
 
