@@ -39,11 +39,11 @@
         transform-origin: 0 0; /* Scale from top-left corner */
         will-change: transform;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
         .content {
-            width: 768px; /* Set width to 768px on phones */
+            width: 600px; /* Fixed width on phones */
             height: auto; /* Maintain aspect ratio */
-            transform: none; /* Remove scaling */
+            transform: none; /* No scaling on small screens */
         }
     }
     .buttonstaff { 
@@ -70,30 +70,35 @@
     
     @media only screen and (max-width: 600px) {
         .buttonstaff {
-            width: 23.4%
+            width: 19.68%
         }
     }
 
     @media only screen and (max-width: 600px) {
         .buttonsupport {
-            width: 24%;
+            width: 19.68%;
         }
     }
 
     @media only screen and (max-width: 600px) {
         .buttoncontact {
-            width: 24%;
+            width: 19.68%;
         }
     }
 
     @media only screen and (max-width: 600px) {
         .buttoncredits {
-            width: 23.4%;
+            width: 19.68%;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        .buttonhistory {
+            width: 19.68%;
         }
     }
 
         @media only screen and (max-width: 600px) {
-        .gif1 {
+        .ThaumielGif {
             width: 150px;
             height: 150px;
         }
