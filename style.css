@@ -113,7 +113,7 @@ body {
 @media only screen and (max-width: 768px) {
     .title2 {
         font-size: 15px; /* Reduce font size */
-        top: 35%;
+        top: 37%;
     }
 }
 
@@ -121,6 +121,7 @@ body {
 @media only screen and (max-width: 480px) {
     .title2 {
         font-size: 15px; /* Further reduce font size */
+        top: 37%;
     }
 }
 
