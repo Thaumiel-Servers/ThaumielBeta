@@ -5,6 +5,11 @@ if (!colorSchemeMetaTag) {
     colorSchemeMetaTag.name = 'color-scheme';
     document.head.appendChild(colorSchemeMetaTag);
 }
+
+function isPhone() {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
 function adjustParagraphColors(isDark) {
     const paragraphs = document.getElementsByTagName('p');
     for (let p of paragraphs) {
@@ -14,6 +19,7 @@ function adjustParagraphColors(isDark) {
         }
     }
 }
+
 function adjustButtonStyle(isDark) {
     const staffButton = document.getElementsByClassName('buttonstaff');
     const creditButton = document.getElementsByClassName('buttoncredits');
@@ -35,6 +41,7 @@ function adjustButtonStyle(isDark) {
         adjustColor(button, 'rgb(0, 255, 162)');
     }
 }
+
 function setTheme(isDark) {
     body.classList.toggle('dark-mode', isDark);
     body.classList.toggle('light-mode', !isDark);
@@ -42,60 +49,48 @@ function setTheme(isDark) {
 
     const defaultVar = 'var(--default)';
     const darkVar = 'var(--dark)';
+    const isMobile = isPhone();
+    
     const gradient = isDark
         ? `linear-gradient(to bottom, ${darkVar}, ${darkVar}, #1E90FF, #5F005F 100%)`
         : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F 100%)`;
 
-    document.documentElement.style.background = gradient;    
     body.style.background = gradient;
-
-    body.style.display = 'none';
-    body.offsetHeight; // Trigger a reflow
-    body.style.display = '';
+    body.style.height = '100%';
+    body.style.margin = '0';
+    body.style.padding = '0';
 
     adjustParagraphColors(isDark);
     adjustButtonStyle(isDark);
 
     colorSchemeMetaTag.content = isDark ? 'dark' : 'light';
 
+    // Update button image based on the theme
+    const buttonImage = document.getElementById('buttonImage');
+    if (buttonImage) {
+        buttonImage.src = isDark ? 'light.png' : 'dark.png';
+    }
+
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
+
 function applyTheme() {
     const savedTheme = localStorage.getItem('theme');
     setTheme(savedTheme === 'dark');
 }
+
 applyTheme();
+
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
+    const buttonImage = document.getElementById('buttonImage');
+    if (buttonImage) {
+        buttonImage.addEventListener('click', () => {
             const isDarkMode = body.classList.contains('dark-mode');
             setTheme(!isDarkMode);
         });
     }
 });
 
- const button = document.getElementById('theme-toggle');
- const buttonImage = document.getElementById('buttonImage');
-
- const originalImage = 'light.png';
- const toggledImage = 'Dark.png';
-
- const savedImageState = localStorage.getItem('buttonImageState');
-
-        if (savedImageState) {
-            buttonImage.src = savedImageState;
-        } else {
-            buttonImage.src = originalImage;
-        }
-
-        button.addEventListener('click', () => {
-            let currentImage = buttonImage.src.includes(originalImage) ? toggledImage : originalImage;
-
-            buttonImage.src = currentImage;
-
-            localStorage.setItem('buttonImageState', currentImage);
-        });
         
         const buttonImageis = document.getElementById('buttonImage');
         const blackSquare1 = document.getElementById('blackSquare1');
