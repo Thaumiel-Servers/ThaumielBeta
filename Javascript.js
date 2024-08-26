@@ -160,3 +160,23 @@ function checkResolution() {
 // Check resolution on page load and resize
 window.addEventListener('load', checkResolution);
 window.addEventListener('resize', checkResolution);
+function adjustZoom() {
+    // Get the screen width and height
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+
+    // Desired resolution
+    const targetWidth = 2035;
+    const targetHeight = 1010;
+
+    // Calculate zoom factor
+    const zoomX = targetWidth / screenWidth;
+    const zoomY = targetHeight / screenHeight;
+    const zoomFactor = Math.min(zoomX, zoomY);
+
+    // Apply the zoom factor to the page
+    document.documentElement.style.setProperty('--zoom-factor', zoomFactor);
+}
+
+// Run the adjustZoom function on load
+window.onload = adjustZoom;

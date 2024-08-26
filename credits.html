@@ -12,12 +12,18 @@
     <link rel="icon" type="image/png" href="./favicon.png">
 </head>
 <style>
+    body {
+        transform: scale(var(--zoom-factor));
+        transform-origin: 0 0;
+        width: 2035px; /* Ensure content fits */
+        height: 1010px; /* Ensure content fits */
+    }
     .buttonbacktop {
         width: 50%;
 
     }
 </style>    
-<body>
+<body scroll="no" style="overflow: hidden">
     <h1 style="color: DodgerBlue; font-family: Oxanium;"><b>Thaumiel Credits:</h1>
     <p style="font-family: Oxanium;">This page is for crediting people who contributed to the website.</p>
     <p style="color: royalblue; font-family: Oxanium;">Programmers:</p>

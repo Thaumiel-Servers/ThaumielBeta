@@ -28,6 +28,12 @@
 </a>
 <!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
 <style>
+    body {
+        transform: scale(var(--zoom-factor));
+        transform-origin: 0 0;
+        width: 2035px; /* Ensure content fits */
+        height: 1010px; /* Ensure content fits */
+    }
     .buttonstaff { 
         width: 19.68%;
     }
@@ -102,67 +108,8 @@
             top: 32px;
             left: 30px;
         }
-        .popup {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            border: 2px solid black;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        .popup.active {
-            display: block;
-        }
-        .popup button {
-            margin-top: 10px;
-        }
-        .popup2 {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 20%;
-            left: 20%;
-            width: 60%;
-            background-color: white;
-            border: 2px solid black;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-        }
-        .popup2.active {
-            display: block;
-        }
-        .popup2 button {
-            margin-top: 10px;
-        }
-        /* Style for overlay */
-        .overlay2 {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-        .overlay2.active {
-            display: block;
-        }
 </style>
-<body>
-    <div class="overlay" id="overlay"></div>
-    <div class="popup2" id="popup2">
-        <p style="color: red; font-family: Oxanium;">Warning:</p><p style="color: rgb(16, 15, 15); font-family: Oxanium;">This website is best viewed on the resolution 1920 x 1080<br>Some pages may be broken.</p>
-        <button onclick="closePopup()">OK</button>
-    </div>
-    <div class="popup" id="popup">
-        <p style="color: red; font-family: Oxanium;">Warning:</p><p style="color: rgb(16, 15, 15); font-family: Oxanium;">This website is not made for a resolution lower than 1920 x 1080<br>Some pages may be broken.</p>
-        <button onclick="closePopup()">OK</button>
-    </div>
+<body scroll="no" style="overflow: hidden">
     <img src="blacksquare.png" alt="Black Square 1" id="blackSquare1" class="black-square"  >
     <img src="blacksquare.png" alt="Black Square 2" id="blackSquare2" class="black-square" >
     <div style="display: flex; align-items: center;" class="header-container">

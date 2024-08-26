@@ -15,12 +15,18 @@
     <button class="buttonbacktop">Back</button>
 </a>
 <style>
+    body {
+        transform: scale(var(--zoom-factor));
+        transform-origin: 0 0;
+        width: 2035px; /* Ensure content fits */
+        height: 1010px; /* Ensure content fits */
+    }
     .buttonbacktop {
         width: 50%;
 
     }
 </style>
-<body>
+<body scroll="no" style="overflow: hidden">
     <h1 style="color: DodgerBlue; font-family: Oxanium;">Thaumiel Support:</h1>
     <p style="color: White; font-family: Oxanium;">If you wish to contact support, you can email thaumiel.servers@gmail.com <a href="mailto:thaumiel.servers@gmail.com">(Opens mail if on windows)</a> or join our <a href="https://discord.gg/EpdARdjq2m">Discord</a>.</p>
     <p style="color: White; font-family: Oxanium;">All information for reporting staff is in the Discord.</p>
