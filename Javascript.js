@@ -46,6 +46,7 @@ function setTheme(isDark) {
         ? `linear-gradient(to bottom, ${darkVar}, ${darkVar}, #1E90FF, #5F005F 100%)`
         : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F 100%)`;
 
+    document.documentElement.style.background = gradient;    
     body.style.background = gradient;
 
     body.style.display = 'none';
