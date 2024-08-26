@@ -36,11 +36,9 @@ function adjustButtonStyle(isDark) {
     }
 }
 function setTheme(isDark) {
-    body.style.backgroundSize = 'cover';
-    body.style.backgroundRepeat = 'no-repeat';
-    body.style.minHeight = '100vh';
     body.classList.toggle('dark-mode', isDark);
     body.classList.toggle('light-mode', !isDark);
+    document.documentElement.style.height = '100%';
 
     const defaultVar = 'var(--default)';
     const darkVar = 'var(--dark)';
@@ -49,7 +47,10 @@ function setTheme(isDark) {
         : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F)`;
 
     body.style.background = gradient;
-
+    body.style.backgroundSize = 'cover';
+    body.style.backgroundRepeat = 'no-repeat';
+    body.style.minHeight = '100vh';
+    
     adjustParagraphColors(isDark);
     adjustButtonStyle(isDark);
 
