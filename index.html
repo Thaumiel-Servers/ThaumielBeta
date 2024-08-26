@@ -49,6 +49,12 @@
             transform: none; /* No scaling on small screens */
         }
     }
+    @media (max-width: 600px) {
+        .theme-toggle {
+            width: 45;
+            height: 45;
+        }
+    }
     .buttonstaff { 
         width: 16.3%;
     }
@@ -135,7 +141,7 @@
 <body>
     <button  class="theme-toggle" id="theme-toggle" onclick="toggleImage()">
         <picture>
-        <img src="light.png" alt="Button Image" width="75" height="75" id="buttonImage" >
+        <img src="light.png" alt="Theme Switch" width="75" height="75" id="buttonImage" >
         </picture>
     </button>
     <script src="Javascript.js"></script>
