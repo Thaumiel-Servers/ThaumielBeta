@@ -43,13 +43,14 @@ function setTheme(isDark) {
     const defaultVar = 'var(--default)';
     const darkVar = 'var(--dark)';
     const gradient = isDark
-        ? `linear-gradient(to bottom, ${darkVar}, ${darkVar}, #1E90FF, #5F005F)`
-        : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F)`;
+        ? `linear-gradient(to bottom, ${darkVar}, ${darkVar}, #1E90FF, #5F005F 100%)`
+        : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F 100%)`;
 
     body.style.background = gradient;
-    body.style.backgroundSize = 'cover';
-    body.style.minHeight = '200vh';
-    body.style.margin = '0'; 
+
+    body.style.height = '100%';
+    body.style.margin = '0';
+    body.style.padding = '0';
 
     adjustParagraphColors(isDark);
     adjustButtonStyle(isDark);
