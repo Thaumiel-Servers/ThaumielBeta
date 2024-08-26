@@ -28,6 +28,13 @@
         transform-origin: 0 0; /* Scale from top-left corner */
         will-change: transform;
     }
+    @media (max-width: 768px) {
+        .content {
+            width: 768px; /* Set width to 768px on phones */
+            height: auto; /* Maintain aspect ratio */
+            transform: none; /* Remove scaling */
+        }
+    }
     .buttonbacktop {
         width: 24.2%;
     }

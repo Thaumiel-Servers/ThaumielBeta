@@ -130,18 +130,21 @@ function adjustZoom() {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    // Calculate the required scale factor to match the target resolution
-    const scaleX = targetWidth / viewportWidth;
-    const scaleY = targetHeight / viewportHeight;
-    const scale = Math.min(scaleX, scaleY); // Use the smaller scale to fit within bounds
+    // Only apply scaling if the viewport width is greater than 768px
+    if (viewportWidth > 768) {
+        // Calculate the required scale factor to match the target resolution
+        const scaleX = targetWidth / viewportWidth;
+        const scaleY = targetHeight / viewportHeight;
+        const scale = Math.min(scaleX, scaleY); // Use the smaller scale to fit within bounds
 
-    // Apply the scale to the content
-    const content = document.querySelector('.content');
-    content.style.transform = `scale(${scale})`;
+        // Apply the scale to the content
+        const content = document.querySelector('.content');
+        content.style.transform = `scale(${scale})`;
 
-    // Adjust the size of the content container to match the target resolution
-    content.style.width = `${targetWidth / scale}px`;
-    content.style.height = `${targetHeight / scale}px`;
+        // Adjust the size of the content container to match the target resolution
+        content.style.width = `${targetWidth / scale}px`;
+        content.style.height = `${targetHeight / scale}px`;
+    }
 }
 
 // Adjust zoom on page load and when resizing
