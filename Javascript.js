@@ -49,7 +49,7 @@ function setTheme(isDark) {
     body.style.background = gradient;
     body.style.backgroundSize = 'cover';
     body.style.backgroundRepeat = 'no-repeat';
-    body.style.minHeight = '100vh';
+    body.style.maxHeight = '100vh';
     body.style.margin = '0'; 
 
     adjustParagraphColors(isDark);
