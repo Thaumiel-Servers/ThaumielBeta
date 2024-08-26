@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Check if the user is on a mobile device
             if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
                 // Redirect to a different URL if on a phone
-                window.location.href = 'https://forms.gle/kyjRRA4xEhLH1s3Z8'; // Replace with the desired URL
+                window.location.href = 'https://forms.gle/kyjRRA4xEhLH1s3Z8';
             } else {
                 // Toggle iframe display for non-mobile devices
                 if (iframe.style.display === 'none') {
@@ -159,3 +159,4 @@ function adjustZoom() {
 // Adjust zoom on page load and when resizing
 window.addEventListener('load', adjustZoom);
 window.addEventListener('resize', adjustZoom);
+// :3
