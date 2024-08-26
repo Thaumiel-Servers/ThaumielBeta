@@ -51,7 +51,7 @@ body {
     position: absolute;
     border-radius: 30%;
     left: -80px;
-    top: -75px;
+    top: -85px;
 }
 .index {
     position: relative;
@@ -66,14 +66,20 @@ body {
     text-align: center;
     white-space: nowrap; /* Prevent text wrapping */
 }
-
+@media only screen and (max-width: 768px) {
+    .ThaumielGif {
+        position: absolute;
+        font-size: 45px; /* Reduce font size */
+        top: -50px;
+    }
+}
 /* Title styles */
 .title {
     position: absolute;
     font-size: 45px;
     text-align: center; /* Center text inside the title */
     left: -100px;
-    top: 40px;
+    top: 30px;
 }
 
 /* Styles for devices with a max width of 768px (tablets and phones) */
@@ -81,6 +87,7 @@ body {
     .title {
         position: absolute;
         font-size: 45px; /* Reduce font size */
+        top: 70px;
     }
 }
 
@@ -94,7 +101,7 @@ body {
 /* Title2 styles */
 .title2 {
     position: absolute;
-    top: 31%;
+    top: 26%;
     left: 50%;
     transform: translate(-50%, -50%); /* Center the title within the wrapper */
     font-size: 15px;
@@ -106,6 +113,7 @@ body {
 @media only screen and (max-width: 768px) {
     .title2 {
         font-size: 15px; /* Reduce font size */
+        top: 35%;
     }
 }
 
