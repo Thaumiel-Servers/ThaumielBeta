@@ -13,9 +13,9 @@ body {
     color: white;
     font-size: 24px;
     background-size: cover;
-    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F);
+    background: linear-gradient(to bottom, var(--default) 0%, var(--default) 33%, #1E90FF 66%, #5F005F 100%);
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: 100vh !important;
 } 
 .cass{
     color: #0099ff;
