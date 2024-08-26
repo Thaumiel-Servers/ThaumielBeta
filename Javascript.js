@@ -124,59 +124,26 @@ function toggleIframe() {
         iframe.style.display = 'none';
     }
 }
-function showPopup() {
-    document.getElementById('popup').classList.add('active');
-    document.getElementById('overlay').classList.add('active');
-}
-
-// Function to close the popup
-function closePopup() {
-    document.getElementById('popup').classList.remove('active');
-    document.getElementById('overlay').classList.remove('active');
-}
-
-// Show popup if on a mobile device
-if (window.innerWidth < 1820) { // You can adjust this width as needed
-    showPopup();
-}
-function showPopup() {
-    // Display the popup and overlay
-    document.getElementById('popup2').classList.add('active');
-    document.getElementById('overlay2').classList.add('active');
-}
-
-function closePopup() {
-    // Hide the popup and overlay
-    document.getElementById('popup2').classList.remove('active');
-    document.getElementById('overlay2').classList.remove('active');
-}
-
-function checkResolution() {
-    if (window.innerWidth > 1900 && window.innerHeight > 1060) {
-        showPopup();
-    }
-}
-
-// Check resolution on page load and resize
-window.addEventListener('load', checkResolution);
-window.addEventListener('resize', checkResolution);
 function adjustZoom() {
-    // Get the screen width and height
-    const screenWidth = window.screen.width;
-    const screenHeight = window.screen.height;
-
-    // Desired resolution
-    const targetWidth = 2035;
+    const targetWidth = 1920;
     const targetHeight = 1010;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
 
-    // Calculate zoom factor
-    const zoomX = targetWidth / screenWidth;
-    const zoomY = targetHeight / screenHeight;
-    const zoomFactor = Math.min(zoomX, zoomY);
+    // Calculate the required scale factor to match the target resolution
+    const scaleX = targetWidth / viewportWidth;
+    const scaleY = targetHeight / viewportHeight;
+    const scale = Math.min(scaleX, scaleY); // Use the smaller scale to fit within bounds
 
-    // Apply the zoom factor to the page
-    document.documentElement.style.setProperty('--zoom-factor', zoomFactor);
+    // Apply the scale to the content
+    const content = document.querySelector('.content');
+    content.style.transform = `scale(${scale})`;
+
+    // Adjust the size of the content container to match the target resolution
+    content.style.width = `${targetWidth / scale}px`;
+    content.style.height = `${targetHeight / scale}px`;
 }
 
-// Run the adjustZoom function on load
-window.onload = adjustZoom;
+// Adjust zoom on page load and when resizing
+window.addEventListener('load', adjustZoom);
+window.addEventListener('resize', adjustZoom);

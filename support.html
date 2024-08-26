@@ -16,10 +16,15 @@
 </a>
 <style>
     body {
-        transform: scale(var(--zoom-factor));
-        transform-origin: 0 0;
-        width: 2035px; /* Ensure content fits */
-        height: 1010px; /* Ensure content fits */
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
+    .content {
+        transform-origin: 0 0; /* Scale from top-left corner */
+        will-change: transform;
     }
     .buttonbacktop {
         width: 50%;

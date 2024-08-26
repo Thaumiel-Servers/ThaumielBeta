@@ -29,10 +29,15 @@
 <!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
 <style>
     body {
-        transform: scale(var(--zoom-factor));
-        transform-origin: 0 0;
-        width: 2035px; /* Ensure content fits */
-        height: 1010px; /* Ensure content fits */
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
+    .content {
+        transform-origin: 0 0; /* Scale from top-left corner */
+        will-change: transform;
     }
     .buttonstaff { 
         width: 19.68%;
@@ -87,7 +92,7 @@
         }
     }
     .black-square {
-            position: fixed;
+            position: absolute;
             display: none; /* Initially hidden */
         }
 
@@ -109,7 +114,7 @@
             left: 30px;
         }
 </style>
-<body scroll="no" style="overflow: hidden">
+<body scroll="no">
     <img src="blacksquare.png" alt="Black Square 1" id="blackSquare1" class="black-square"  >
     <img src="blacksquare.png" alt="Black Square 2" id="blackSquare2" class="black-square" >
     <div style="display: flex; align-items: center;" class="header-container">
