@@ -130,8 +130,8 @@ function adjustZoom() {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    // Only apply scaling if the viewport width is greater than 768px
-    if (viewportWidth > 768) {
+    // Only apply scaling if the viewport width is greater than 600px
+    if (viewportWidth > 600) {
         // Calculate the required scale factor to match the target resolution
         const scaleX = targetWidth / viewportWidth;
         const scaleY = targetHeight / viewportHeight;
