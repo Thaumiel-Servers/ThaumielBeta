@@ -42,8 +42,8 @@ function setTheme(isDark) {
     const defaultVar = 'var(--default)';
     const darkVar = 'var(--dark)';
     const gradient = isDark
-        ? `linear-gradient(to bottom, ${darkVar}, ${darkVar}, #1E90FF, #5F005F)`
-        : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F)`;
+        ? `linear-gradient(to bottom, ${darkVar}, ${darkVar}, #1E90FF, #5F005F, #5F005F)`
+        : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F, #5F005F)`;
 
     body.style.background = gradient;
 
