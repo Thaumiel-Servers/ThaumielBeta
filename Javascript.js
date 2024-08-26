@@ -48,7 +48,7 @@ function setTheme(isDark) {
 
     body.style.background = gradient;
     body.style.backgroundSize = 'cover';
-    body.style.maxHeight = '200vh';
+    body.style.minHeight = '200vh';
     body.style.margin = '0'; 
 
     adjustParagraphColors(isDark);
