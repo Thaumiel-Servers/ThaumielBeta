@@ -13,6 +13,7 @@ body {
     color: white;
     font-size: 24px;
     background-size: cover;
+    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F);
     background-repeat: no-repeat;
     min-height: 100vh;
     margin: 0;
