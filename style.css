@@ -58,9 +58,19 @@ body {
 }
 @media only screen and (max-width: 600px) {
     .title {
-        position: absolute;
+        position: relative;
+        top: 30px;
+        left: 225px;
+        font-size: 45px;
         display: flex;
     }
+    @media only screen and (max-width: 600px) {
+        .title2 {
+            position: relative;
+            top: 70px;
+            left: 40px;
+            display: flex;
+        }
 .ThaumielGif {
     position: absolute;
     top: 50px;
