@@ -47,52 +47,75 @@ body {
     position: relative;
     bottom: 100px;
 }
-@media only screen and (max-width: 600px) {
-    .ThaumielGif {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        border-radius: 30%;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .title {
-        position: relative;
-        top: 30px;
-        left: 225px;
-        font-size: 45px;
-        display: flex;
-    }
-    @media only screen and (max-width: 600px) {
-        .title2 {
-            position: relative;
-            top: 70px;
-            left: 40px;
-            display: flex;
-        }
 .ThaumielGif {
     position: absolute;
-    top: 50px;
-    left: 50px;
     border-radius: 30%;
+    left: -80px;
+    top: -75px;
 }
 .index {
     position: relative;
-    top: 100px;
+    top: 200px;
 }
-.title {
-    position: relative;
-    top: 30px;
-    left: 225px;
-    font-size: 45px;    
+.title-container {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the title within the wrapper */
+    font-size: 45px;
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping */
 }
-.title2 {
-    position: relative;
-    top: 70px;
-    left: 40px;
 
+/* Title styles */
+.title {
+    position: absolute;
+    font-size: 45px;
+    text-align: center; /* Center text inside the title */
+    left: -100px;
+    top: 40px;
 }
+
+/* Styles for devices with a max width of 768px (tablets and phones) */
+@media only screen and (max-width: 768px) {
+    .title {
+        position: absolute;
+        font-size: 45px; /* Reduce font size */
+    }
+}
+
+/* Styles for devices with a max width of 480px (phones) */
+@media only screen and (max-width: 480px) {
+    .title {
+        position: absolute;
+        font-size: 45px; /* Further reduce font size */
+    }
+}
+/* Title2 styles */
+.title2 {
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the title within the wrapper */
+    font-size: 15px;
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Styles for devices with a max width of 768px (tablets and phones) */
+@media only screen and (max-width: 768px) {
+    .title2 {
+        font-size: 15px; /* Reduce font size */
+    }
+}
+
+/* Styles for devices with a max width of 480px (phones) */
+@media only screen and (max-width: 480px) {
+    .title2 {
+        font-size: 15px; /* Further reduce font size */
+    }
+}
+
 .historytitle {
     position: relative;
     top: 35px;
@@ -282,6 +305,9 @@ button {
 .buttonhistory {
     color:rgb(255, 0, 162)
 }
+.buttonSuggestion {
+    color: rgb(86, 11, 226)
+}
 
 /* Staff buttons */
 .buttonhome:hover {
@@ -314,5 +340,5 @@ body {
     width: 450px;
     height: 250px;
     border: none;
-    margin-top: 10px;
+    margin-top: -34.5%;
 }

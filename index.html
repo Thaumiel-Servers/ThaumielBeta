@@ -26,6 +26,9 @@
 <a href="History.html">
     <button class="buttonhistory">History</button>
 </a>
+<a>
+    <button class="buttonSuggestion"onclick="toggleIframe()">Submit feedback</button>
+</a>
 <!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
 <style>
     body {
@@ -47,135 +50,70 @@
         }
     }
     .buttonstaff { 
-        width: 19.68%;
+        width: 16.3%;
     }
 
     .buttonsupport {
-        width: 19.68%;
+        width: 16.3%;
     }
 
     .buttoncontact {
-        width: 19.68%;
+        width: 16.3%;
     }
 
     .buttoncredits {
-        width: 19.68%;
+        width: 16.3%;
     }
     .buttonhistory {
-        width: 19.68%;
+        width: 16.3%;
     }
     .buttonSuggestion {
-        position: relative;
+        width: 16.3%
     }
     
     @media only screen and (max-width: 600px) {
         .buttonstaff {
-            width: 19%
+            width: 13%
         }
     }
 
     @media only screen and (max-width: 600px) {
         .buttonsupport {
-            width: 19%;
+            width: 13%;
         }
     }
 
     @media only screen and (max-width: 600px) {
         .buttoncontact {
-            width: 19%;
+            width: 13%;
         }
     }
 
     @media only screen and (max-width: 600px) {
         .buttoncredits {
-            width: 19%;
+            width: 13%;
         }
     }
     @media only screen and (max-width: 600px) {
         .buttonhistory {
-            width: 19%;
-        }
-    }
-
-        @media only screen and (max-width: 600px) {
-        .ThaumielGif {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100px;
-            height: 100px;
-        }
-    }
-    .black-square {
-            position: absolute;
-            display: none; /* Initially hidden */
-        
-        }
-
-        #blackSquare1 {
-            opacity: 0.6;
-            border-radius: 30%;
-            width: 170px;
-            height: 170px;
-            top: 40px;
-            left: 40px;
-        }
-
-        #blackSquare2 {     
-            opacity: 0.4;
-            border-radius: 30%;
-            width: 190px;
-            height: 190px;
-            top: 32px;
-            left: 30px;
-        }
-    @media only screen and (max-width: 600px) {
-        .black-square {
-            position: absolute;
-            display: none; /* Initially hidden */
-            align-items: center;
-            justify-content: center;
-        }
-            #blackSquare1 {
-                opacity: 0.6;
-                border-radius: 30%;
-                width: 120px;
-                height: 120px;
-            }
-
-            #blackSquare2 {
-                opacity: 0.4;
-                border-radius: 30%;
-                width: 140px;
-                height: 140px;
+            width: 13%;
         }
     }
     @media only screen and (max-width: 600px) {
-        .ThaumielGif {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            border-radius: 30%;
-        }
-    }
-    @media only screen and (max-width: 600px) {
-        .title {
-            position: relative;
-            top: 30px;
-            left: 225px;
-            font-size: 45px;
-            display: flex;
+        .buttonSuggestion {
+            width: 24.7%
         }
     }
 </style>
 <body scroll="no">
-    <img src="blacksquare.png" alt="Black Square 1" id="blackSquare1" class="black-square"  >
-    <img src="blacksquare.png" alt="Black Square 2" id="blackSquare2" class="black-square" >
+    <header class="title-container">
     <div style="display: flex; align-items: center;" class="header-container">
         <img src="Thaumiel1.gif" width="150" height="150" class="ThaumielGif" alt="Thaumiel logo">
         <h1 class="title" style="color: DodgerBlue; font-family: Oxanium;"><b>Thaumiel</b></h1> <!-- Main Header -->
+    </header>
+    <header class="title2-container">
         <small class= "title2" style="font-family: Oxanium;">Previously known as Thaumiel Servers.</small>
+    </header>
     </div>
     <h2 class="index" style="text-align: center; font-family: Oxanium;">About The Server</h2><!--aligns to center and sets font to Oxanium-->
     <p class="index" style="font-family: Oxanium; text-align: center;">
@@ -192,7 +130,6 @@
         Appeal requests, reports, and staff applications are all held in the Discord server. If you find a player or staff member acting unjustly or making you uncomfortable, please report them in the server for both your fun & safety and ours. All staff reports are only seen by our Staff Manager Jurgen and the Server Owner Mr. Baguetter, A.K.A. Ender.
     </p>
     <p class="index" style="text-align: center; font-family: Oxanium;">This is a open source website contributions can be made <a href="https://github.com/Thaumiel-Servers/Thaumiel/tree/Developer">here</a>.</p>
-    <button class="buttonSuggestion"onclick="toggleIframe()">Submit feedback</button>
     <iframe id="iframe-display" src="https://forms.gle/kyjRRA4xEhLH1s3Z8" frameborder="0" style="height: 270px; width: 450px; display: none;"></iframe>
 </body>
 <body>
