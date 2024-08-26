@@ -25,9 +25,10 @@ body {
     left: 30px
     
 }
-html {
-    height: auto;
-    min-height: 100%;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 .anton-regular {
     font-family: "Anton", sans-serif;
@@ -287,10 +288,6 @@ html {
 }
 .buttonbackbottomstaff {
     position: absolute; bottom: 0; /* sets the button to the bottom of the page */
-}
-html 
-{
-  min-height: 100%;
 }
 
 button {

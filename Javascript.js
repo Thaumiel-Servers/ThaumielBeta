@@ -48,9 +48,9 @@ function setTheme(isDark) {
 
     body.style.background = gradient;
 
-    body.style.height = '100%';
-    body.style.margin = '0';
-    body.style.padding = '0';
+    body.style.display = 'none';
+    body.offsetHeight; // Trigger a reflow
+    body.style.display = '';
 
     adjustParagraphColors(isDark);
     adjustButtonStyle(isDark);
