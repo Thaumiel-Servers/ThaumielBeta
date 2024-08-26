@@ -36,6 +36,9 @@ function adjustButtonStyle(isDark) {
     }
 }
 function setTheme(isDark) {
+    body.style.backgroundSize = 'cover';
+    body.style.backgroundRepeat = 'no-repeat';
+    body.style.minHeight = '100vh';
     body.classList.toggle('dark-mode', isDark);
     body.classList.toggle('light-mode', !isDark);
 

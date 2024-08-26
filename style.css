@@ -12,7 +12,10 @@ body {
     padding: 0px;
     color: white;
     font-size: 24px;
-    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
 } 
 .cass{
     color: #0099ff;
