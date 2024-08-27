@@ -1,7 +1,23 @@
 :root {
-    --default: white;
-    --dark: black;
+    --bg-start: #ffffff;
+    --bg-middle: #aacfff;
+    --bg-end: #0037ff;
+    --text-color: #000000;
+    --button-bg: #000000;
+    --button-text: #ffffff;
+    --button-hover-bg: #333333;
 }
+
+[data-theme='dark'] {
+    --bg-start: #000000;
+    --bg-middle: #000000;
+    --bg-end: #5F005F;
+    --text-color: #ffffff;
+    --button-bg: #ffffff;
+    --button-text: #000000;
+    --button-hover-bg: #cccccc;
+}
+
 
 body {
     margin: 0;
@@ -10,10 +26,10 @@ body {
     align-items: center;
     /* TODO: make the text look better */ /* Yes do that */
     padding: 0px;
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
     font-size: 24px;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F);
+    background: linear-gradient(to bottom, var(--bg-start), var(--bg-middle), var(--bg-end));
     background-attachment: fixed;
 } 
 html, body {
@@ -57,7 +73,10 @@ html, body {
     position: absolute;
     border-radius: 30%;
     left: -80px;
-    top: -85px;
+    top: -60px;
+}
+.test {
+    position: relative
 }
 .index {
     position: relative;
@@ -65,7 +84,7 @@ html, body {
 }
 .title-container {
     position: absolute;
-    top: 14%;
+    top: 70px;
     left: 50%;
     transform: translate(-50%, -50%); /* Center the title within the wrapper */
     font-size: 45px;
@@ -79,13 +98,24 @@ html, body {
         top: -50px;
     }
 }
+@media only screen and (max-width: 768px) {
+    .title-container {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the title within the wrapper */
+        font-size: 45px;
+        text-align: center;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+}
 /* Title styles */
 .title {
     position: absolute;
     font-size: 45px;
     text-align: center; /* Center text inside the title */
     left: -100px;
-    top: 30px;
+    top: 50px;
 }
 
 /* Styles for devices with a max width of 768px (tablets and phones) */
@@ -107,27 +137,27 @@ html, body {
 /* Title2 styles */
 .title2 {
     position: absolute;
-    top: 26%;
-    left: 50%;
     transform: translate(-50%, -50%); /* Center the title within the wrapper */
     font-size: 15px;
     text-align: center;
-    white-space: nowrap; /* Prevent text wrapping */
+    top: 130px;
 }
 
 /* Styles for devices with a max width of 768px (tablets and phones) */
 @media only screen and (max-width: 768px) {
     .title2 {
+        position: absolute;
         font-size: 15px; /* Reduce font size */
-        top: 38%;
+        top: 140px;
     }
 }
 
 /* Styles for devices with a max width of 480px (phones) */
 @media only screen and (max-width: 480px) {
     .title2 {
+        position: absolute;
         font-size: 15px; /* Further reduce font size */
-        top: 38%;
+        top: 140px;
     }
 }
 
@@ -170,8 +200,8 @@ html, body {
 }
 .theme-toggle {
     position: fixed;
-    top: 90%;
-    right: 1%;
+    top: 89%;
+    right: 2%;
     background: none; 
             border: none; 
             padding: 0; 
@@ -362,6 +392,7 @@ body {
     }
 
 #iframe-display {
+    position: absolute;
     width: 450px;
     height: 250px;
     border: none;

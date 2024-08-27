@@ -16,30 +16,37 @@
             }
         }
         
-function adjustZoom() {
-    const targetWidth = 1920;
-    const targetHeight = 1010;
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-
-    // Only apply scaling if the viewport width is greater than 600px
-    if (viewportWidth > 600) {
-        // Calculate the required scale factor to match the target resolution
-        const scaleX = targetWidth / viewportWidth;
-        const scaleY = targetHeight / viewportHeight;
-        const scale = Math.min(scaleX, scaleY); // Use the smaller scale to fit within bounds
-
-        // Apply the scale to the content
-        const content = document.querySelector('.content');
-        content.style.transform = `scale(${scale})`;
-
-        // Adjust the size of the content container to match the target resolution
-        content.style.width = `${targetWidth / scale}px`;
-        content.style.height = `${targetHeight / scale}px`;
-    }
-}
-
-// Adjust zoom on page load and when resizing
-window.addEventListener('load', adjustZoom);
-window.addEventListener('resize', adjustZoom);
-// :3
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleButton = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const body = document.body;
+        
+            // Function to set theme
+            function setTheme(theme) {
+                body.setAttribute('data-theme', theme);
+                if (theme === 'dark') {
+                    themeIcon.src = 'light.png'; // Show light icon for dark theme
+                    themeToggleButton.setAttribute('aria-label', 'Switch to Light Theme');
+                } else {
+                    themeIcon.src = 'Dark.png'; // Show dark icon for light theme
+                    themeToggleButton.setAttribute('aria-label', 'Switch to Dark Theme');
+                }
+                localStorage.setItem('theme', theme);
+            }
+        
+            // Check for a saved theme in localStorage and set it
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                // Default to light theme if no preference is saved
+                setTheme('light');
+            }
+        
+            // Toggle theme on button click
+            themeToggleButton.addEventListener('click', () => {
+                const currentTheme = body.getAttribute('data-theme');
+                setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+        });
+        
