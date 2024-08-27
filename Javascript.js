@@ -45,20 +45,21 @@ function adjustButtonStyle(isDark) {
 function setTheme(isDark) {
     body.classList.toggle('dark-mode', isDark);
     body.classList.toggle('light-mode', !isDark);
+
     document.documentElement.style.height = '100%';
+    body.style.height = '100%';
 
     const defaultVar = 'var(--default)';
     const darkVar = 'var(--dark)';
-    const isMobile = isPhone();
-    
     const gradient = isDark
         ? `linear-gradient(to bottom, ${darkVar}, ${darkVar}, #1E90FF, #5F005F 100%)`
         : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F 100%)`;
 
     body.style.background = gradient;
-    body.style.backgroundSize = 'cover'; // Ensure background covers the whole area
-    body.style.backgroundRepeat = 'no-repeat'; // Prevent repeating of the background
-    body.style.height = '100%';
+    body.style.backgroundSize = 'cover'; // Ensure gradient covers the entire body
+    body.style.backgroundRepeat = 'no-repeat'; // Prevent background from repeating
+    body.style.backgroundAttachment = 'fixed'; // Ensure the background is fixed relative to the viewport
+
     body.style.margin = '0';
     body.style.padding = '0';
 
@@ -69,11 +70,12 @@ function setTheme(isDark) {
 
     const buttonImage = document.getElementById('buttonImage');
     if (buttonImage) {
-        buttonImage.src = isDark ? 'light.png' : 'dark.png';
+        buttonImage.src = isDark ? 'dark.png' : 'light.png';
     }
 
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
+
 function applyTheme() {
     const savedTheme = localStorage.getItem('theme');
     setTheme(savedTheme === 'dark');
@@ -90,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 
         checkAndShowImages();
         function toggleIframe() {
