@@ -29,7 +29,7 @@ body.dark-mode {
     background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F 100%);
 }
 body.light-mode {
-    background: linear-gradient(to bottom, #fff, #fff, #1E90FF, #5F005F 100%);
+    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F 100%);
 }
 img {
     cursor: pointer;
