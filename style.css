@@ -10,9 +10,9 @@ body {
     align-items: center;
     /* TODO: make the text look better */ /* Yes do that */
     padding: 0px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 24px;
-    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F);
+    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F) no-repeat;
 
 } 
 
@@ -23,10 +23,6 @@ body {
     top: 198px;
     left: 30px
     
-}
-html, body {
-    height: 100%;
-    margin: 0;
 }
 .anton-regular {
     font-family: "Anton", sans-serif;
@@ -149,8 +145,13 @@ html, body {
 }
 .bagtext {
     position: relative;
-    text-align: center;
-    top: 200px;
+    top: 100px;
+    left: 20px;
+}
+.bagtext3 {
+    position: relative;
+    top: 100px;
+    left: 20px;
 }
 .bag {
     left: 200px;
@@ -188,11 +189,18 @@ html, body {
     align-items: left;
     border-radius: 20%;
 }
-
+.casfade1 {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    opacity: 0.5;
+    border-radius: 20%;
+}
 
 .castext {
     position: relative;
-    text-align: center
+    top: 100px;
+    left: 20px;
 }
 
 @media only screen and (max-width: 600px) {
