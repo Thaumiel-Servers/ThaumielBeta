@@ -1,4 +1,4 @@
-# Release Canidate 1 is selected.
+# Release Canidate 1 is selected
 # Information
 * This is the Thaumiel webpage. This website includes information about the SCP: SL Server Thaumiel
 * Hello, this is an open-source website. Any additions would be welcome.
