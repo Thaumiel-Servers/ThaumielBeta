@@ -13,7 +13,6 @@ body {
     color: white;
     font-size: 24px;
     background-size: cover;
-    background: linear-gradient(to bottom, var(--default) 0%, var(--default) 33%, #1E90FF 66%, #5F005F 100%);
     background-repeat: no-repeat;
     min-height: 100vh !important;
 } 
@@ -33,12 +32,6 @@ body.light-mode {
 }
 img {
     cursor: pointer;
-}
-@media screen and (max-width: 768px) {
-    body, html {
-        min-height: 100vh !important;
-        background: linear-gradient(to bottom, var(--default) 0%, var(--default) 33%, #1E90FF 66%, #5F005F 100%);
-    }
 }
 html, body {
     height: 100%;
