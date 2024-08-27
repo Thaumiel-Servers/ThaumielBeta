@@ -173,6 +173,12 @@ body {
             padding: 0; 
             cursor: pointer; 
 }
+.castext3 {
+    position: absolute;
+    top: 400px;
+    font-size: 20px;
+    left: 20px;
+}
 .cas {
     left: 200px;
     position: relative;
@@ -187,13 +193,6 @@ body {
     top: 50px;
     left: 50px;
     align-items: left;
-    border-radius: 20%;
-}
-.casfade1 {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    opacity: 0.5;
     border-radius: 20%;
 }
 
