@@ -10,11 +10,12 @@ body {
     align-items: center;
     /* TODO: make the text look better */ /* Yes do that */
     padding: 0px;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 24px;
-    background-image: linear-gradient(#1E90FF, #5F005F);
+    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F);
 
 } 
+
 .cass{
     color: #0099ff;
     position: fixed;
@@ -22,52 +23,6 @@ body {
     top: 198px;
     left: 30px
     
-}
-body.dark-mode {
-    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F) no-repeat;
-  background: -moz-linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F) no-repeat;
-  background: -ms-linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F) no-repeat;
-  background: -webkit-linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F) no-repeat;
-  background: -webkit-linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F) no-repeat;
-  background: -o-linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F) no-repeat;
-  background:  linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F) no-repeat;  
-  background-size: cover;
-
-}
-body.light-mode {
-    background: linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #5F005F) no-repeat;
-  background: -moz-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #5F005F) no-repeat;
-  background: -ms-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #5F005F) no-repeat;
-  background: -webkit-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #5F005F) no-repeat;
-  background: -webkit-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #5F005F) no-repeat;
-  background: -o-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #5F005F) no-repeat;
-  background:  linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #5F005F) no-repeat;  
-  background-size: cover;
-}
-@media only screen and (max-width: 768px) {
-    body.light-mode {
-        background: linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
-      background: -moz-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
-      background: -ms-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
-      background: -webkit-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
-      background: -webkit-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
-      background: -o-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
-      background:  linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;  
-      background-size: cover;
-    }
-}
-@media only screen and (max-width: 768px) {
-    body.dark-mode {
-        background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
-      background: -moz-linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
-      background: -ms-linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
-      background: -webkit-linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
-      background: -webkit-linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
-      background: -o-linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
-      background:  linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;  
-      background-size: cover;
-    
-    }
 }
 html, body {
     height: 100%;
@@ -194,15 +149,15 @@ html, body {
 }
 .bagtext {
     position: relative;
-    top: 100px;
-    left: 20px;
+    text-align: center;
+    top: 200px;
 }
 .bag {
     left: 200px;
     position: relative;
 }
 .BagPFP {
-    position: fixed;
+    position: absolute;
     top: 50px;
     left: 50px;
     align-items: left;
@@ -227,24 +182,17 @@ html, body {
     left: 205px;
 }
 .casPFP {
-    position: fixed;
+    position: absolute;
     top: 50px;
     left: 50px;
     align-items: left;
     border-radius: 20%;
 }
-.casfade1 {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    opacity: 0.5;
-    border-radius: 20%;
-}
+
 
 .castext {
     position: relative;
-    top: 100px;
-    left: 20px;
+    text-align: center
 }
 
 @media only screen and (max-width: 600px) {
