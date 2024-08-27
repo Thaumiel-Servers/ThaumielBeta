@@ -12,6 +12,8 @@ body {
     padding: 0px;
     color: white;
     font-size: 24px;
+    background-image: linear-gradient(#1E90FF, #5F005F);
+
 } 
 .cass{
     color: #0099ff;
@@ -41,6 +43,31 @@ body.light-mode {
   background: -o-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #5F005F) no-repeat;
   background:  linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #5F005F) no-repeat;  
   background-size: cover;
+}
+@media only screen and (max-width: 768px) {
+    body.light-mode {
+        background: linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
+      background: -moz-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
+      background: -ms-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
+      background: -webkit-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
+      background: -webkit-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
+      background: -o-linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;
+      background:  linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #1E90FF) no-repeat;  
+      background-size: cover;
+    }
+}
+@media only screen and (max-width: 768px) {
+    body.dark-mode {
+        background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
+      background: -moz-linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
+      background: -ms-linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
+      background: -webkit-linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
+      background: -webkit-linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
+      background: -o-linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;
+      background:  linear-gradient(to bottom, #000000, #000000, #1E90FF, #1E90FF) no-repeat;  
+      background-size: cover;
+    
+    }
 }
 html, body {
     height: 100%;
