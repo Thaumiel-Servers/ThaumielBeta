@@ -25,6 +25,15 @@ body {
     left: 30px
     
 }
+body.dark-mode {
+    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F 100%);
+}
+body.light-mode {
+    background: linear-gradient(to bottom, #fff, #fff, #1E90FF, #5F005F 100%);
+}
+img {
+    cursor: pointer;
+}
 @media screen and (max-width: 768px) {
     body, html {
         min-height: 100vh !important;
