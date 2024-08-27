@@ -15,7 +15,10 @@ body {
     background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F)
 
 } 
-
+html, body {
+    min-height: 100%;
+    height: auto;    
+    }
 .cass{
     color: #0099ff;
     position: fixed;
