@@ -198,6 +198,32 @@ html, body {
     align-items: left;
     border-radius: 20%;
 }
+.ezetitle {
+    position: relative;
+    top: -35px;
+    left: 205px;
+}
+.ezetext {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.ezetext3 {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.eze {
+    left: 200px;
+    position: relative;
+}
+.EzePFP {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    align-items: left;
+    border-radius: 20%;
+}
 .theme-toggle {
     position: fixed;
     top: 89%;
