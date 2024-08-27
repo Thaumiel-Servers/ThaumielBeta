@@ -22,13 +22,10 @@ body {
     
 }
 body.dark-mode {
-    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F 100%);
+    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F 100%) no-repeat;
 }
 body.light-mode {
-    background: linear-gradient(to bottom, #000000, #000000, #1E90FF, #5F005F 100%);
-}
-img {
-    cursor: pointer;
+    background: linear-gradient(to bottom, #ffffff, #ffffff, #1E90FF, #5F005F 100%) no-repeat;
 }
 html, body {
     height: 100%;
