@@ -56,6 +56,8 @@ function setTheme(isDark) {
         : `linear-gradient(to bottom, ${defaultVar}, ${defaultVar}, #1E90FF, #5F005F 100%)`;
 
     body.style.background = gradient;
+    body.style.backgroundSize = 'cover'; // Ensure background covers the whole area
+    body.style.backgroundRepeat = 'no-repeat'; // Prevent repeating of the background
     body.style.height = '100%';
     body.style.margin = '0';
     body.style.padding = '0';
@@ -65,7 +67,6 @@ function setTheme(isDark) {
 
     colorSchemeMetaTag.content = isDark ? 'dark' : 'light';
 
-    // Update button image based on the theme
     const buttonImage = document.getElementById('buttonImage');
     if (buttonImage) {
         buttonImage.src = isDark ? 'light.png' : 'dark.png';
@@ -73,7 +74,6 @@ function setTheme(isDark) {
 
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
-
 function applyTheme() {
     const savedTheme = localStorage.getItem('theme');
     setTheme(savedTheme === 'dark');
@@ -90,31 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-        
-        const buttonImageis = document.getElementById('buttonImage');
-        const blackSquare1 = document.getElementById('blackSquare1');
-        const blackSquare2 = document.getElementById('blackSquare2');
-
-        const darkImage = 'Dark.png';
-
-        function checkAndShowImages() {
-            const currentImage = buttonImage.src.split('/').pop();
-
-            if (currentImage === darkImage) {
-                console.log('dark.png is the current image. Showing blacksquare images.');
-                blackSquare1.style.display = 'block';
-                blackSquare2.style.display = 'block';
-            } else {
-                console.log('dark.png is not the current image.');
-                blackSquare1.style.display = 'none';
-                blackSquare2.style.display = 'none';
-
-            }
-        }
-
-
-        document.getElementById('theme-toggle').addEventListener('click', checkAndShowImages);
 
         checkAndShowImages();
         function toggleIframe() {
