@@ -224,6 +224,32 @@ html, body {
     align-items: left;
     border-radius: 20%;
 }
+.jurtitle {
+    position: relative;
+    top: -35px;
+    left: 205px;
+}
+.jurtext {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.jurtext3 {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.jur {
+    left: 200px;
+    position: relative;
+}
+.JurPFP {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    align-items: left;
+    border-radius: 20%;
+}
 .theme-toggle {
     position: fixed;
     top: 89%;

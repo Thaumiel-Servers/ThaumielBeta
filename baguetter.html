@@ -46,31 +46,32 @@
         .buttonhome {
             width: 25%;
         }
-        @media (max-width: 768px) {
-            .Bag2 {
-                position: absolute;
-                top: 140px;
-                right: 360px;
-            }
-        
+        @media only screen and (max-width: 600px) {
+        .bagtext {
+            display: flex;
+            text-align: center;
+            left: 2px;
+            font-size: 18px;
         }
-        @media (max-width: 768px) {
-            .bagtext {
-                position: absolute;
-                top: 250px
-
-            }
-        
+    }
+    @media only screen and (max-width: 600px) {
+        .Bag2 {
+            text-align: center;
+            position: relative;
+            display: flex;
+            font-size: 16px;
         }
-        @media (max-width: 768px) {
-            .bagtext {
-                position: absolute;
-                font-size: 20px;
-
-            }
-
+    }
+    @media only screen and (max-width: 600px) {
+        .bagtitle {
+            text-align: center;
+            position: absolute;
+            display: flex;
+            font-size: 14px;
+            right: 18%;
+            top: 50%;
         }
-        
+    }   
     </style>
     <a href="staff.html">
         <button class="buttonstaffback">Back</button>
