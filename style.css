@@ -445,8 +445,8 @@ body {
 
 #iframe-display {
     position: absolute;
+    top: 30px;
     width: 450px;
     height: 250px;
     border: none;
-    margin-top: -496px;
 }
