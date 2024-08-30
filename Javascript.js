@@ -49,4 +49,3 @@
                 setTheme(currentTheme === 'dark' ? 'light' : 'dark');
             });
         });
-        

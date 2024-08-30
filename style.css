@@ -450,3 +450,7 @@ body {
     height: 250px;
     border: none;
 }
+.Badge {
+    position: absolute;
+    bottom: 10px;
+}
