@@ -305,12 +305,6 @@ html, body {
         font-size: 125%;
     }
 }
-
-.oxanium-<Oxanium> {
-    font-family: "Oxanium", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
 .buttonstaff:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -445,8 +439,8 @@ body {
 
 #iframe-display {
     position: absolute;
-    top: 30px;
     width: 450px;
     height: 250px;
     border: none;
+    margin-top: -496px;
 }

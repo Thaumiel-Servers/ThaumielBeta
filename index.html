@@ -119,15 +119,21 @@
         }
     }
 </style>
+<select id="languageSwitcher" onchange="translateAndSaveLanguage(this.value)">
+    <option value="EN">English</option>
+    <option value="DE">German</option>
+    <option value="RU">Russian</option>
+    <option value="UK">Ukrainian</option>
+    <!-- Add more languages as needed -->
+</select>
+
 <div class="test">
-<body onload="showWarning()">
+<body scroll="no">
     <header class="title-container">
     <div style="display: flex; align-items: center;" class="header-container">
         <img src="Thaumiel1.gif" width="150" height="150" class="ThaumielGif" alt="Thaumiel logo">
         <h1 class="title" style="color: DodgerBlue; font-family: Oxanium;"><b>Thaumiel</b></h1> <!-- Main Header -->
         <p class= "title2" style="font-family: Oxanium;">(Previously known as Thaumiel Servers)</p>
-    </header>
-    <header class="title2-container">
     </header>
     </div>
     <h2 class="index" style="text-align: center; font-family: Oxanium;">About The Server</h2><!--aligns to center and sets font to Oxanium-->
@@ -136,22 +142,14 @@
         Welcome to Thaumiel! This SCP: Secret Laboratory server is dedicated to honest staff, balanced Vanilla+ gameplay, and above all else, community.
         While Secret Laboratory is our focus, we also serve as a diverse social group and safe space. Our Discord server includes gamenights, an art channel, and a mental health forum to use occasionally. Remember that we are not a substitute for professional help.
     </p>
-
     <h2 class="index" style="text-align: center; font-family: Oxanium;">Server Info</h2><!--aligns to center and sets font to Oxanium-->
-
     <p class="index" style="text-align: center; font-family: Oxanium;">
-        <!--aligns to center and sets font to Oxanium-->
         The server is hosted using Amazon Web Services (AWS) and is located in California. VPNS and proxies are detected and blocked on the SCP: Secret Laboratory server. If you are blocked unfairly due to this system, please request a whitelist in the Discord server.
         Appeal requests, reports, and staff applications are all held in the Discord server. If you find a player or staff member acting unjustly or making you uncomfortable, please report them in the server for both your fun & safety and ours. All staff reports are only seen by our Staff Manager Jurgen and the Server Owner Mr. Baguetter, A.K.A. Ender.
     </p>
     <p class="index" style="text-align: center; font-family: Oxanium;">This is a open source website contributions can be made <a href="https://github.com/Thaumiel-Servers/Thaumiel/tree/Developer">here</a>.</p>
     <iframe id="iframe-display" src="https://forms.gle/kyjRRA4xEhLH1s3Z8" frameborder="0" style="height: 270px; width: 450px; display: none;"></iframe>
     <script src="Javascript.js"></script>
-    <script>
-        function showWarning() {
-            alert("Warning: This is a beta version. Bugs are expected.");
-        }
-    </script>
 </div>
 <button id="theme-toggle">
     <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75">

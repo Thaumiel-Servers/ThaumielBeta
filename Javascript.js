@@ -49,4 +49,32 @@
                 setTheme(currentTheme === 'dark' ? 'light' : 'dark');
             });
         });
+        async function translateWebsite(targetLang) {
+            // Select all relevant text elements
+            const elements = document.querySelectorAll('p, h1, h2, h3, span, div, li, blockquote'); // Add any additional tags needed
+        
+            for (let element of elements) {
+                const originalText = element.textContent.trim();
+        
+                if (originalText.length > 0) {  // Ensure the element contains text
+                    const response = await fetch('https://api-free.deepl.com/v2/translate', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: new URLSearchParams({
+                            auth_key: '18b98c28-5b53-4a17-856b-9fb4843b7883:fx',
+                            text: originalText,
+                            target_lang: targetLang
+                        })
+                    });
+        
+                    const result = await response.json();
+                    element.innerHTML = element.innerHTML.replace(originalText, result.translations[0].text);
+                }
+            }
+        }
+        
+        
+        
         
