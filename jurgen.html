@@ -20,6 +20,13 @@
 </script>
 <body scroll="no" style="overflow: hidden">
 <style>
+body {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
     .buttonstaffback {
         width: 24.2%;
     }
@@ -27,6 +34,13 @@
     .buttonhome {
         width: 25%;
     }
+    @media (max-width: 768px) {
+            .content {
+                width: auto; /* Set width to 768px on phones */
+                height: auto; /* Maintain aspect ratio */
+                transform: none; /* Remove scaling */
+            }
+        }
     @media only screen and (max-width: 600px) {
         .jurtext {
             display: flex;
@@ -42,11 +56,13 @@
     <button class="buttonhome">Home</button>
 </a>
 </style>
-<select id="languageSwitcher" onchange="translateAndSaveLanguage(this.value)">
+<select id="languageSwitcher" onchange="translateWebsite(this.value)">
     <option value="EN">English</option>
     <option value="DE">German</option>
     <option value="RU">Russian</option>
     <option value="UK">Ukrainian</option>
+    <option value="ZH-HANS">Chinese (simplified)</option>
+    <option value="ZH-HANT">Chinese (traditional)</option>
     <!-- Add more languages as needed -->
 </select>
 <div>

@@ -91,25 +91,7 @@ html, body {
     text-align: center;
     white-space: nowrap; /* Prevent text wrapping */
 }
-@media only screen and (max-width: 768px) {
-    .ThaumielGif {
-        position: absolute;
-        font-size: 45px; /* Reduce font size */
-        top: -50px;
-    }
-}
-@media only screen and (max-width: 768px) {
-    .title-container {
-        position: absolute;
-        top: 50px;
-        left: 50%;
-        transform: translate(-50%, -50%); /* Center the title within the wrapper */
-        font-size: 45px;
-        text-align: center;
-        white-space: nowrap; /* Prevent text wrapping */
-    }
-}
-/* Title styles */
+
 .title {
     position: absolute;
     font-size: 45px;
@@ -118,23 +100,6 @@ html, body {
     top: 50px;
 }
 
-/* Styles for devices with a max width of 768px (tablets and phones) */
-@media only screen and (max-width: 768px) {
-    .title {
-        position: absolute;
-        font-size: 45px; /* Reduce font size */
-        top: 70px;
-    }
-}
-
-/* Styles for devices with a max width of 480px (phones) */
-@media only screen and (max-width: 480px) {
-    .title {
-        position: absolute;
-        font-size: 45px; /* Further reduce font size */
-    }
-}
-/* Title2 styles */
 .title2 {
     position: absolute;
     transform: translate(-50%, -50%); /* Center the title within the wrapper */
@@ -143,23 +108,7 @@ html, body {
     top: 130px;
 }
 
-/* Styles for devices with a max width of 768px (tablets and phones) */
-@media only screen and (max-width: 768px) {
-    .title2 {
-        position: absolute;
-        font-size: 15px; /* Reduce font size */
-        top: 140px;
-    }
-}
 
-/* Styles for devices with a max width of 480px (phones) */
-@media only screen and (max-width: 480px) {
-    .title2 {
-        position: absolute;
-        font-size: 15px; /* Further reduce font size */
-        top: 140px;
-    }
-}
 
 .historytitle {
     position: relative;
@@ -288,23 +237,7 @@ html, body {
     left: 20px;
 }
 
-@media only screen and (max-width: 600px) {
-    p {
-        font-size: 80%;
-    }
-}
 
-@media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 155%;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    h2 {
-        font-size: 125%;
-    }
-}
 .buttonstaff:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -443,4 +376,105 @@ body {
     height: 250px;
     border: none;
     margin-top: -496px;
+}
+/* Beta stuffs remove before release */
+.beta-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+    color: white;
+    padding: 15px;
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* Ensures the popup appears above other content */
+}
+
+.beta-popup p {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.beta-popup button {
+    background-color: rgba(85, 85, 85, 0.8); /* Gray button with 80% opacity */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded button edges */
+    cursor: pointer;
+}
+
+.beta-popup button:hover {
+    background-color: rgba(119, 119, 119, 0.8); /* Lighter gray with 80% opacity */
+}
+
+/* Styles for devices with a max width of 768px (tablets and phones) */
+
+@media only screen and (max-width: 768px) {
+    .ThaumielGif {
+        position: absolute;
+        font-size: 45px; /* Reduce font size */
+        top: -50px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .title-container {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the title within the wrapper */
+        font-size: 45px;
+        text-align: center;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+}
+@media only screen and (max-width: 600px) {
+    p {
+        font-size: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 155%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h2 {
+        font-size: 125%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .title2 {
+        position: absolute;
+        font-size: 15px; /* Reduce font size */
+        top: 140px;
+    }
+}
+
+/* Styles for devices with a max width of 480px (phones) */
+@media only screen and (max-width: 480px) {
+    .title2 {
+        position: absolute;
+        font-size: 15px; /* Further reduce font size */
+        top: 140px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .title {
+        position: absolute;
+        font-size: 45px; /* Reduce font size */
+        top: 70px;
+    }
+}
+
+/* Styles for devices with a max width of 480px (phones) */
+@media only screen and (max-width: 480px) {
+    .title {
+        position: absolute;
+        font-size: 45px; /* Further reduce font size */
+    }
 }

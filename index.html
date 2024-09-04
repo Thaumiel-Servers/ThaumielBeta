@@ -119,14 +119,21 @@
         }
     }
 </style>
-<select id="languageSwitcher" onchange="translateAndSaveLanguage(this.value)">
+<select id="languageSwitcher" onchange="translateWebsite(this.value)">
     <option value="EN">English</option>
     <option value="DE">German</option>
     <option value="RU">Russian</option>
     <option value="UK">Ukrainian</option>
+    <option value="ZH-HANS">Chinese (simplified)</option>
+    <option value="ZH-HANT">Chinese (traditional)</option>
     <!-- Add more languages as needed -->
 </select>
-
+<!-- Remove before release -->
+<div id="beta-popup" class="beta-popup">
+    <p>This is the beta site, bugs are expected.</p>
+    <button id="beta-popup-close">Okay</button>
+</div>
+<!-- Dont Remove -->
 <div class="test">
 <body scroll="no">
     <header class="title-container">
