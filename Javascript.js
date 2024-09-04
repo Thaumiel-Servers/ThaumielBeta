@@ -72,15 +72,14 @@ async function translateWebsite(targetLang) {
     for (let element of elements) {
         element.childNodes.forEach(async (node) => {
             if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim().length > 0) {
-                const response = await fetch('https://api-free.deepl.com/v2/translate', {
+                const response = await fetch('https://ripple-quartz-border.glitch.me', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
+                        'Content-Type': 'application/json'
                     },
-                    body: new URLSearchParams({
-                        auth_key: 'f6fc81c9-b17a-4a01-838b-1c1fc9369f88:fx',
+                    body: JSON.stringify({
                         text: node.nodeValue.trim(),
-                        target_lang: targetLang
+                        targetLang: targetLang
                     })
                 });
 
@@ -90,6 +89,7 @@ async function translateWebsite(targetLang) {
         });
     }
 }
+
 // Beta stuffs remove before release
 document.getElementById('beta-popup-close').addEventListener('click', function () {
     document.getElementById('beta-popup').style.display = 'none';
