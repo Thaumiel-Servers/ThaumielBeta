@@ -6,6 +6,8 @@
     --button-bg: #000000;
     --button-text: #ffffff;
     --button-hover-bg: #333333;
+    --buttoncolor: #dddddd;
+    --Ezekiel: #1547a4;
 }
 
 [data-theme='dark'] {
@@ -16,6 +18,8 @@
     --button-bg: #ffffff;
     --button-text: #000000;
     --button-hover-bg: #cccccc;
+    --buttoncolor: #111111;
+    --Ezekiel: #1a5cd7;
 }
 
 
@@ -115,7 +119,7 @@ html, body {
 }
 .history {
     position: relative;
-    top: 100px;
+    top: 30px;
     left: 10px;
 }
 .bagtitle {
@@ -300,12 +304,13 @@ html, body {
 }
 
 button {
-    font-family: bold "Oxanium", sans-serif;
+    font-family: bold Oxanium, sans-serif;
     font-weight: 1000;
     border-radius: 25px;
     padding: 5px 20px;
-    content: none
+    content: none;
     font-size: 15px;
+    background-color: var(--buttoncolor);
 }
 /*Button colors*/
 .buttonhome {

@@ -46,6 +46,11 @@
         .buttonhome {
             width: 25%;
         }
+        
+        .bagcreations {
+            width: 25%;
+            color: #00c997;
+        }
         @media only screen and (max-width: 768px) {
         .bagtext {
             display: flex;
@@ -85,6 +90,7 @@
     </style>
         <button class="buttonstaffback">Back</button>
         <button class="buttonhome">Home</button>
+        <button class="bagcreations">Creations</button>
 </style>
     <img src="BagPFP.png" width="120" height="120" class="BagPFP" alt="Mr. Baguetters Profile Picture">
 <div class="Bag2">   
@@ -99,6 +105,9 @@
         });
         document.querySelector('.buttonstaffback').addEventListener('click', function() {
             window.location.href = 'staff.html';
+        });
+        document.querySelector('.bagcreations').addEventListener('click', function() {
+            window.location.href = 'bagcreations1.html';
         });
     </script>
     <button class= "buttonhide"id="theme-toggle" style="border: none; background: none; padding: 0;">

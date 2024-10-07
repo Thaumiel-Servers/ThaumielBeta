@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Mr. Baguetter - Thaumiel</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8FQLDNPJ6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S8FQLDNPJ6');
+</script>
+<body scroll="no" style="overflow: hidden">
+    <style>
+        body {
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        .content {
+            transform-origin: 0 0; /* Scale from top-left corner */
+            will-change: transform;
+        }
+        @media (max-width: 768px) {
+            .content {
+                width: auto; /* Set width to 768px on phones */
+                height: auto; /* Maintain aspect ratio */
+                transform: none; /* Remove scaling */
+            }
+        }
+        .bagback {
+            width: 24.2%;
+            color: #ffae00;
+        }
+
+        .buttonhome {
+            width: 25%;
+        }
+        @media only screen and (max-width: 768px) {
+        .bagtext {
+            display: flex;
+            text-align: center;
+            left: 2px;
+            font-size: 18px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .Bag2 {
+            text-align: center;
+            position: relative;
+            display: flex;
+            font-size: 16px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .bagtitle {
+            text-align: center;
+            position: absolute;
+            display: flex;
+            font-size: 14px;
+            left: 170px;
+            top: 49px;
+        }
+    }   
+    @media only screen and (max-width: 768px) {
+        .bag {
+            text-align: center;
+            position: relative;
+            display: flex;
+            font-size: 18px;
+            left: 170px;
+            top: 30px;
+        }
+    } 
+    .SEBot {
+        color: #2eaa01;
+    }  
+    </style>
+        <button class="bagback">Back</button>
+        <button class="buttonhome">Home</button>
+</style>
+<div class="Bag2">   
+    <h1 style="color: rgb(255, 30, 30); font-family: Oxanium;"><b>Mr. Baguetter's Creations</b></h1>
+</div>
+<p style="font-family: Oxanium;"><b>WIP</b></p>
+<button class="SEBot" style="font-family: Oxanium;";>Space Engineers Discord Bot</button>
+    <script src="Javascript.js"></script>
+    <script>
+        document.querySelector('.buttonhome').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+        document.querySelector('.bagback').addEventListener('click', function() {
+            window.location.href = 'baguetter.html';
+        });
+        document.querySelector('.SEBot').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script>
+    <button class= "buttonhide"id="theme-toggle" style="border: none; background: none; padding: 0;">
+        <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75">
+    </button>
+</body>
+</html>
