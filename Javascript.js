@@ -15,23 +15,6 @@ function toggleIframe() {
     }
 }
 
-function togglePluginIframe() {
-    var iframe = document.getElementById('iframe-display');
-
-    // Check if the user is on a mobile device
-    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        // Redirect to a different URL if on a phone
-        window.location.href = 'Google.com';
-    } else {
-        // Toggle iframe display for non-mobile devices
-        if (iframe.style.display === 'none') {
-            iframe.style.display = 'block';
-        } else {
-            iframe.style.display = 'none';
-        }
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
@@ -66,32 +49,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-async function translateWebsite(targetLang) {
-    const elements = document.querySelectorAll('p, h1, h2, h3, span, div, li, blockquote, section, article');
-
-    for (let element of elements) {
-        element.childNodes.forEach(async (node) => {
-            if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim().length > 0) {
-                const response = await fetch('https://ripple-quartz-border.glitch.me', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        text: node.nodeValue.trim(),
-                        targetLang: targetLang
-                    })
-                });
-
-                const result = await response.json();
-                node.nodeValue = result.translations[0].text;
-            }
-        });
-    }
-}
-
 // Beta stuffs remove before release
 document.getElementById('beta-popup-close').addEventListener('click', function () {
     document.getElementById('beta-popup').style.display = 'none';
 });
-        
+document.querySelector('.buttonstaff').addEventListener('click', function() {
+    window.location.href = 'staff.html';
+});
+document.querySelector('.buttonsupport').addEventListener('click', function() {
+    window.location.href = 'support.html';
+});
+document.querySelector('.buttoncontact').addEventListener('click', function() {
+    window.location.href = 'contact.html';
+});
+document.querySelector('.buttoncredits').addEventListener('click', function() {
+    window.location.href = 'credits.html';
+});
+document.querySelector('.buttonhistory').addEventListener('click', function() {
+    window.location.href = 'History.html';
+});
+
+document.querySelector('.buttonbacktop').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
+document.querySelector('.buttonhome').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
+document.querySelector('.buttonstaffback').addEventListener('click', function() {
+    window.location.href = 'staff.html';
+});

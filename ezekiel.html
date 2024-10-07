@@ -10,6 +10,7 @@
     <title>Name - Thaumiel</title>
     <link rel="icon" type="image/png" href="./favicon.png">
 </head>
+<script async src="https://atlantic-dark-risk.glitch.me/APIHandler.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8FQLDNPJ6"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -28,22 +29,9 @@
         width: 25%;
     }
 </style>
-<a href="staff.html">
     <button class="buttonstaffback">Back</button>
-</a>
-<a href="index.html">
     <button class="buttonhome">Home</button>
-</a>
 </style>
-<select id="languageSwitcher" onchange="translateWebsite(this.value)">
-    <option value="EN">English</option>
-    <option value="DE">German</option>
-    <option value="RU">Russian</option>
-    <option value="UK">Ukrainian</option>
-    <option value="ZH-HANS">Chinese (simplified)</option>
-    <option value="ZH-HANT">Chinese (traditional)</option>
-    <!-- Add more languages as needed -->
-</select>
 <div>
 <img src="ezekiel.png" width="120" height="120" class="EzePFP" alt="Ezekiels PFP">
 <h1 class="eze" style="color: rgb(255, 30, 30); font-family: Oxanium;"><b>Ezekiel</b></h1>
@@ -54,9 +42,17 @@
 </div>
 </body>
 <body>
-    <button id="theme-toggle">
+    <button class= "buttonhide"id="theme-toggle" style="border: none; background: none; padding: 0;">
         <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75">
     </button>
 <script src="Javascript.js"></script>
+    <script>
+        document.querySelector('.buttonhome').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+        document.querySelector('.buttonstaffback').addEventListener('click', function() {
+            window.location.href = 'staff.html';
+        });
+    </script>
 </body>
 </html>

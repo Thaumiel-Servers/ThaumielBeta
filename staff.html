@@ -11,6 +11,7 @@
     <title>Staff Team - Thaumiel</title>
     <link rel="icon" type="image/png" href="./favicon.png">
 </head>
+<script async src="https://atlantic-dark-risk.glitch.me/APIHandler.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8FQLDNPJ6"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -51,41 +52,36 @@
     .buttonezekiel {
         width: 50%;
     }
-</style>  
 </style>
 <body scroll="no" style="overflow: hidden">
-</style>
     <h1 style="color: DodgerBlue; font-family: Oxanium;"><b>Thaumiel Staff Pages</b></h1>
-</style>
-<select id="languageSwitcher" onchange="translateWebsite(this.value)">
-    <option value="EN">English</option>
-    <option value="DE">German</option>
-    <option value="RU">Russian</option>
-    <option value="UK">Ukrainian</option>
-    <option value="ZH-HANS">Chinese (simplified)</option>
-    <option value="ZH-HANT">Chinese (traditional)</option>
-    <!-- Add more languages as needed -->
-</select>
     <p style="font-family: Oxanium;">This page contains the majority of the staff members for Thaumiel.</p>
-    
-    <a href="baguetter.html">
+    <div class="Staffbuttons">
         <button class="buttonbaguetter">Mr. Baguetter</button>
-    </a>
-    <a href="cassie.html">
-        <button class="buttoncassie">C.A.S.S.I.E</button>
-    </a>
-    <a href="jurgen.html">
-        <button class="buttoncassie">Jurgen</button>
-    </a>
-    <a href="ezekiel.html">
-        <button class="buttoncassie">Ezekiel</button>
-    </a>
-    <a href="index.html">
+        <button class="buttoncassie">C.A.S.S.I.E <small>(Discord Bot)</small></button>
+        <button class="buttonjurgen">Jurgen</button>
+        <button class="buttonezekiel">Ezekiel</button>
+    </div>
         <button class="buttonbacktop">Back</button>
-    </a>
     <script src="Javascript.js"></script>
-    <button id="theme-toggle">
+    <button class= "buttonhide"id="theme-toggle" style="border: none; background: none; padding: 0;">
         <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75">
     </button>
-    
+<script>
+    document.querySelector('.buttonbacktop').addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
+    document.querySelector('.buttoncassie').addEventListener('click', function() {
+    window.location.href = 'cassie.html';
+});
+document.querySelector('.buttonbaguetter').addEventListener('click', function() {
+    window.location.href = 'baguetter.html';
+});
+document.querySelector('.buttonjurgen').addEventListener('click', function() {
+    window.location.href = 'jurgen.html';
+});
+document.querySelector('.buttonezekiel').addEventListener('click', function() {
+    window.location.href = 'ezekiel.html';
+});
+</script>
 </html>

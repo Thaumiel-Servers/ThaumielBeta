@@ -11,6 +11,7 @@
     <title>Plugins - Thaumiel</title>
     <link rel="icon" type="image/png" href="./favicon.png">
 </head>
+<script async src="https://atlantic-dark-risk.glitch.me/APIHandler.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8FQLDNPJ6"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -46,24 +47,18 @@
 
 <body scroll="no" style="overflow: hidden">
     <h1 style="color: DodgerBlue; font-family: Oxanium;">Thaumiel Plugins</h1>
-    <select id="languageSwitcher" onchange="translateWebsite(this.value)">
-        <option value="EN">English</option>
-        <option value="DE">German</option>
-        <option value="RU">Russian</option>
-        <option value="UK">Ukrainian</option>
-        <option value="ZH-HANS">Chinese (simplified)</option>
-        <option value="ZH-HANT">Chinese (traditional)</option>
-        <!-- Add more languages as needed -->
-    </select>
     <p style="font-family: Oxanium;">The following list is the plugins on Thaumiel as of September 4th, 2024.</p>
     <h2 style="color: red; font-family: Oxanium;">Thaumiel Vanilla+</h2>
     <p style="font-family: Oxanium;">WIP.</p>
-    <a href="index.html">
-        <button class="buttonbacktop">Back</button>
-    </a>
-    <button id="theme-toggle">
+    <button class="buttonbacktop">Back</button>
+    <button class= "buttonhide"id="theme-toggle" style="border: none; background: none; padding: 0;">
         <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75">
     </button>
+    <script>
+        document.querySelector('.buttonbacktop').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script>
 <script src="Javascript.js"></script>
 </body>
 </html>
