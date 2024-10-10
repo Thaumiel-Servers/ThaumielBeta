@@ -66,15 +66,28 @@
     <summary style="font-family: Oxanium; font-size: 32px;"><b>Early History.</b></summary>
     <p style="font-family: Oxanium;">WIP.</p>
     </details>
+<details class="history">
+        <summary style="font-family: Oxanium; font-size: 32px;"><b>Recent History.</b></summary>
+        <li style="font-family: Oxanium;">Thaumiel Servers was renamed to Thaumiel. <br> <li>
+    </details>
 <p class="history" style="text-align: center; font-family: Oxanium;"></p>
 </div>
-<button class= "buttonhide"id="theme-toggle" style="border: none; background: none; padding: 0;">
-    <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75">
+<button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
+    <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
 </button>
 <script src="Javascript.js"></script>
 <script>
     document.querySelector('.buttonbacktop').addEventListener('click', function() {
         window.location.href = 'index.html';
     });
+</script>
+<script>
+    function displayDate() {
+        const dateElement = document.getElementById("current-date");
+        const currentDate = new Date();
+        dateElement.textContent = currentDate.toLocaleDateString();
+    }
+
+    window.onload = displayDate;
 </script>
 </html>

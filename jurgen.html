@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <title>Name - Thaumiel</title>
+    <title>Jurgen - Thaumiel</title>
     <link rel="icon" type="image/png" href="./favicon.png">
 </head>
 <script async src="https://atlantic-dark-risk.glitch.me/APIHandler.js"></script>
@@ -19,7 +19,7 @@
 
     gtag('config', 'G-S8FQLDNPJ6');
 </script>
-<body scroll="no" style="overflow: hidden">
+<body>
 <style>
 body {
     margin: 0;
@@ -28,6 +28,10 @@ body {
     height: 100vh;
     width: 100vw;
 }
+.content {
+        transform-origin: 0 0; /* Scale from top-left corner */
+        will-change: transform;
+    }
     .buttonstaffback {
         width: 24.2%;
     }
@@ -35,11 +39,17 @@ body {
     .buttonhome {
         width: 25%;
     }
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
+            body {
+                overflow: hidden;
+            }
+        }
+    @media (max-width: 600px) {
             .content {
-                width: auto; /* Set width to 768px on phones */
+                width: auto; /* Set width to 600px on phones */
                 height: auto; /* Maintain aspect ratio */
                 transform: none; /* Remove scaling */
+                overflow: hidden;
             }
         }
     @media only screen and (max-width: 600px) {
@@ -59,14 +69,14 @@ body {
     <p class="jurtitle" style="color: rgb(255, 111, 0); font-family: Oxanium;"><b>Staff Manager</b></p>
 </div>
 <div>
-    <p class="jurtext" style="font-family: Oxanium;">Jurgen the Staff Manager of Thaumiel. As staff manager, Jurgen monitors staff members' actions and takes action if they violate the staff rules.<br>Like many of the staff, he originates from The Shy Guy One, being one of the O5 council members in the server.</p>
+    <p class="jurtext" style="font-family: Oxanium;">Jurgen the Staff Manager of Thaumiel. As staff manager, Jurgen monitors staff members' actions and takes action if they violate the staff rules. <br> Like many of the staff, he originates from The Shy Guy One, being one of the O5 council members in the server.</p>
     <p class="jurtext" style="font-family: Oxanium;">As Staff Manager, he has the same permissions as the O5 council in the SCP: SL server.</p>
 </div>
 </body>
 <body>
-<button class= "buttonhide"id="theme-toggle" style="border: none; background: none; padding: 0;">
-    <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75">
-</button>
+    <button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
+        <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
+    </button>
 <script>
     document.querySelector('.buttonhome').addEventListener('click', function() {
         window.location.href = 'index.html';

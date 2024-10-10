@@ -8,6 +8,9 @@
     --button-hover-bg: #333333;
     --buttoncolor: #dddddd;
     --Ezekiel: #1547a4;
+    --AnniversaryBackground: #aacfff;
+    --AnniversaryClose: #1b1b1b;
+    --AnniversaryClosehover: #2c2c2c;
 }
 
 [data-theme='dark'] {
@@ -20,6 +23,9 @@
     --button-hover-bg: #cccccc;
     --buttoncolor: #111111;
     --Ezekiel: #1a5cd7;
+    --AnniversaryBackground: #5F005F;
+    --AnniversaryClose: #ffffff;
+    --AnniversaryClosehover: #aaa;
 }
 
 
@@ -35,6 +41,7 @@ body {
     min-height: 100vh;
     background: linear-gradient(to bottom, var(--bg-start), var(--bg-middle), var(--bg-end));
     background-attachment: fixed;
+    overflow-x: hidden;
 } 
 html, body {
     min-height: 100%;
@@ -202,8 +209,8 @@ html, body {
 }
 .theme-toggle {
     position: fixed;
-    bottom: 2%;
-    right: 2%;
+    bottom: 1%;
+    right: 1%;
     background: none; 
             border: none; 
             padding: 0; 
@@ -243,37 +250,30 @@ html, body {
 .buttonstaff:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttonsupport:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttoncontact:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttoncredits:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttonbacktop:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttonSuggestion:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttonhistory:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttonbacktop {
     position: absolute; top: 0; /* sets the button to the top of the page */
@@ -281,7 +281,6 @@ html, body {
 .buttonbackbottom:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttonbackbottom {
     position: absolute; bottom: 0; /* sets the button to the bottom of the page */
@@ -289,7 +288,6 @@ html, body {
 .buttonbacktopstaff:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttonbacktopstaff {
     position: absolute; top: 0; /* sets the button to the top of the page */
@@ -297,7 +295,6 @@ html, body {
 .buttonbackbottomstaff:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttonbackbottomstaff {
     position: absolute; bottom: 0; /* sets the button to the bottom of the page */
@@ -358,12 +355,10 @@ button {
 .buttonhome:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 .buttonstaffback:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
 }
 body {
     transition: background-color 0.3s, color 0.3s;
@@ -401,6 +396,18 @@ body {
     display: flex;
     align-items: center;
     z-index: 1000; /* Ensures the popup appears above other content */
+}
+p {
+    font-family: Oxanium
+}
+h1 {
+    font-family: Oxanium
+}
+h2 {
+    font-family: Oxanium
+}
+small {
+    font-family: Oxanium
 }
 
 .beta-popup p {
@@ -487,5 +494,18 @@ body {
     .title {
         position: absolute;
         font-size: 45px; /* Further reduce font size */
+    }
+}
+@media only screen and (max-width: 768px) {
+    .theme-toggle {
+        position: fixed;
+        bottom: 2%;
+        right: 2%;
+        transform: scale(.8);
+        background: none; 
+                border: none; 
+                padding: 0; 
+                cursor: pointer; 
+        opacity: 75%;
     }
 }

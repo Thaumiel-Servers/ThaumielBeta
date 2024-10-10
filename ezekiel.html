@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <title>Name - Thaumiel</title>
+    <title>Ezekiel - Thaumiel</title>
     <link rel="icon" type="image/png" href="./favicon.png">
 </head>
 <script async src="https://atlantic-dark-risk.glitch.me/APIHandler.js"></script>
@@ -21,6 +21,23 @@
 </script>
 <body scroll="no" style="overflow: hidden">
 <style>
+    .content {
+        transform-origin: 0 0; /* Scale from top-left corner */
+        will-change: transform;
+    }
+    @media (min-width: 768px) {
+            body {
+                overflow: hidden;
+            }
+        }
+    @media (max-width: 600px) {
+            .content {
+                width: auto; /* Set width to 600px on phones */
+                height: auto; /* Maintain aspect ratio */
+                transform: none; /* Remove scaling */
+                overflow: hidden;
+            }
+        }
     .buttonstaffback {
         width: 24.2%;
     }
@@ -42,8 +59,8 @@
 </div>
 </body>
 <body>
-    <button class= "buttonhide"id="theme-toggle" style="border: none; background: none; padding: 0;">
-        <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75">
+    <button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
+        <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
     </button>
 <script src="Javascript.js"></script>
     <script>

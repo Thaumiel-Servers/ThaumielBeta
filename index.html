@@ -35,15 +35,118 @@
         height: 100vh;
         width: 100vw;
     }
+    #welcomePopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 1000;
+        }
+        #welcomePopup button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #dontShowAgainBtn {
+            background-color: #f44336;
+        }
+    #smartphoneWarning {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffcccb;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            text-align: center;
+            z-index: 1000;
+        }
+        #smartphoneWarning button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     .content {
-        transform-origin: 0 0; /* Scale from top-left corner */
+        transform-origin: 0 0;
         will-change: transform;
     }
+    .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: var(--AnniversaryBackground);
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .close {
+            color: var(--AnniversaryClose);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: var(--AnniversaryClosehover);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .close-button {
+            background-color: #4CAF50;
+        }
+        .close-button:hover {
+            background-color: #f44336;
+        }
     @media (max-width: 600px) {
         .content {
-            width: auto; /* Fixed width on phones */
-            height: auto; /* Maintain aspect ratio */
-            transform: none; /* No scaling on small screens */
+            width: auto;
+            height: auto;
+            transform: none;
         }
     }
     @media (max-width: 600px) {
@@ -107,11 +210,37 @@
             width: 27.5%
         }
     }
+    @media only screen and (max-width: 600px) {
+        button {
+            font-size: 8px;
+            padding: 5px 3px;
+        }
+    }
 </style>
 
+<div id="anniversaryModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>🎉 Thaumiel's 1st Anniversary! 🎉</h2>
+        <p>Celebrate with us in our Discord!</p>
+        <button style="font-family: Oxanium;" class="button" onclick="joinDiscord()">Join Discord</button>
+            <button style="font-family: Oxanium;" class="button close-button" onclick="closeModal()">Close</button>
+    </div>
+</div>
+<div id="welcomePopup">
+    <p style="color: black; font-family: Oxanium;">Hello, welcome to the Thaumiel website! If you wish to contact us for reporting a staff member or viewing our server or staff rules, please click the "Support" button.</p>
+    <button id="closeBtn">Close</button>
+    <button id="dontShowAgainBtn">Don't show again</button>
+</div>
+<!-- Remove when phone version is properly added.-->
+<div id="smartphoneWarning">
+    <p style="color: red; font-family: Oxanium;"><b>Warning:</b></p>
+    <p style="color: black; font-family: Oxanium;">Smartphones may not display this site correctly. A mobile version is currently in development.</p>
+    <button onclick="closePopup()">Close</button>
+</div>
 <!-- Remove before release -->
 <div id="beta-popup" class="beta-popup">
-    <p style="font-family: Oxanium;""">This is the beta site, bugs are expected.</p>
+    <p style="font-family: Oxanium;">This is the beta site, bugs, and unfinished pages are expected.</p>
     <button id="beta-popup-close">Okay</button>
 </div>
 <!-- Dont Remove -->
@@ -124,23 +253,76 @@
         <p class= "title2" style="font-family: Oxanium;">(Previously known as Thaumiel Servers)</p>
     </header>
     </div>
-    <h2 class="index" style="text-align: center; font-family: Oxanium;">About The Server</h2><!--aligns to center and sets font to Oxanium-->
+    <h2 class="index" style="text-align: center; font-family: Oxanium;">About The Server</h2>
     <p class="index" style="font-family: Oxanium; text-align: center;">
-        <!--aligns to center and sets font to Oxanium-->
         Welcome to Thaumiel! This SCP: Secret Laboratory server is dedicated to honest staff, balanced Vanilla+ gameplay, and above all else, community.
         While Secret Laboratory is our focus, we also serve as a diverse social group and safe space. Our Discord server includes gamenights, an art channel, and a mental health forum to use occasionally. Remember that we are not a substitute for professional help.
     </p>
     <h2 class="index" style="text-align: center; font-family: Oxanium;">Server Info</h2><!--aligns to center and sets font to Oxanium-->
     <p class="index" style="text-align: center; font-family: Oxanium;">
-        The server is hosted using Amazon Web Services (AWS) and is located in California. VPNS and proxies are detected and blocked on the SCP: Secret Laboratory server. If you are blocked unfairly due to this system, please request a whitelist in the Discord server.
+        The server is hosted using Amazon Web Services (AWS) and Microsoft Azure. Thaumiel #1 is located in California, and Thaumiel #2 is located in Virginia. VPNS and proxies are detected and blocked on the SCP: Secret Laboratory server. If you are blocked unfairly due to this system, please request a whitelist in the Discord server.
         Appeal requests, reports, and staff applications are all held in the Discord server. If you find a player or staff member acting unjustly or making you uncomfortable, please report them in the server for both your fun & safety and ours. All staff reports are only seen by our Staff Manager Jurgen and the Server Owner Mr. Baguetter, A.K.A. Ender.
     </p>
     <p class="index" style="text-align: center; font-family: Oxanium;">This is a open source website contributions can be made <a href="https://github.com/Thaumiel-Servers/Thaumiel/tree/Developer">here</a>.</p>
     <iframe id="iframe-display" src="https://forms.gle/kyjRRA4xEhLH1s3Z8" frameborder="0" style="height: 270px; width: 450px; display: none;"></iframe>
     <script src="Javascript.js"></script>
 </div>
-<button class= "buttonhide"id="theme-toggle" style="border: none; background: none; padding: 0;">
-    <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75">
+<button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
+    <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
 </button>
+<script>
+// Remove when phone version is completed. 
+function checkDevice() {
+    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        document.getElementById('smartphoneWarning').style.display = 'block';
+    }
+}
+function closePopup() {
+    document.getElementById('smartphoneWarning').style.display = 'none';
+}
+window.onload = checkDevice;
+</script>
+<script>
+        function showPopup() {
+            const popup = document.getElementById('welcomePopup');
+            popup.style.display = 'block';
+        }
+        function hidePopup() {
+            const popup = document.getElementById('welcomePopup');
+            popup.style.display = 'none';
+        }
+        function dontShowAgain() {
+            localStorage.setItem('dontShowPopup', 'true');
+            hidePopup();
+        }
+        window.onload = function() {
+            if (!localStorage.getItem('dontShowPopup')) {
+                showPopup();
+            }
+        }
+        document.getElementById('closeBtn').onclick = hidePopup;
+        document.getElementById('dontShowAgainBtn').onclick = dontShowAgain;
+</script>
+<script>
+    function checkAnniversary() {
+        const today = new Date();
+        const anniversaryDate = new Date(today.getFullYear(), 10, 3); // November 3rd. Change to todays date to test. Months: 0-11
+
+        if (today.toDateString() === anniversaryDate.toDateString()) {
+            document.getElementById("anniversaryModal").style.display = "block";
+        }
+    }
+
+    function closeModal() {
+        document.getElementById("anniversaryModal").style.display = "none";
+    }
+
+    function joinDiscord() {
+    const newWindow = window.open('https://discord.gg/EpdARdjq2m', '_blank');
+    if (newWindow) newWindow.opener = null;
+    }
+
+    window.onload = checkAnniversary;
+</script>
 </body>
 </html>
