@@ -142,6 +142,88 @@
         .close-button:hover {
             background-color: #f44336;
         }
+        .changelog-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .changelog-modal-content {
+            background-color: var(--AnniversaryBackground);
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .changelog-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .changelog-close:hover,
+        .changelog-close:focus {
+            color: black;
+            cursor: pointer;
+        }
+
+        .changelog-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .changelog-button:hover {
+            background-color: #45a049;
+        }
+
+        .changelog-textarea {
+            width: 100%;
+            height: 160px;
+            margin-top: 10px;
+            resize: none;
+        }
+        .notification-popup {
+            display: none;
+            position: fixed;
+            width: 600px;
+            height: 30px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f44336; /* Red */
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            opacity: .9;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+        .notification-popup-text {
+            position: fixed;
+            bottom: 15px;
+            font-size: 20px;
+        }
+
+        .notification-popup.fade-out {
+            animation: fadeOut 1s forwards;
+        }
+
+        @keyframes fadeOut {
+            from { opacity: .9; }
+            to { opacity: 0; }
+        }
     @media (max-width: 600px) {
         .content {
             width: auto;
@@ -217,7 +299,22 @@
         }
     }
 </style>
+<div id="changelogModal" class="changelog-modal">
+    <div class="changelog-modal-content">
+        <span class="changelog-close" onclick="closeModal()">&times;</span>
+        <h2>The website has been updated since your last visit!</h2>
+        <p>Changes include:</p>
+        <textarea id="changelogBox" class="changelog-textarea" readonly></textarea>
+        <br>
+        <button class="changelog-button" onclick="closeModal()">Close</button>
+    </div>
+</div>
 
+<div id="notificationPopup" class="notification-popup">
+    <div class="notification-popup-text">
+    <p style="font-family: Oxanium;">Unable to fetch updates from GitHub. Please try again later.</p>
+    </div>
+</div>
 <div id="anniversaryModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
@@ -270,59 +367,5 @@
 <button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
     <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
 </button>
-<script>
-// Remove when phone version is completed. 
-function checkDevice() {
-    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        document.getElementById('smartphoneWarning').style.display = 'block';
-    }
-}
-function closePopup() {
-    document.getElementById('smartphoneWarning').style.display = 'none';
-}
-window.onload = checkDevice;
-</script>
-<script>
-        function showPopup() {
-            const popup = document.getElementById('welcomePopup');
-            popup.style.display = 'block';
-        }
-        function hidePopup() {
-            const popup = document.getElementById('welcomePopup');
-            popup.style.display = 'none';
-        }
-        function dontShowAgain() {
-            localStorage.setItem('dontShowPopup', 'true');
-            hidePopup();
-        }
-        window.onload = function() {
-            if (!localStorage.getItem('dontShowPopup')) {
-                showPopup();
-            }
-        }
-        document.getElementById('closeBtn').onclick = hidePopup;
-        document.getElementById('dontShowAgainBtn').onclick = dontShowAgain;
-</script>
-<script>
-    function checkAnniversary() {
-        const today = new Date();
-        const anniversaryDate = new Date(today.getFullYear(), 10, 3); // November 3rd. Change to todays date to test. Months: 0-11
-
-        if (today.toDateString() === anniversaryDate.toDateString()) {
-            document.getElementById("anniversaryModal").style.display = "block";
-        }
-    }
-
-    function closeModal() {
-        document.getElementById("anniversaryModal").style.display = "none";
-    }
-
-    function joinDiscord() {
-    const newWindow = window.open('https://discord.gg/EpdARdjq2m', '_blank');
-    if (newWindow) newWindow.opener = null;
-    }
-
-    window.onload = checkAnniversary;
-</script>
 </body>
 </html>
