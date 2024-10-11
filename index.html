@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
     <title>Home - Thaumiel</title>
     <link rel="icon" type="image/png" href="./favicon.png">
-</head> <!--Button names and redirects-->
+</head>
 <script async src="https://atlantic-dark-risk.glitch.me/APIHandler.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8FQLDNPJ6"></script>
 <script>
@@ -317,7 +317,7 @@
 </div>
 <div id="anniversaryModal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="close" onclick="closeanniversaryModal()">&times;</span>
         <h2>🎉 Thaumiel's 1st Anniversary! 🎉</h2>
         <p>Celebrate with us in our Discord!</p>
         <button style="font-family: Oxanium;" class="button" onclick="joinDiscord()">Join Discord</button>
@@ -332,8 +332,8 @@
 <!-- Remove when phone version is properly added.-->
 <div id="smartphoneWarning">
     <p style="color: red; font-family: Oxanium;"><b>Warning:</b></p>
-    <p style="color: black; font-family: Oxanium;">Smartphones may not display this site correctly. A mobile version is currently in development.</p>
-    <button onclick="closePopup()">Close</button>
+    <p style="color: black; font-family: Oxanium;">Phones may not display this site correctly. A mobile version is currently in development.</p>
+    <button onclick="closesmartphoneWarningPopup()">Close</button>
 </div>
 <!-- Remove before release -->
 <div id="beta-popup" class="beta-popup">
@@ -367,5 +367,33 @@
 <button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
     <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
 </button>
+<script>
+            function checkDevice() {
+            if (window.innerWidth <= 768) {
+                document.getElementById('smartphoneWarning').style.display = 'block';
+            }
+        }
+
+        function closesmartphoneWarningPopup() {
+            document.getElementById('smartphoneWarning').style.display = 'none';
+        }
+        window.onload = checkDevice;
+
+        function checkAnniversary() {
+        const today = new Date();
+        const anniversaryDate = new Date(today.getFullYear(), 10, 3); // November 3rd. Change to todays date to test. (month 0-11), (day)
+        if (today.toDateString() === anniversaryDate.toDateString()) {
+            document.getElementById("anniversaryModal").style.display = "block";
+        }
+    }
+    function closeanniversaryModal() {
+        document.getElementById("anniversaryModal").style.display = "none";
+    }
+    function joinDiscord() {
+    const newWindow = window.open('https://discord.gg/EpdARdjq2m', '_blank');
+    if (newWindow) newWindow.opener = null;
+    }   
+    window.onload = checkAnniversary;
+</script>
 </body>
 </html>

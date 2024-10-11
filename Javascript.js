@@ -49,33 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function checkDevice() {
-    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        document.getElementById('smartphoneWarning').style.display = 'block';
-    }
-}
-function closePopup() {
-    document.getElementById('smartphoneWarning').style.display = 'none';
-}
-window.onload = checkDevice;
-
-function checkAnniversary() {
-        const today = new Date();
-        const anniversaryDate = new Date(today.getFullYear(), 10, 3); // November 3rd. Change to todays date to test. (month 0-11), (day)
-        if (today.toDateString() === anniversaryDate.toDateString()) {
-            document.getElementById("anniversaryModal").style.display = "block";
-        }
-    }
-    function closeModal() {
-        document.getElementById("anniversaryModal").style.display = "none";
-    }
-    function joinDiscord() {
-    const newWindow = window.open('https://discord.gg/EpdARdjq2m', '_blank');
-    if (newWindow) newWindow.opener = null;
-    }   
-    window.onload = checkAnniversary;
-
-    function showPopup() {
+        function showPopup() {
             const popup = document.getElementById('welcomePopup');
             popup.style.display = 'block';
         }
@@ -83,17 +57,17 @@ function checkAnniversary() {
             const popup = document.getElementById('welcomePopup');
             popup.style.display = 'none';
         }
-        function dontShowAgain() {
-            localStorage.setItem('dontShowPopup', 'true');
+        function dontShowwelcomePopup() {
+            localStorage.setItem('dontShowwelcomePopup', 'true');
             hidePopup();
         }
         window.onload = function() {
-            if (!localStorage.getItem('dontShowPopup', 'true')) {
+            if (!localStorage.getItem('dontShowwelcomePopup')) {
                 showPopup();
             }
         }
         document.getElementById('closeBtn').onclick = hidePopup;
-        document.getElementById('dontShowAgainBtn').onclick = dontShowAgain;
+        document.getElementById('dontShowAgainBtn').onclick = dontShowwelcomePopup;
 
         const repoOwner = 'Thaumiel-Servers';
         const repoName = 'Thaumielbeta';
