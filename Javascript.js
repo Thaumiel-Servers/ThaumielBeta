@@ -49,93 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-        function showPopup() {
-            const popup = document.getElementById('welcomePopup');
-            popup.style.display = 'block';
-        }
-        function hidePopup() {
-            const popup = document.getElementById('welcomePopup');
-            popup.style.display = 'none';
-        }
-        function dontShowwelcomePopup() {
-            localStorage.setItem('dontShowwelcomePopup', 'true');
-            hidePopup();
-        }
-        window.onload = function() {
-            if (!localStorage.getItem('dontShowwelcomePopup')) {
-                showPopup();
-            }
-        }
-        document.getElementById('closeBtn').onclick = hidePopup;
-        document.getElementById('dontShowAgainBtn').onclick = dontShowwelcomePopup;
 
-        const repoOwner = 'Thaumiel-Servers';
-        const repoName = 'Thaumielbeta';
-        const apiUrl = `https://api.github.com/repos/Thaumiel-Servers/Thaumielbeta/commits`;
 
-        async function checkForUpdates() {
-            const lastCommitHash = localStorage.getItem('lastCommitHash');
-            let hasNewCommits = false;
-
-            try {
-                const response = await fetch(apiUrl);
-                const commits = await response.json();
-
-                if (commits.length > 0) {
-                    const latestCommit = commits[0].sha;
-
-                    if (!lastCommitHash || lastCommitHash !== latestCommit) {
-                        hasNewCommits = true;
-                        displayChangelog(commits);
-                        localStorage.setItem('lastCommitHash', latestCommit);
-                    }
-                }
-            } catch (error) {
-                console.error('Error fetching GitHub data:', error);
-                showNotification();
-            }
-
-            if (!hasNewCommits) {
-                console.log("No new updates");
-            }
-        }
-
-        function displayChangelog(commits) {
-            const changelogBox = document.getElementById('changelogBox');
-            changelogBox.value = '';
-
-            const latestChanges = commits.slice(0, 1);
-            latestChanges.forEach(commit => {
-                changelogBox.value += `- ${commit.commit.message}\n`;
-            });
-
-            document.getElementById('changelogModal').style.display = 'block';
-        }
-
-        function closeModal() {
-            document.getElementById('changelogModal').style.display = 'none';
-        }
-
-        function showNotification() {
-            const notification = document.getElementById('notificationPopup');
-            notification.style.display = 'block';
-
-            setTimeout(() => {
-                notification.classList.add('fade-out');
-            }, 5000);
-
-            setTimeout(() => {
-                notification.style.display = 'none';
-                notification.classList.remove('fade-out');
-            }, 6000);
-        }
-
-        window.onload = checkForUpdates;
 
 // Beta stuffs remove before release
 document.getElementById('beta-popup-close').addEventListener('click', function () {
     document.getElementById('beta-popup').style.display = 'none';
 });
+
+
 document.querySelector('.buttonstaff').addEventListener('click', function() {
     window.location.href = 'staff.html';
 });
