@@ -21,10 +21,15 @@
     gtag('config', 'G-S8FQLDNPJ6');
 </script>
     <button class="buttonstaff">Staff</button>
+    <div class="buttonstaffhover-text"><p>The staff members of Thaumiel.</p></div>
     <button class="buttonsupport">Support</button>
+    <div class="buttonsupporthover-text"><p>You can go here for instructions on how to report staff members. <br>This page also contains the staff and server rules.</p></div>
     <button class="buttoncontact">Contact</button>
+    <div class="buttoncontacthover-text"><p>Get the contact information for Thaumiel.</p></div>
     <button class="buttoncredits">Credits</button>
+    <div class="buttoncreditshover-text"><p>Credits to the editors.</p></div>
     <button class="buttonhistory">History</button>
+    <div class="buttonhistoryhover-text"><p>History of Thaumiel.</p></div>
     <button class="buttonSuggestion"onclick="toggleIframe()">Submit feedback</button>
 <!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
 <style>
@@ -224,6 +229,83 @@
             from { opacity: .9; }
             to { opacity: 0; }
         }
+.buttonstaffhover-text {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 100;
+    background-color: var(--button-box);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.buttonstaff:hover + .buttonstaffhover-text {
+    opacity: 1;
+}
+.buttonsupporthover-text {
+    opacity: 0;
+    position: absolute;
+    left: 10.54%;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 100;
+    background-color: var(--button-box);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.buttonsupport:hover + .buttonsupporthover-text {
+    opacity: 1;
+}
+
+.buttoncontacthover-text {
+    opacity: 0;
+    position: absolute;
+    left: 26.68%;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 100;
+    background-color: var(--button-box);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.buttoncontact:hover + .buttoncontacthover-text {
+    opacity: 1;
+}
+
+.buttoncreditshover-text {
+    opacity: 0;
+    position: absolute;
+    left: 50.07%;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 100;
+    background-color: var(--button-box);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.buttoncredits:hover + .buttoncreditshover-text {
+    opacity: 1;
+}
+
+.buttonhistoryhover-text {
+    opacity: 0;
+    position: absolute;
+    left: 67.19%;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 100;
+    background-color: var(--button-box);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.buttonhistory:hover + .buttonhistoryhover-text {
+    opacity: 1;
+}
+
+
+
+
     @media (max-width: 600px) {
         .content {
             width: auto;
@@ -357,7 +439,7 @@
     </p>
     <h2 class="index" style="text-align: center; font-family: Oxanium;">Server Info</h2><!--aligns to center and sets font to Oxanium-->
     <p class="index" style="text-align: center; font-family: Oxanium;">
-        The server is hosted using Amazon Web Services (AWS) and Microsoft Azure. Thaumiel #1 is located in California, and Thaumiel #2 is located in Virginia. VPNS and proxies are detected and blocked on the SCP: Secret Laboratory server. If you are blocked unfairly due to this system, please request a whitelist in the Discord server.
+        The server is hosted using Amazon Web Services (AWS), and Thaumiel is located in California. VPNS and proxies are detected and blocked on the SCP: Secret Laboratory server. If you are blocked unfairly due to this system, please request a whitelist in the Discord server.
         Appeal requests, reports, and staff applications are all held in the Discord server. If you find a player or staff member acting unjustly or making you uncomfortable, please report them in the server for both your fun & safety and ours. All staff reports are only seen by our Staff Manager Jurgen and the Server Owner Mr. Baguetter, A.K.A. Ender.
     </p>
     <p class="index" style="text-align: center; font-family: Oxanium;">This is a open source website contributions can be made <a href="https://github.com/Thaumiel-Servers/Thaumiel/tree/Developer">here</a>.</p>
@@ -477,6 +559,21 @@
             }
 
             window.onload = checkForUpdates;
+    document.querySelector('.buttonstaff').addEventListener('hover', function() {
+        function showNotification() {
+                const notification = document.getElementById('staffhover');
+                notification.style.display = 'block';
+
+                setTimeout(() => {
+                    notification.classList.add('fade-out');
+                }, 5000);
+
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                    notification.classList.remove('fade-out');
+                }, 6000);
+            }
+    });
 </script>
 </body>
 </html>

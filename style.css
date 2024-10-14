@@ -11,6 +11,7 @@
     --AnniversaryBackground: #aacfff;
     --AnniversaryClose: #1b1b1b;
     --AnniversaryClosehover: #2c2c2c;
+    --button-box: rgba(255, 255, 255, 0.5);
 }
 
 [data-theme='dark'] {
@@ -26,6 +27,9 @@
     --AnniversaryBackground: #5F005F;
     --AnniversaryClose: #ffffff;
     --AnniversaryClosehover: #aaa;
+    --buttonwidth: 3px;
+    --outlinecolor: #ebebeb;
+    --button-box: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -308,6 +312,8 @@ button {
     content: none;
     font-size: 15px;
     background-color: var(--buttoncolor);
+    border-width: var(--buttonwidth);
+    border-color: var(--outlinecolor);
 }
 /*Button colors*/
 .buttonhome {

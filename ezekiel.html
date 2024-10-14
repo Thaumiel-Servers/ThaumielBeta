@@ -19,19 +19,25 @@
 
     gtag('config', 'G-S8FQLDNPJ6');
 </script>
-<body scroll="no" style="overflow: hidden">
+<body>
 <style>
     body {
         margin: 0;
         align-items: center;
         justify-content: center;
-        height: 100vh;
-        width: 100vw;
+        overflow: hidden;
+        height: auto;
+        width: auto;
     }
     @media (max-width: 768px) {
         body {
             height: auto;
             width: auto;
+        }
+    }
+    @media (min-width: 768px) {
+        .ezetext {
+            max-width: 95%;
         }
     }
     @media (min-width: 768px) {
