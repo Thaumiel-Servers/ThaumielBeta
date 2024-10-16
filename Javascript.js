@@ -52,11 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Beta stuffs remove before release
-document.getElementById('beta-popup-close').addEventListener('click', function () {
-    document.getElementById('beta-popup').style.display = 'none';
-});
-
 
 document.querySelector('.buttonstaff').addEventListener('click', function() {
     window.location.href = 'staff.html';
