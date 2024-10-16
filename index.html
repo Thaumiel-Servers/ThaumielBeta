@@ -417,11 +417,6 @@
     <p style="color: black; font-family: Oxanium;">Phones may not display this site correctly. A mobile version is currently in development.</p>
     <button onclick="closesmartphoneWarningPopup()">Close</button>
 </div>
-<!-- Remove before release -->
-<div id="beta-popup" class="beta-popup">
-    <p style="font-family: Oxanium;">This is the beta site, bugs, and unfinished pages are expected.</p>
-    <button id="beta-popup-close">Okay</button>
-</div>
 <!-- Dont Remove -->
 <div class="test">
 <body scroll="no">
@@ -498,8 +493,8 @@
 
 
             const repoOwner = 'Thaumiel-Servers';
-            const repoName = 'Thaumielbeta';
-            const apiUrl = `https://api.github.com/repos/Thaumiel-Servers/Thaumielbeta/commits`;
+            const repoName = 'Thaumiel';
+            const apiUrl = `https://api.github.com/repos/Thaumiel-Servers/Thaumiel/commits`;
 
             async function checkForUpdates() {
                 const lastCommitHash = localStorage.getItem('lastCommitHash');
