@@ -12,6 +12,9 @@
     --AnniversaryClose: #1b1b1b;
     --AnniversaryClosehover: #2c2c2c;
     --button-box: rgba(255, 255, 255, 0.5);
+    --header-color: rgba(0, 67, 377, 0.2);
+    --header-color2: rgba(0, 67, 377, 0.1);
+    --button-color: #dddddd;
 }
 
 [data-theme='dark'] {
@@ -30,6 +33,9 @@
     --buttonwidth: 3px;
     --outlinecolor: #ebebeb;
     --button-box: rgba(0, 0, 0, 0.5);
+    --header-color: rgba(137, 0, 137, 0.2);
+    --header-color2: rgba(137, 0, 137, 0.1);
+    --button-color: #111111;
 }
 
 
@@ -84,44 +90,7 @@ html, body {
     position: relative;
     bottom: 100px;
 }
-.ThaumielGif {
-    position: absolute;
-    border-radius: 30%;
-    left: -80px;
-    top: -60px;
-}
-.test {
-    position: relative
-}
-.index {
-    position: relative;
-    top: 200px;
-}
-.title-container {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center the title within the wrapper */
-    font-size: 45px;
-    text-align: center;
-    white-space: nowrap; /* Prevent text wrapping */
-}
 
-.title {
-    position: absolute;
-    font-size: 45px;
-    text-align: center; /* Center text inside the title */
-    left: -100px;
-    top: 50px;
-}
-
-.title2 {
-    position: absolute;
-    transform: translate(-50%, -50%); /* Center the title within the wrapper */
-    font-size: 15px;
-    text-align: center;
-    top: 130px;
-}
 .historytitle {
     position: relative;
     top: 35px;
@@ -387,7 +356,7 @@ body {
     width: 450px;
     height: 250px;
     border: none;
-    margin-top: -496px;
+    margin-bottom: -586px;
 }
 /* Beta stuffs remove before release */
 .beta-popup {

@@ -20,17 +20,7 @@
 
     gtag('config', 'G-S8FQLDNPJ6');
 </script>
-    <button class="buttonstaff">Staff</button>
-    <div class="buttonstaffhover-text"><p>The staff members of Thaumiel.</p></div>
-    <button class="buttonsupport">Support</button>
-    <div class="buttonsupporthover-text"><p>You can go here for instructions on how to report staff members. <br>This page also contains the staff and server rules.</p></div>
-    <button class="buttoncontact">Contact</button>
-    <div class="buttoncontacthover-text"><p>Get the contact information for Thaumiel.</p></div>
-    <button class="buttoncredits">Credits</button>
-    <div class="buttoncreditshover-text"><p>Credits to the editors.</p></div>
-    <button class="buttonhistory">History</button>
-    <div class="buttonhistoryhover-text"><p>History of Thaumiel.</p></div>
-    <button class="buttonSuggestion"onclick="toggleIframe()">Submit feedback</button>
+
 <!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
 <style>
     body {
@@ -380,6 +370,182 @@
             padding: 5px 3px;
         }
     }
+    #staff-button {
+    background-image: url('user-avatar.png');
+    background-size: 50% 90%;
+    background-position: center; 
+}
+
+#support-button {
+    background-image: url('customer-support.png');
+    background-size: 50% 90%;
+    background-position: center; 
+}
+
+#contact-button {
+    background-image: url('mail.png');
+    background-size: 50% 90%;
+    background-position: center;
+}
+
+#credits-button {
+    background-image: url('check.png');
+    background-size: 50% 90%;
+    background-position: center; 
+}
+
+#history-button {
+    background-image: url('file.png');
+    background-size: 50% 90%; 
+    background-position: center; 
+}
+
+#suggestion-button {
+    background-image: url('question.png');
+    background-size: 50% 90%; 
+    background-position: center; 
+}
+
+button {
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    width: 100px;
+    height: 150px;
+    cursor: pointer;
+    color: transparent;
+    position: relative;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh; 
+}
+
+.title-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+}
+.header-image {
+    border-radius: 30px;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.title-text {
+    margin-left: 10px; 
+}
+
+.title {
+    color: DodgerBlue; 
+    margin: 0;
+    text-shadow: 0 0 5px rgba(30, 144, 255, 0.8), 0 0 10px rgba(30, 144, 255, 0.6), 0 0 15px rgba(30, 144, 255, 0.4);
+}
+
+.title2 {
+    margin: 0; 
+    font-size: 12px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+button {
+    margin: 5px; 
+
+}
+.buttonstaff, .buttonsupport, .buttoncontact, .buttoncredits, .buttonhistory, .buttonSuggestion {
+    position: relative;
+}
+.dropdown-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+    font-family: Oxanium;
+    position: relative;
+}
+
+.button-text {
+    position: relative;
+    background-color: var(--bg-start);
+    padding: 5px 10px;
+    border-radius: 10px;
+    top: 90px;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: var(--button-color);
+}
+.dropdown-button {
+    width: 100%;
+    padding: 15px;
+    cursor: pointer;
+    font-family: Oxanium;
+    font-size: 1.2em;
+    color: var(--text-color);
+    text-align: center;
+    line-height: 1.2;
+    max-height: 70px;
+}
+
+.dropdown-button:hover {
+    background: linear-gradient(to right, var(--header-color2), var(--header-color));
+}
+
+.dropdown-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: none;
+    padding: 10px;
+    margin-top: 2px;
+    background-color: var(--bg-start);
+    border-radius: 20px;
+}
+
+/* Animation for dropdown */
+.dropdown-content.show {
+    display: block;
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.index {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
 </style>
 <div id="changelogModal" class="changelog-modal">
     <div class="changelog-modal-content">
@@ -418,32 +584,100 @@
     <button onclick="closesmartphoneWarningPopup()">Close</button>
 </div>
 <!-- Dont Remove -->
-<div class="test">
-<body scroll="no">
-    <header class="title-container">
-    <div style="display: flex; align-items: center;" class="header-container">
-        <img src="Thaumiel1.gif" width="150" height="150" class="ThaumielGif" alt="Thaumiel logo">
-        <h1 class="title" style="color: DodgerBlue; font-family: Oxanium;"><b>Thaumiel</b></h1> <!-- Main Header -->
-        <p class= "title2" style="font-family: Oxanium;">(Previously known as Thaumiel Servers)</p>
-    </header>
+<div class="title-container">
+    <div class="header-container">
+        <img class="header-image" src="Thaumiel1.gif" width="120" height="120" class="ThaumielGif" alt="Thaumiel logo">
+        <div class="title-text">
+            <h1 class="title">Thaumiel</h1>
+            <p class="title2">(Previously known as Thaumiel Servers)</p>
+        </div>
     </div>
-    <h2 class="index" style="text-align: center; font-family: Oxanium;">About The Server</h2>
-    <p class="index" style="font-family: Oxanium; text-align: center;">
-        Welcome to Thaumiel! This SCP: Secret Laboratory server is dedicated to honest staff, balanced Vanilla+ gameplay, and above all else, community.
-        While Secret Laboratory is our focus, we also serve as a diverse social group and safe space. Our Discord server includes gamenights, an art channel, and a mental health forum to use occasionally. Remember that we are not a substitute for professional help.
-    </p>
-    <h2 class="index" style="text-align: center; font-family: Oxanium;">Server Info</h2><!--aligns to center and sets font to Oxanium-->
-    <p class="index" style="text-align: center; font-family: Oxanium;">
-        The server is hosted using Amazon Web Services (AWS), and Thaumiel is located in California. VPNS and proxies are detected and blocked on the SCP: Secret Laboratory server. If you are blocked unfairly due to this system, please request a whitelist in the Discord server.
-        Appeal requests, reports, and staff applications are all held in the Discord server. If you find a player or staff member acting unjustly or making you uncomfortable, please report them in the server for both your fun & safety and ours. All staff reports are only seen by our Staff Manager Jurgen and the Server Owner Mr. Baguetter, A.K.A. Ender.
-    </p>
+</div>
+<div class="button-container">
+    <button class="buttonstaff" id="staff-button"><p class="button-text">Staff</p></button>
+    <button class="buttonsupport" id="support-button"><p class="button-text">Support</p></button>
+    <button class="buttoncontact" id="contact-button"><p class="button-text">Contact</p></button>
+    <button class="buttoncredits" id="credits-button"><p class="button-text">Credits</p></button>
+    <button class="buttonhistory" id="history-button"><p class="button-text">History</p></button>
+    <button class="buttonSuggestion" id="suggestion-button" onclick="toggleIframe()"><p class="button-text">Submit feedback</p></button>
+</div>
+<<div class="dropdown-container">
+    <button class="dropdown-button" onclick="toggleDropdown('aboutServer')">
+        ▼ About The Server ▼
+    </button>    
+    <div id="aboutServer" class="dropdown-content">
+        <p class="index" style="font-family: Oxanium;">
+            Welcome to Thaumiel! This SCP: Secret Laboratory server is dedicated to honest staff, balanced Vanilla+ gameplay, and above all else, community.
+            While Secret Laboratory is our focus, we also serve as a diverse social group and safe space. Our Discord server includes gamenights, an art channel, and a mental health forum to use occasionally. Remember that we are not a substitute for professional help.
+        </p>
+    </div>
+</div>
+
+<div class="dropdown-container">
+    <button class="dropdown-button" onclick="toggleDropdown('serverInfo')">
+        ▼ Server Info ▼
+    </button>
+    <div id="serverInfo" class="dropdown-content">
+        <p class="index" style="font-family: Oxanium;">
+            The server is hosted using Amazon Web Services (AWS), and Thaumiel is located in California. VPNS and proxies are detected and blocked on the SCP: Secret Laboratory server. If you are blocked unfairly due to this system, please request a whitelist in the Discord server.
+            Appeal requests, reports, and staff applications are all held in the Discord server. If you find a player or staff member acting unjustly or making you uncomfortable, please report them in the server for both your fun & safety and ours. All staff reports are only seen by our Staff Manager Jurgen and the Server Owner Mr. Baguetter, A.K.A. Ender.
+        </p>
+    </div>
+</div>
     <p class="index" style="text-align: center; font-family: Oxanium;">This is a open source website contributions can be made <a href="https://github.com/Thaumiel-Servers/Thaumiel/tree/Developer">here</a>.</p>
-    <iframe id="iframe-display" src="https://forms.gle/kyjRRA4xEhLH1s3Z8" frameborder="0" style="height: 270px; width: 450px; display: none;"></iframe>
+    <iframe id="iframe-display" src="https://forms.gle/kyjRRA4xEhLH1s3Z8" frameborder="0" style="height: 370px; width: 450px; display: none;"></iframe>
     <script src="Javascript.js"></script>
 <button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
     <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
 </button>
 <script>
+function toggleDropdown(dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    const allDropdowns = document.getElementsByClassName('dropdown-content');
+    const button = dropdown.previousElementSibling;
+    
+    Array.from(allDropdowns).forEach(item => {
+        if (item.id !== dropdownId && item.classList.contains('show')) {
+            item.classList.remove('show');
+            const otherButton = item.previousElementSibling;
+            otherButton.textContent = otherButton.textContent.replace('▲', '▼');
+        }
+    });
+
+    dropdown.classList.toggle('show');
+    
+    // Update arrow in button
+    if (dropdown.classList.contains('show')) {
+        button.textContent = button.textContent.replace(/▼/g, '▲');
+    } else {
+        button.textContent = button.textContent.replace(/▲/g, '▼');
+    }
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-button')) {
+        const dropdowns = document.getElementsByClassName('dropdown-content');
+        Array.from(dropdowns).forEach(dropdown => {
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+                const button = dropdown.previousElementSibling;
+                button.textContent = button.textContent.replace(/▲/g, '▼');
+            }
+        });
+    }
+}
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-button')) {
+        const dropdowns = document.getElementsByClassName('dropdown-content');
+        Array.from(dropdowns).forEach(dropdown => {
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+                const button = dropdown.previousElementSibling;
+                button.innerHTML = button.innerHTML.replace('▲', '▼');
+            }
+        });
+    }
+}
             function checkDevice() {
             if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
                 document.getElementById('smartphoneWarning').style.display = 'block';
@@ -457,7 +691,7 @@
 
         function checkAnniversary() {
         const today = new Date();
-        const anniversaryDate = new Date(today.getFullYear(), 10, 3); // November 3rd. Change to todays date to test. (month 0-11), (day)
+        const anniversaryDate = new Date(today.getFullYear(), 10, 2); // November 2nd. Change to todays date to test. (month 0-11), (day)
         if (today.toDateString() === anniversaryDate.toDateString()) {
             document.getElementById("anniversaryModal").style.display = "block";
         }
