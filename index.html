@@ -23,475 +23,54 @@
 
 <!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
 <style>
-    body {
-        margin: 0;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100vw;
-    }
-    #welcomePopup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            z-index: 1000;
-        }
-        #welcomePopup button {
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #dontShowAgainBtn {
-            background-color: #f44336;
-        }
-    #smartphoneWarning {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #ffcccb;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            text-align: center;
-            z-index: 1000;
-        }
-        #smartphoneWarning button {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #ff4444;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    .content {
-        transform-origin: 0 0;
-        will-change: transform;
-    }
-    .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            background-color: var(--AnniversaryBackground);
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            text-align: center;
-            border-radius: 15px;
-        }
-
-        .close {
-            color: var(--AnniversaryClose);
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: var(--AnniversaryClosehover);
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin: 0 10px;
-        }
-
-        .button:hover {
-            background-color: #45a049;
-        }
-
-        .close-button {
-            background-color: #4CAF50;
-        }
-        .close-button:hover {
-            background-color: #f44336;
-        }
-        .changelog-modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .changelog-modal-content {
-            background-color: var(--AnniversaryBackground);
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .changelog-close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .changelog-close:hover,
-        .changelog-close:focus {
-            color: black;
-            cursor: pointer;
-        }
-
-        .changelog-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .changelog-button:hover {
-            background-color: #45a049;
-        }
-
-        .changelog-textarea {
-            width: 100%;
-            height: 160px;
-            margin-top: 10px;
-            resize: none;
-        }
-        .notification-popup {
-            display: none;
-            position: fixed;
-            width: 600px;
-            height: 30px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #f44336; /* Red */
-            color: white;
-            padding: 15px;
-            border-radius: 15px;
-            opacity: .9;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-        .notification-popup-text {
-            position: fixed;
-            bottom: 15px;
-            font-size: 20px;
-        }
-
-        .notification-popup.fade-out {
-            animation: fadeOut 1s forwards;
-        }
-
-        @keyframes fadeOut {
-            from { opacity: .9; }
-            to { opacity: 0; }
-        }
-.buttonstaffhover-text {
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 100;
-    background-color: var(--button-box);
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.buttonstaff:hover + .buttonstaffhover-text {
-    opacity: 1;
-}
-.buttonsupporthover-text {
-    opacity: 0;
-    position: absolute;
-    left: 10.54%;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 100;
-    background-color: var(--button-box);
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.buttonsupport:hover + .buttonsupporthover-text {
-    opacity: 1;
-}
-
-.buttoncontacthover-text {
-    opacity: 0;
-    position: absolute;
-    left: 26.68%;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 100;
-    background-color: var(--button-box);
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.buttoncontact:hover + .buttoncontacthover-text {
-    opacity: 1;
-}
-
-.buttoncreditshover-text {
-    opacity: 0;
-    position: absolute;
-    left: 50.07%;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 100;
-    background-color: var(--button-box);
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.buttoncredits:hover + .buttoncreditshover-text {
-    opacity: 1;
-}
-
-.buttonhistoryhover-text {
-    opacity: 0;
-    position: absolute;
-    left: 67.19%;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 100;
-    background-color: var(--button-box);
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.buttonhistory:hover + .buttonhistoryhover-text {
-    opacity: 1;
-}
-
-
-
-
-    @media (max-width: 600px) {
-        .content {
-            width: auto;
-            height: auto;
-            transform: none;
-        }
-    }
-    @media (max-width: 600px) {
-        .theme-toggle {
-            width: 45;
-            height:  45;
-        }
-    }
-    .buttonstaff { 
-        width: 16.3%;
-    }
-
-    .buttonsupport {
-        width: 16.3%;
-    }
-
-    .buttoncontact {
-        width: 16.3%;
-    }
-
-    .buttoncredits {
-        width: 16.3%;
-    }
-    .buttonhistory {
-        width: 16.3%;
-    }
-    .buttonSuggestion {
-        width: 16.3%
-    }
-    
-    @media only screen and (max-width: 600px) {
-        .buttonstaff {
-            width: 17%
-        }
-    }
-
-    @media only screen and (max-width: 600px) {
-        .buttonsupport {
-            width: 17%;
-        }
-    }
-
-    @media only screen and (max-width: 600px) {
-        .buttoncontact {
-            width: 17%;
-        }
-    }
-
-    @media only screen and (max-width: 600px) {
-        .buttoncredits {
-            width: 17%;
-        }
-    }
-    @media only screen and (max-width: 600px) {
-        .buttonhistory {
-            width: 17%;
-        }
-    }
-    @media only screen and (max-width: 600px) {
-        .buttonSuggestion {
-            width: 27.5%
-        }
-    }
-    @media only screen and (max-width: 600px) {
-        button {
-            font-size: 10px;
-            padding: 5px 3px;
-        }
-    }
-    #staff-button {
-    background-image: url('user-avatar.png');
-    background-size: 50% 90%;
-    background-position: center; 
-}
-
-#support-button {
-    background-image: url('customer-support.png');
-    background-size: 50% 90%;
-    background-position: center; 
-}
-
-#contact-button {
-    background-image: url('mail.png');
-    background-size: 50% 90%;
-    background-position: center;
-}
-
-#credits-button {
-    background-image: url('check.png');
-    background-size: 50% 90%;
-    background-position: center; 
-}
-
-#history-button {
-    background-image: url('file.png');
-    background-size: 50% 90%; 
-    background-position: center; 
-}
-
-#suggestion-button {
-    background-image: url('question.png');
-    background-size: 50% 90%; 
-    background-position: center; 
-}
-
-button {
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: none;
-    width: 100px;
-    height: 150px;
-    cursor: pointer;
-    color: transparent;
-    position: relative;
-}
-
-button:hover {
-    opacity: 0.8;
-}
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    height: 100vh; 
+    width: 100vw; 
+    height: 100vh;
 }
 
 .title-container {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    width: 100%;
+    width: auto;
     padding: 10px;
     z-index: 1000;
-}
-.header-image {
-    border-radius: 30px;
-}
-.header-container {
     display: flex;
     align-items: center;
-    width: 100%;
 }
+
+.header-image {
+    border-radius: 30px;
+    height: 50px;
+    width: 50px;
+}
+
 .title-text {
-    margin-left: 10px; 
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
     color: DodgerBlue; 
     margin: 0;
-    text-shadow: 0 0 5px rgba(30, 144, 255, 0.8), 0 0 10px rgba(30, 144, 255, 0.6), 0 0 15px rgba(30, 144, 255, 0.4);
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(30, 144, 255, 0.8), 
+                 0 0 10px rgba(30, 144, 255, 0.6), 
+                 0 0 15px rgba(30, 144, 255, 0.4);
 }
 
 .title2 {
-    margin: 0; 
+    margin: 0;
     font-size: 12px;
+    color: gray;
 }
 
-.button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
-button {
-    margin: 5px; 
 
-}
-.buttonstaff, .buttonsupport, .buttoncontact, .buttoncredits, .buttonhistory, .buttonSuggestion {
-    position: relative;
-}
-.dropdown-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 10px auto;
-    font-family: Oxanium;
-    position: relative;
-}
-
-.button-text {
-    position: relative;
-    background-color: var(--bg-start);
-    padding: 5px 10px;
-    border-radius: 10px;
-    top: 90px;
-    font-size: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    background-color: var(--button-color);
-}
 .dropdown-button {
     width: 100%;
     padding: 15px;
@@ -502,25 +81,227 @@ button {
     text-align: center;
     line-height: 1.2;
     max-height: 70px;
+    background-color: var(--bg-start);
+    border-radius: 10px;
+    position: relative;
+}
+
+.button-text {
+    position: absolute;
+    bottom: -3vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-start);
+    padding: 1vw 2vw;
+    border-radius: 1vw;
+    font-size: .8vw; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: font-size 0.3s ease-in-out;
 }
 
 .dropdown-button:hover {
     background: linear-gradient(to right, var(--header-color2), var(--header-color));
 }
 
+
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: 80px;
+}
+
+button {
+    margin: 5px;
+}
+
+@media (max-width: 600px) {
+    .header-image {
+        height: 40px; 
+        width: 40px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .title2 {
+        font-size: 10px;
+    }
+
+    .dropdown-button {
+        font-size: 1em; 
+    }
+
+    .button-text {
+        font-size: 0.9em;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    body {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        transform: scale(0.7);
+    }
+}
+
+#welcomePopup,
+#smartphoneWarning {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+}
+
+#welcomePopup {
+    background-color: #f1f1f1;
+}
+
+#smartphoneWarning {
+    background-color: #ffcccb;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: calc(10vw);
+    height: calc(15vh);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#welcomePopup button {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#smartphoneWarning button {
+    margin-top: 10px;
+    background-color: #ff4444;
+    color: white;
+}
+
+.notification-popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 90%;
+    max-width: 600px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #f44336;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.notification-popup.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 0.9;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.modal, .changelog-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content, .changelog-modal-content {
+    background-color: var(--AnniversaryBackground);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+@media (max-width: 600px) {
+    button {
+        font-size: 10px;
+        padding: 5px 3px;
+        width: calc(20vw);
+        height: calc(20vh);
+    }
+
+    .notification-popup {
+        bottom: 10px;
+        right: 10px;
+        width: 95%;
+    }
+}
+
+.dropdown-container {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 10px auto;
+    font-family: Oxanium;
+    position: relative;
+    margin-top: 60px; 
+}
+
+
 .dropdown-content {
+    display: none;
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 999;
-    display: none;
     padding: 10px;
-    margin-top: 2px;
-    background-color: var(--bg-start);
     border-radius: 20px;
+    background-color: var(--bg-start);
+    width: 100%;
+    z-index: 999
 }
 
-/* Animation for dropdown */
 .dropdown-content.show {
     display: block;
     animation: slideDown 1s ease-out;
@@ -536,7 +317,131 @@ button {
         transform: translateY(0);
     }
 }
-.index {
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: fit-content; 
+    padding: 10px;
+    text-align: center;
+    z-index: 999; 
+    margin-bottom: 10px;
+    font-size: .8vw;
+}
+#staff-button {
+    background-image: url('user-avatar.png');
+    background-size: 60% 90%;
+    background-position: center; 
+}
+
+#support-button {
+    background-image: url('customer-support.png');
+    background-size: 60% 90%;
+    background-position: center; 
+}
+
+#contact-button {
+    background-image: url('mail.png');
+    background-size: 60% 90%;
+    background-position: center;
+}
+
+#credits-button {
+    background-image: url('check.png');
+    background-size: 60% 90%;
+    background-position: center; 
+}
+
+#history-button {
+    background-image: url('file.png');
+    background-size: 60% 90%; 
+    background-position: center; 
+}
+
+#suggestion-button {
+    background-image: url('question.png');
+    background-size: 60% 90%; 
+    background-position: center; 
+}
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw; 
+    height: 100vh; 
+}
+
+.title-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto; 
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.header-image {
+    border-radius: 30px;
+    height: 5vh; 
+    width: 2.8vw; 
+}
+
+.title-text {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: .8vw;
+}
+
+.title {
+    color: DodgerBlue; 
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(30, 144, 255, 0.8), 
+                 0 0 10px rgba(30, 144, 255, 0.6), 
+                 0 0 15px rgba(30, 144, 255, 0.4);
+    font-size: .8vw;
+}
+
+.title2 {
+    margin: 0;
+    font-size: 12px;
+    color: gray;
+    font-size: .8vw;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: 80px;
+}
+
+button {
+    margin: 5px;
+}
+
+@media (max-width: 600px) {
+    .header-image {
+        height: 40px;
+        width: 40px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .title2 {
+        font-size: 10px;
+    }
+}
+.dropdown-text {
     position: relative;
     bottom: 0;
     left: 50%;
@@ -545,6 +450,7 @@ button {
     padding: 10px;
     margin-bottom: 10px;
     text-align: center;
+    z-index: 999;
 }
 </style>
 <div id="changelogModal" class="changelog-modal">
@@ -601,12 +507,12 @@ button {
     <button class="buttonhistory" id="history-button"><p class="button-text">History</p></button>
     <button class="buttonSuggestion" id="suggestion-button" onclick="toggleIframe()"><p class="button-text">Submit feedback</p></button>
 </div>
-<<div class="dropdown-container">
+<div class="dropdown-container">
     <button class="dropdown-button" onclick="toggleDropdown('aboutServer')">
         ▼ About The Server ▼
     </button>    
     <div id="aboutServer" class="dropdown-content">
-        <p class="index" style="font-family: Oxanium;">
+        <p class="dropdown-text" style="font-family: Oxanium;">
             Welcome to Thaumiel! This SCP: Secret Laboratory server is dedicated to honest staff, balanced Vanilla+ gameplay, and above all else, community.
             While Secret Laboratory is our focus, we also serve as a diverse social group and safe space. Our Discord server includes gamenights, an art channel, and a mental health forum to use occasionally. Remember that we are not a substitute for professional help.
         </p>
@@ -618,17 +524,17 @@ button {
         ▼ Server Info ▼
     </button>
     <div id="serverInfo" class="dropdown-content">
-        <p class="index" style="font-family: Oxanium;">
+        <p class="dropdown-text" style="font-family: Oxanium;">
             The server is hosted using Amazon Web Services (AWS), and Thaumiel is located in California. VPNS and proxies are detected and blocked on the SCP: Secret Laboratory server. If you are blocked unfairly due to this system, please request a whitelist in the Discord server.
             Appeal requests, reports, and staff applications are all held in the Discord server. If you find a player or staff member acting unjustly or making you uncomfortable, please report them in the server for both your fun & safety and ours. All staff reports are only seen by our Staff Manager Jurgen and the Server Owner Mr. Baguetter, A.K.A. Ender.
         </p>
     </div>
 </div>
-    <p class="index" style="text-align: center; font-family: Oxanium;">This is a open source website contributions can be made <a href="https://github.com/Thaumiel-Servers/Thaumiel/tree/Developer">here</a>.</p>
+    <p class="footer" style="text-align: center; font-family: Oxanium;">This is a open source website contributions can be made <a href="https://github.com/Thaumiel-Servers/Thaumiel/tree/Developer">here</a>.</p>
     <iframe id="iframe-display" src="https://forms.gle/kyjRRA4xEhLH1s3Z8" frameborder="0" style="height: 370px; width: 450px; display: none;"></iframe>
     <script src="Javascript.js"></script>
 <button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
-    <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
+    <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75vh" width="75vw" style="display: block;">
 </button>
 <script>
 function toggleDropdown(dropdownId) {
