@@ -23,51 +23,13 @@
 
 <!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
 <style>
+
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
     width: 100vw; 
     height: 100vh;
-}
-
-.title-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: auto;
-    padding: 10px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-}
-
-.header-image {
-    border-radius: 30px;
-    height: 50px;
-    width: 50px;
-}
-
-.title-text {
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.title {
-    color: DodgerBlue; 
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    text-shadow: 0 0 5px rgba(30, 144, 255, 0.8), 
-                 0 0 10px rgba(30, 144, 255, 0.6), 
-                 0 0 15px rgba(30, 144, 255, 0.4);
-}
-
-.title2 {
-    margin: 0;
-    font-size: 12px;
-    color: gray;
 }
 
 
@@ -116,29 +78,6 @@ body {
 
 button {
     margin: 5px;
-}
-
-@media (max-width: 600px) {
-    .header-image {
-        height: 40px; 
-        width: 40px;
-    }
-
-    .title {
-        font-size: 14px;
-    }
-
-    .title2 {
-        font-size: 10px;
-    }
-
-    .dropdown-button {
-        font-size: 1em; 
-    }
-
-    .button-text {
-        font-size: 0.9em;
-    }
 }
 
 
@@ -270,7 +209,7 @@ button:hover {
         font-size: 10px;
         padding: 5px 3px;
         width: calc(20vw);
-        height: calc(20vh);
+        height: calc(10vh);
     }
 
     .notification-popup {
@@ -326,9 +265,8 @@ button:hover {
     width: fit-content; 
     padding: 10px;
     text-align: center;
-    z-index: 999; 
     margin-bottom: 10px;
-    font-size: .8vw;
+    font-size: clamp(14px, 2vw, 24px);
 }
 #staff-button {
     background-image: url('user-avatar.png');
@@ -371,22 +309,25 @@ body {
     flex-direction: column;
     width: 100vw; 
     height: 100vh; 
+    padding-top: 60px
 }
 
 .title-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: auto; 
-    padding: 10px;
+    position: fixed; 
+    top: 0;   
+    left: 0;  
+    width: 100%; 
+    height: 60px;    
     z-index: 1000;
-    display: flex;
+    display: flex; 
     align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px; 
 }
 
 .header-image {
     border-radius: 30px;
-    height: 5vh; 
+    height: 5.7 vh; 
     width: 2.8vw; 
 }
 
@@ -400,7 +341,6 @@ body {
 .title {
     color: DodgerBlue; 
     margin: 0;
-    font-size: 18px;
     font-weight: bold;
     text-shadow: 0 0 5px rgba(30, 144, 255, 0.8), 
                  0 0 10px rgba(30, 144, 255, 0.6), 
@@ -410,37 +350,15 @@ body {
 
 .title2 {
     margin: 0;
-    font-size: 12px;
     color: gray;
     font-size: .8vw;
 }
 
-.button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    margin-top: 80px;
-}
 
 button {
     margin: 5px;
 }
 
-@media (max-width: 600px) {
-    .header-image {
-        height: 40px;
-        width: 40px;
-    }
-
-    .title {
-        font-size: 14px;
-    }
-
-    .title2 {
-        font-size: 10px;
-    }
-}
 .dropdown-text {
     position: relative;
     bottom: 0;
