@@ -575,10 +575,6 @@ window.onclick = function(event) {
                     console.error('Error fetching GitHub data:', error);
                     showNotification();
                 }
-
-                if (!hasNewCommits) {
-                    console.log("No new updates");
-                }
             }
 
             function displayChangelog(commits) {
