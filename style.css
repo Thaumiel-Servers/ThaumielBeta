@@ -1,0 +1,486 @@
+:root {
+    --bg-start: #ffffff;
+    --bg-middle: #aacfff;
+    --bg-end: #0037ff;
+    --text-color: #000000;
+    --button-bg: #000000;
+    --button-text: #ffffff;
+    --button-hover-bg: #333333;
+    --buttoncolor: #dddddd;
+    --Ezekiel: #1547a4;
+    --AnniversaryBackground: #aacfff;
+    --AnniversaryClose: #1b1b1b;
+    --AnniversaryClosehover: #2c2c2c;
+    --button-box: rgba(255, 255, 255, 0.5);
+    --header-color: rgba(0, 67, 377, 0.2);
+    --header-color2: rgba(0, 67, 377, 0.1);
+    --button-color: #dddddd;
+}
+
+[data-theme='dark'] {
+    --bg-start: #000000;
+    --bg-middle: #000000;
+    --bg-end: #5F005F;
+    --text-color: #ffffff;
+    --button-bg: #ffffff;
+    --button-text: #000000;
+    --button-hover-bg: #cccccc;
+    --buttoncolor: #111111;
+    --Ezekiel: #1a5cd7;
+    --AnniversaryBackground: #5F005F;
+    --AnniversaryClose: #ffffff;
+    --AnniversaryClosehover: #aaa;
+    --buttonwidth: 3px;
+    --outlinecolor: #ebebeb;
+    --button-box: rgba(0, 0, 0, 0.5);
+    --header-color: rgba(137, 0, 137, 0.2);
+    --header-color2: rgba(137, 0, 137, 0.1);
+    --button-color: #111111;
+}
+
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    /* TODO: make the text look better */ /* Yes do that */
+    padding: 0px;
+    color: var(--text-color);
+    font-size: 24px;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, var(--bg-start), var(--bg-middle), var(--bg-end));
+    background-attachment: fixed;
+    overflow-x: hidden;
+} 
+html, body {
+    min-height: 100%;
+    height: auto;    
+    }
+.cass{
+    color: #0099ff;
+    position: fixed;
+    font-size: 15px;
+    top: 198px;
+    left: 30px
+    
+}
+.anton-regular {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }  
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.header-container {
+    display: flex;
+
+}
+.Ai {
+    position: relative;
+    bottom: 100px;
+}
+
+.historytitle {
+    position: relative;
+    top: 35px;
+    left: 15px;
+    
+}
+.history {
+    position: relative;
+    top: 30px;
+    left: 10px;
+}
+.bagtitle {
+    position: relative;
+    top: -35px;
+    left: 205px;
+}
+.bagtext {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.bagtext3 {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.bag {
+    left: 200px;
+    position: relative;
+}
+.BagPFP {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    align-items: left;
+    border-radius: 20%;
+}
+.ezetitle {
+    position: relative;
+    top: -35px;
+    left: 205px;
+}
+.ezetext {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.ezetext3 {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.eze {
+    left: 200px;
+    position: relative;
+}
+.EzePFP {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    align-items: left;
+    border-radius: 20%;
+}
+.jurtitle {
+    position: relative;
+    top: -35px;
+    left: 205px;
+}
+.jurtext {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.jurtext3 {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+.jur {
+    left: 200px;
+    position: relative;
+}
+.JurPFP {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    align-items: left;
+    border-radius: 20%;
+}
+.theme-toggle {
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    background: none; 
+            border: none; 
+            padding: 0; 
+            cursor: pointer; 
+    opacity: 75%;
+}
+.castext3 {
+    position: absolute;
+    top: 400px;
+    font-size: 20px;
+    left: 20px;
+}
+.cas {
+    left: 200px;
+    position: relative;
+}
+.castitle {
+    position: relative;
+    top: -35px;
+    left: 205px;
+}
+.casPFP {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    align-items: left;
+    border-radius: 20%;
+}
+
+.castext {
+    position: relative;
+    top: 100px;
+    left: 20px;
+}
+
+
+.buttonstaff:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttonsupport:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttoncontact:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttoncredits:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttonbacktop:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttonSuggestion:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttonhistory:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttonbacktop {
+    position: absolute; top: 0; /* sets the button to the top of the page */
+}
+.buttonbackbottom:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttonbackbottom {
+    position: absolute; bottom: 0; /* sets the button to the bottom of the page */
+}
+.buttonbacktopstaff:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttonbacktopstaff {
+    position: absolute; top: 0; /* sets the button to the top of the page */
+}
+.buttonbackbottomstaff:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttonbackbottomstaff {
+    position: absolute; bottom: 0; /* sets the button to the bottom of the page */
+}
+
+button {
+    font-family: bold Oxanium, sans-serif;
+    font-weight: 1000;
+    border-radius: 25px;
+    padding: 5px 20px;
+    content: none;
+    font-size: 15px;
+    background-color: var(--buttoncolor);
+    border-width: var(--buttonwidth);
+    border-color: var(--outlinecolor);
+}
+/*Button colors*/
+.buttonhome {
+    color: #ff21e1;
+}
+.buttonstaffback {
+    color: #ffae00;
+}
+.buttonbacktop {
+    color: #ffae00;
+}
+.buttonbackbottom {
+    color: #ff5021;
+}
+.buttonbaguetter {
+    color: orangered;
+}
+.buttoncassie {
+    color: #3498db;
+}
+.buttonjurgen {
+    color: #16ed06;
+}
+.buttonstaff {
+    color: #0354eb;
+}
+.buttonsupport {
+    color: rgb(255, 0, 0);
+}
+.buttoncontact {
+    color: #A200B4
+}
+.buttoncredits {
+    color: #6709ff;
+}
+.buttonhistory {
+    color:rgb(255, 0, 162)
+}
+.buttonSuggestion {
+    color: rgb(86, 11, 226)
+}
+
+/* Staff buttons */
+.buttonhome:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.buttonstaffback:hover {
+    background-color: #1982EA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    /* Light mode styles */
+    body.light-mode {
+        background-color: white;
+        color: black;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+        background-color: black;
+        color: white;
+    }
+
+#iframe-display {
+    position: absolute;
+    width: 450px;
+    height: 250px;
+    border: none;
+    margin-bottom: -44.27%;
+    right: 76%;
+}
+/* Beta stuffs remove before release */
+.beta-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+    color: white;
+    padding: 15px;
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    z-index: 1000; /* Ensures the popup appears above other content */
+}
+p {
+    font-family: Oxanium
+}
+h1 {
+    font-family: Oxanium
+}
+h2 {
+    font-family: Oxanium
+}
+small {
+    font-family: Oxanium
+}
+
+.beta-popup p {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.beta-popup button {
+    background-color: rgba(85, 85, 85, 0.8); /* Gray button with 80% opacity */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded button edges */
+    cursor: pointer;
+}
+
+.beta-popup button:hover {
+    background-color: rgba(119, 119, 119, 0.8); /* Lighter gray with 80% opacity */
+}
+
+/* Styles for devices with a max width of 768px (tablets and phones) */
+
+@media only screen and (max-width: 768px) {
+    .ThaumielGif {
+        position: absolute;
+        font-size: 45px; /* Reduce font size */
+        top: -50px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .title-container {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the title within the wrapper */
+        font-size: 45px;
+        text-align: center;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+}
+@media only screen and (max-width: 600px) {
+    p {
+        font-size: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 155%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h2 {
+        font-size: 125%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .title2 {
+        position: absolute;
+        font-size: 15px; /* Reduce font size */
+        top: 140px;
+    }
+}
+
+/* Styles for devices with a max width of 480px (phones) */
+@media only screen and (max-width: 480px) {
+    .title2 {
+        position: absolute;
+        font-size: 15px; /* Further reduce font size */
+        top: 140px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .title {
+        position: absolute;
+        font-size: 45px; /* Reduce font size */
+        top: 70px;
+    }
+}
+
+/* Styles for devices with a max width of 480px (phones) */
+@media only screen and (max-width: 480px) {
+    .title {
+        position: absolute;
+        font-size: 45px; /* Further reduce font size */
+    }
+}
+@media only screen and (max-width: 768px) {
+    .theme-toggle {
+        position: fixed;
+        bottom: 2%;
+        right: 2%;
+        transform: scale(.8);
+        background: none; 
+                border: none; 
+                padding: 0; 
+                cursor: pointer; 
+        opacity: 75%;
+    }
+}

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Mr. Baguetter - Thaumiel</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8FQLDNPJ6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S8FQLDNPJ6');
+</script>
+<body scroll="no" style="overflow: hidden">
+    <style>
+        body {
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        .content {
+            transform-origin: 0 0; /* Scale from top-left corner */
+            will-change: transform;
+        }
+        @media (max-width: 768px) {
+            .content {
+                width: auto; /* Set width to 768px on phones */
+                height: auto; /* Maintain aspect ratio */
+                transform: none; /* Remove scaling */
+            }
+        }
+        .buttonstaffback {
+            width: 24.2%;
+        }
+
+        .buttonhome {
+            width: 25%;
+        }
+        @media only screen and (max-width: 768px) {
+        .bagtext {
+            display: flex;
+            text-align: center;
+            left: 2px;
+            font-size: 18px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .Bag2 {
+            text-align: center;
+            position: relative;
+            display: flex;
+            font-size: 16px;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .bagtitle {
+            text-align: center;
+            position: absolute;
+            display: flex;
+            font-size: 14px;
+            left: 170px;
+            top: 49px;
+        }
+    }   
+    @media only screen and (max-width: 768px) {
+        .bag {
+            text-align: center;
+            position: relative;
+            display: flex;
+            font-size: 18px;
+            left: 170px;
+            top: 30px;
+        }
+    }   
+    </style>
+        <button class="buttonstaffback">Back</button>
+        <button class="buttonhome">Home</button>
+</style>
+    <img src="BagPFP.png" width="120" height="120" class="BagPFP" alt="Mr. Baguetters Profile Picture">
+<div class="Bag2">   
+    <h1 class="bag" style="color: rgb(255, 30, 30); font-family: Oxanium;"><b>Mr. Baguetter</b></h1>
+    <p class="bagtitle" style="font-family: Oxanium;"><b>Owner of Thaumiel</b></p>
+</div>
+    <p class="bagtext" style="font-family: Oxanium;">Mr. Baguetter, also known as Ender, owns and runs both the Thaumiel Discord community and SCP: SL server. He is an active and communicative member in our community. He reads all suggestions and requests. <br> He originally started playing on The Shy Guy One in June of 2023, which was formerly a popular SCP: SL server that shut down in December. <br> His creation, Thaumiel, is intended to be an attempt at recreating the same feeling with staff improvements, superior communication, and better balance.</p>
+    <script src="Javascript.js"></script>
+    <script>
+        document.querySelector('.buttonhome').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+        document.querySelector('.buttonstaffback').addEventListener('click', function() {
+            window.location.href = 'staff.html';
+        });
+    </script>
+    <button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
+        <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
+    </button>
+</body>
+</html>

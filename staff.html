@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Staff Team - Thaumiel</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+</head>
+<script async src="https://atlantic-dark-risk.glitch.me/APIHandler.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8FQLDNPJ6"></script>
+<style>
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    height: 100%;
+}
+.buttonbacktop {
+        width: 50%;
+        left: 0px;
+    }
+#buttonbaguetter {
+    background-image: url('BagPFP.png');
+    background-size: 60% 90%;
+    background-position: center;
+}
+#buttoncassie {
+    background-image: url('casPFP.png');
+    background-size: 60% 90%;
+    background-position: center;
+}
+#buttonjurgen {
+    background-image: url('jurgen.png');
+    background-size: 60% 90%;
+    background-position: center;
+}
+#buttonezekiel {
+    background-image: url('Ezekiel.png');
+    background-size: 60% 90%;
+    background-position: center;
+}
+#buttonmint {
+    background-image: url('Template.PNG');
+    background-size: 60% 90%;
+    background-position: center;
+}
+#buttonquagsire {
+    background-image: url('Template.PNG');
+    background-size: 60% 90%;
+    background-position: center;
+}
+#buttonmorbious {
+    background-image: url('Template.PNG');
+    background-size: 60% 90%;
+    background-position: center;
+}
+#buttondill {
+    background-image: url('Template.PNG');
+    background-size: 60% 90%;
+    background-position: center;
+}
+button:not(.buttonbacktop) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 8px;
+    width: clamp(80px, 10vw, 200px);
+    aspect-ratio: 3 / 2;
+    background-color: var(--button-color);
+    position: relative;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+    body {
+        width: calc(100% - 10px); 
+        height: calc(100% - 10px); 
+        overflow: hidden; 
+    }
+    button:not(.buttonbacktop) {
+        width: clamp(100px, 8vw, 180px);
+        font-size: clamp(1em, 2vw, 1.5em);
+    }
+}
+
+
+@media (max-width: 900px) {
+    body {
+        width: calc(100% - 15px); 
+        height: calc(100% - 15px);
+        overflow: hidden; 
+    }
+    button:not(.buttonbacktop) {
+        width: clamp(90px, 15vw, 170px);
+        font-size: clamp(0.8em, 1.2vw, 1em);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        overflow: hidden;
+    }
+    button:not(.buttonbacktop) {
+        width: clamp(80px, 15vw, 140px);
+        font-size: clamp(0.6em, 1vw, 0.9em);
+    }
+    .button-text {
+        font-size: clamp(0.6em, 1vw, 1em);
+        top: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        width: calc(100% - 25px); 
+        height: calc(100% - 25px);
+        overflow: hidden;
+    }
+    button:not(.buttonbacktop) {
+        width: clamp(80px, 20vw, 100px);
+        font-size: clamp(0.5em, 0.8vw, 0.7em);
+    }
+}
+@media (max-width: 768px) {
+    button:not(.buttonbacktop) {
+        font-size: 10px;
+        padding: 5px 3px;
+        width: calc(35vw) !important;
+        height: calc(11vh) !important;
+    }
+}
+@media (max-width: 900px) {
+    button:not(.buttonbacktop) {
+        font-size: 10px;
+        padding: 5px 3px;
+        width: calc(20vw);
+        height: calc(10vh);
+    }
+}
+@media (max-width: 1200px) {
+    button:not(.buttonbacktop) {
+        font-size: 10px;
+        padding: 5px 3px;
+        width: calc(20vw);
+        height: calc(10vh);
+    }
+}
+.button-text {
+    position: relative; 
+    bottom: -3vw;
+    font-size: clamp(0.8em, 1.2vw, 1.5em);
+    text-align: center;
+    background-color: var(--bg-end);
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    color: var(--text-color);
+}
+.buttonezekiel {
+    color: var(--Ezekiel);
+}
+</style>
+<body scroll="no" style="overflow: hidden">
+    <h1 style="color: DodgerBlue; font-family: Oxanium;"><b>Thaumiel Staff Pages</b></h1>
+    <p style="font-family: Oxanium;">This page contains the majority of the staff members for Thaumiel.</p>
+    <div class="button-container">
+        <button id="buttonbaguetter" class="buttonbaguetter"><p class="button-text">Mr. Baguetter</p></button>
+        <button id="buttoncassie" class="buttoncassie"><p class="button-text">C.A.S.S.I.E <small>(Discord Bot)</small></p></button>
+        <button id="buttonjurgen" class="buttonjurgen"><p class="button-text">Jurgen</p></button>
+        <button id="buttonezekiel" class="buttonezekiel"><p class="button-text">Ezekiel</p></button>
+        <button id="buttonmint" class="buttonmint"><p class="button-text">Mint</p></button>
+        <button id="buttonquagsire" class="buttonquagsire"><p class="button-text">Quagsire</p></button>
+        <button id="buttonmorbious" class="buttonmorbious"><p class="button-text">Morbious</p></button>
+        <button id="buttondill" class="buttondill"><p class="button-text">Dill</p></button>
+    </div>
+    <button class="buttonbacktop">Back</button>
+    <script src="Javascript.js"></script>
+    <button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
+        <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
+    </button>
+<script>
+    document.querySelector('.buttonbacktop').addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
+    document.querySelector('.buttoncassie').addEventListener('click', function() {
+    window.location.href = 'cassie.html';
+});
+document.querySelector('.buttonbaguetter').addEventListener('click', function() {
+    window.location.href = 'baguetter.html';
+});
+document.querySelector('.buttonjurgen').addEventListener('click', function() {
+    window.location.href = 'jurgen.html';
+});
+document.querySelector('.buttonezekiel').addEventListener('click', function() {
+    window.location.href = 'ezekiel.html';
+});
+document.querySelector('.buttonmint').addEventListener('click', function() {
+    window.location.href = 'mint.html';
+});
+document.querySelector('.buttonquagsire').addEventListener('click', function() {
+    window.location.href = 'quagsire.html';
+});
+document.querySelector('.buttonmorbious').addEventListener('click', function() {
+    window.location.href = 'morbious.html';
+});
+document.querySelector('.buttondill').addEventListener('click', function() {
+    window.location.href = 'dill.html';
+});
+
+</script>
+</html>

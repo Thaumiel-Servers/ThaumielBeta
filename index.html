@@ -1,0 +1,753 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Dont touch-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Home - Thaumiel</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+</head>
+<script async src="https://atlantic-dark-risk.glitch.me/APIHandler.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8FQLDNPJ6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S8FQLDNPJ6');
+</script>
+
+<!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
+<style>
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    height: 100%;
+}
+
+
+.dropdown-button {
+    width: 100%;
+    padding: 15px;
+    cursor: pointer;
+    font-family: Oxanium;
+    font-size: .8em;
+    color: var(--text-color);
+    text-align: center;
+    line-height: 1.2;
+    max-height: 70px;
+    background-color: var(--button-color);
+    border-radius: 10px;
+    position: relative;
+}
+
+.button-text {
+    position: absolute;
+    bottom: -3vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--button-color);
+    padding: .7vw 1vw;
+    border-radius: .4vw;
+    font-size: calc(.8vw); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.dropdown-button:hover {
+    background: linear-gradient(to right, var(--header-color2), var(--header-color));
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 1200px) {
+    body {
+        width: calc(100% - 10px); 
+        height: calc(100% - 10px); 
+        overflow: hidden; 
+    }
+    button:not(.dropdown-button) {
+        width: clamp(100px, 8vw, 180px) !important;
+        font-size: clamp(1em, 2vw, 1.5em);
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        width: calc(100% - 15px); 
+        height: calc(100% - 15px);
+        overflow: hidden; 
+    }
+    button:not(.dropdown-button) {
+        width: clamp(60px, 15vw, 100px) !important;
+        font-size: clamp(0.6em, 1vw, 0.9em);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        overflow: hidden;
+    }
+    button:not(.dropdown-button) {
+        width: clamp(90px, 15vw, 130px) !important;
+        font-size: clamp(0.6em, 1vw, 0.9em);
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        width: calc(100% - 25px); 
+        height: calc(100% - 25px);
+        overflow: hidden;
+    }
+    button:not(.dropdown-button) {
+        width: clamp(80px, 20vw, 110px) !important;
+        font-size: 0.6em;
+    }
+}
+
+
+#welcomePopup,
+#smartphoneWarning {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+}
+
+#welcomePopup {
+    background-color: #f1f1f1;
+}
+
+#smartphoneWarning {
+    background-color: #ffcccb;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 10px 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    margin: 8px;
+    width: clamp(80px, 10vw, 200px);
+    height: auto;
+    aspect-ratio: 3 / 2;
+    font-size: clamp(0.8em, 1.5vw, 1.2em);
+    padding: 10px;
+    background-color: var(--button-color);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#welcomePopup button {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#smartphoneWarning button {
+    margin-top: 10px;
+    background-color: #ff4444;
+    color: white;
+}
+
+.notification-popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 90%;
+    max-width: 600px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #f44336;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.notification-popup.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 0.9;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.modal, .changelog-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content, .changelog-modal-content {
+    background-color: var(--AnniversaryBackground);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    button:not(.dropdown-button) {
+        font-size: 10px;
+        padding: 5px 3px;
+        width: calc(30vw) !important;
+        height: calc(10vh) !important;
+    }
+
+
+    .notification-popup {
+        bottom: 10px;
+        right: 10px;
+        width: 95%;
+    }
+}
+@media (max-width: 900px) {
+    button {
+        font-size: 10px;
+        padding: 5px 3px;
+        width: calc(20vw);
+        height: calc(10vh);
+    }
+}
+@media (max-width: 1200px) {
+    button {
+        font-size: 10px;
+        padding: 5px 3px;
+        width: calc(20vw);
+        height: calc(10vh);
+    }
+}
+.dropdown-container {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 10px auto;
+    font-family: Oxanium;
+    position: relative;
+    margin-top: 150px; 
+}
+.serverInfo-dropdown-container {
+    width: 90vw;
+    max-width: 1200px;
+    margin: 10px auto;
+    font-family: Oxanium;
+    position: relative;
+    margin-top: 70px;  
+}
+@media (max-width: 768px) {
+    .dropdown-container {
+        margin-top: 40px;
+    }
+    .serverInfo-dropdown-container {
+        margin-top: -10px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdown-container {
+        margin-top: 30px;
+    }
+    .serverInfo-dropdown-container {
+        margin-top: -10px;
+    }
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--bg-start);
+    width: 100%;
+    z-index: 999;
+}
+
+.dropdown-content.show {
+    display: block;
+    animation: slideDown 1s ease-out;
+}
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+#staff-button {
+    background-image: url('user-avatar.png');
+    background-size: 60% 90%;
+    background-position: center; 
+}
+
+#support-button {
+    background-image: url('customer-support.png');
+    background-size: 60% 90%;
+    background-position: center; 
+}
+
+#contact-button {
+    background-image: url('mail.png');
+    background-size: 60% 90%;
+    background-position: center;
+}
+
+#credits-button {
+    background-image: url('check.png');
+    background-size: 60% 90%;
+    background-position: center; 
+}
+
+#history-button {
+    background-image: url('file.png');
+    background-size: 60% 90%; 
+    background-position: center; 
+}
+
+#suggestion-button {
+    background-image: url('question.png');
+    background-size: 60% 90%; 
+    background-position: center; 
+}
+
+.title-container {
+    position: fixed; 
+    top: 0;        
+    width: calc(100vw);
+    height: calc(10vh);   
+    z-index: 1000;  
+    display: flex;  
+    align-items: center; 
+    justify-content: flex-start;
+    padding: 0 20px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+@media (max-width: 768px) {
+    .title-container {
+        top: 40px;
+    }
+    .title {
+        top: 17px !important;
+        left: 70px !important;
+        font-size: calc(4vw) !important;
+    }
+    .title2 {
+        left: 70px !important;
+        font-size: calc(4vw) !important;
+        margin-top: 15px !important;
+    }
+    .header-image {
+        position: fixed;
+        top: 10px;
+    }
+    .header-image {
+        height: 45px !important; 
+    }
+    .button-text {
+        font-size: 10px !important;
+    }
+}
+@media (max-width: 900px) {
+    .title {
+        margin-top: -3px !important;
+        left: 55px;
+        font-size: calc(4vw) !important;
+    }
+    .title2 {
+        font-size: calc(1.2vw) !important;
+        top: 20px !important;
+    }
+}
+.header-image {
+    height: calc(5.7vh); 
+    width: auto; 
+    border-radius: 30px;
+}
+
+.title-text {
+    display: flex; 
+    height: calc(10vh);
+    flex-direction: column; 
+    text-align: left;
+    margin-left: 10px;
+}
+
+.title {
+    position: fixed; 
+    color: DodgerBlue; 
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(30, 144, 255, 0.8), 
+                 0 0 10px rgba(30, 144, 255, 0.6), 
+                 0 0 15px rgba(30, 144, 255, 0.4);
+    font-size: 20px !important;
+    top: 12px;
+}
+
+.title2 {
+    position: fixed; 
+    color: gray;
+    font-size: calc(.7vw);
+    top: 33px;
+}
+
+.dropdown-text {
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    z-index: 999;
+}
+@media (min-width: 1200px) {
+    .title2{
+
+        margin: 0;
+    }
+    .title{
+        font-size: .8vw;
+        margin: 0;
+    }
+}
+.theme-toggle {
+    position: fixed;
+    bottom: 16px !important;
+    right: 16px !important;
+    z-index: 1000;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+.theme-toggle:hover {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .theme-toggle {
+        bottom: 1px !important;
+        right: 4px !important;
+    }
+}
+
+
+</style>
+<button class="theme-toggle" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
+    <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
+</button>
+<body>
+<div id="changelogModal" class="changelog-modal">
+    <div class="changelog-modal-content">
+        <span class="changelog-close" onclick="closeModal()">&times;</span>
+        <h2>The website has been updated since your last visit!</h2>
+        <p>Changes include:</p>
+        <textarea id="changelogBox" class="changelog-textarea" readonly></textarea>
+        <br>
+        <button class="changelog-button" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<div id="notificationPopup" class="notification-popup">
+    <div class="notification-popup-text">
+    <p style="font-family: Oxanium;">Unable to fetch updates from GitHub. Please try again later.</p>
+    </div>
+</div>
+<div id="anniversaryModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeanniversaryModal()">&times;</span>
+        <h2>🎉 Thaumiel's 1st Anniversary! 🎉</h2>
+        <p>Celebrate with us in our Discord!</p>
+        <button style="font-family: Oxanium;" class="button" onclick="joinDiscord()">Join Discord</button>
+            <button style="font-family: Oxanium;" class="button close-button" onclick="closeModal()">Close</button>
+    </div>
+</div>
+<div id="welcomePopup">
+    <p style="color: black; font-family: Oxanium;">Hello, welcome to the Thaumiel website! If you wish to contact us for reporting a staff member or viewing our server or staff rules, please click the "Support" button.</p>
+    <button id="closeBtn">Close</button>
+    <button id="dontShowAgainBtn">Don't show again</button>
+</div>
+<!-- Remove when phone version is properly added.-->
+<div id="smartphoneWarning">
+    <p style="color: red; font-family: Oxanium;"><b>Warning:</b></p>
+    <p style="color: black; font-family: Oxanium;">Phones may not display this site correctly. A mobile version is currently in development.</p>
+    <button onclick="closesmartphoneWarningPopup()">Close</button>
+</div>
+<!-- Dont Remove -->
+<div class="title-container">
+    <div class="header-container">
+        <img class="header-image" src="Thaumiel1.gif" width="120" height="120" class="ThaumielGif" alt="Thaumiel logo">
+        <div class="title-text">
+            <h1 class="title">Thaumiel</h1>
+            <p class="title2">(Previously known as Thaumiel Servers)</p>
+        </div>
+    </div>
+</div>
+<div class="button-container">
+    <button class="buttonstaff" id="staff-button"><p class="button-text">Staff</p></button>
+    <button class="buttonsupport" id="support-button"><p class="button-text">Support</p></button>
+    <button class="buttoncontact" id="contact-button"><p class="button-text">Contact</p></button>
+    <button class="buttoncredits" id="credits-button"><p class="button-text">Credits</p></button>
+    <button class="buttonhistory" id="history-button"><p class="button-text">History</p></button>
+    <button class="buttonSuggestion" id="suggestion-button" onclick="toggleIframe()"><p class="button-text">Submit feedback</p></button>
+</div>
+<div class="dropdown-container">
+    <button class="dropdown-button" onclick="toggleDropdown('aboutServer')">
+        ▼ About The Server ▼
+    </button>    
+    <div id="aboutServer" class="dropdown-content">
+        <p class="dropdown-text" style="font-family: Oxanium;">
+            Welcome to Thaumiel! This SCP: Secret Laboratory server is dedicated to honest staff, balanced Vanilla+ gameplay, and above all else, community.
+            While Secret Laboratory is our focus, we also serve as a diverse social group and safe space. Our Discord server includes gamenights, an art channel, and a mental health forum to use occasionally. Remember that we are not a substitute for professional help.
+        </p>
+    </div>
+</div>
+
+<div class="serverInfo-dropdown-container">
+    <button class="dropdown-button" onclick="toggleDropdown('serverInfo')">
+        ▼ Server Info ▼
+    </button>
+    <div id="serverInfo" class="dropdown-content">
+        <p class="dropdown-text" style="font-family: Oxanium;">
+            The server is hosted using Amazon Web Services (AWS), and Thaumiel is located in California. VPNS and proxies are detected and blocked on the SCP: Secret Laboratory server. If you are blocked unfairly due to this system, please request a whitelist in the Discord server.
+            Appeal requests, reports, and staff applications are all held in the Discord server. If you find a player or staff member acting unjustly or making you uncomfortable, please report them in the server for both your fun & safety and ours. All staff reports are only seen by our Staff Manager Jurgen and the Server Owner Mr. Baguetter, A.K.A. Ender.
+        </p>
+    </div>
+</div>
+    <iframe id="iframe-display" src="https://forms.gle/kyjRRA4xEhLH1s3Z8" frameborder="0" style="height: 320px; width: 450px; display: none;"></iframe>
+    <script src="Javascript.js"></script>
+<p class="footer" style="text-align: center; font-family: Oxanium;">This is a open source website contributions can be made <a href="https://github.com/Thaumiel-Servers/Thaumiel/tree/Developer">here</a>.</p>
+<script>
+function toggleDropdown(dropdownId) {
+    const dropdown = document.getElementById(dropdownId);
+    const allDropdowns = document.getElementsByClassName('dropdown-content');
+    const button = dropdown.previousElementSibling;
+    
+    Array.from(allDropdowns).forEach(item => {
+        if (item.id !== dropdownId && item.classList.contains('show')) {
+            item.classList.remove('show');
+            const otherButton = item.previousElementSibling;
+            otherButton.textContent = otherButton.textContent.replace('▲', '▼');
+        }
+    });
+
+    dropdown.classList.toggle('show');
+    
+    // Update arrow in button
+    if (dropdown.classList.contains('show')) {
+        button.textContent = button.textContent.replace(/▼/g, '▲');
+    } else {
+        button.textContent = button.textContent.replace(/▲/g, '▼');
+    }
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-button')) {
+        const dropdowns = document.getElementsByClassName('dropdown-content');
+        Array.from(dropdowns).forEach(dropdown => {
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+                const button = dropdown.previousElementSibling;
+                button.textContent = button.textContent.replace(/▲/g, '▼');
+            }
+        });
+    }
+}
+window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-button')) {
+        const dropdowns = document.getElementsByClassName('dropdown-content');
+        Array.from(dropdowns).forEach(dropdown => {
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove('show');
+                const button = dropdown.previousElementSibling;
+                button.innerHTML = button.innerHTML.replace('▲', '▼');
+            }
+        });
+    }
+}
+            function checkDevice() {
+            if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                document.getElementById('smartphoneWarning').style.display = 'block';
+            }
+        }
+
+        function closesmartphoneWarningPopup() {
+            document.getElementById('smartphoneWarning').style.display = 'none';
+        }
+        window.onload = checkDevice;
+
+        function checkAnniversary() {
+        const today = new Date();
+        const anniversaryDate = new Date(today.getFullYear(), 10, 2); // November 2nd. Change to todays date to test. (month 0-11), (day)
+        if (today.toDateString() === anniversaryDate.toDateString()) {
+            document.getElementById("anniversaryModal").style.display = "block";
+        }
+    }
+    function closeanniversaryModal() {
+        document.getElementById("anniversaryModal").style.display = "none";
+    }
+    function joinDiscord() {
+    const newWindow = window.open('https://discord.gg/EpdARdjq2m', '_blank');
+    if (newWindow) newWindow.opener = null;
+    }   
+    window.onload = checkAnniversary;
+
+            function showPopup() {
+                const popup = document.getElementById('welcomePopup');
+                popup.style.display = 'block';
+            }
+            function hidePopup() {
+                const popup = document.getElementById('welcomePopup');
+                popup.style.display = 'none';
+            }
+            function dontShowwelcomePopup() {
+                localStorage.setItem('dontShowwelcomePopup', 'true');
+                hidePopup();
+            }
+            window.onload = function() {
+                if (!localStorage.getItem('dontShowwelcomePopup')) {
+                    showPopup();
+                }
+            }
+            document.getElementById('closeBtn').onclick = hidePopup;
+            document.getElementById('dontShowAgainBtn').onclick = dontShowwelcomePopup;
+
+
+            const repoOwner = 'Thaumiel-Servers';
+            const repoName = 'Thaumiel';
+            const apiUrl = `https://api.github.com/repos/Thaumiel-Servers/Thaumiel/commits`;
+
+            async function checkForUpdates() {
+                const lastCommitHash = localStorage.getItem('lastCommitHash');
+                let hasNewCommits = false;
+
+                try {
+                    const response = await fetch(apiUrl);
+                    const commits = await response.json();
+
+                    if (commits.length > 0) {
+                        const latestCommit = commits[0].sha;
+
+                        if (!lastCommitHash || lastCommitHash !== latestCommit) {
+                            hasNewCommits = true;
+                            displayChangelog(commits);
+                            localStorage.setItem('lastCommitHash', latestCommit);
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error fetching GitHub data:', error);
+                    showNotification();
+                }
+
+                if (!hasNewCommits) {
+                    console.log("No new updates");
+                }
+            }
+
+            function displayChangelog(commits) {
+                const changelogBox = document.getElementById('changelogBox');
+                changelogBox.value = '';
+
+                const latestChanges = commits.slice(0, 1);
+                latestChanges.forEach(commit => {
+                    changelogBox.value += `- ${commit.commit.message}\n`;
+                });
+
+                document.getElementById('changelogModal').style.display = 'block';
+            }
+
+            function closeModal() {
+                document.getElementById('changelogModal').style.display = 'none';
+            }
+
+            function showNotification() {
+                const notification = document.getElementById('notificationPopup');
+                notification.style.display = 'block';
+
+                setTimeout(() => {
+                    notification.classList.add('fade-out');
+                }, 5000);
+
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                    notification.classList.remove('fade-out');
+                }, 6000);
+            }
+
+            window.onload = checkForUpdates;
+    document.querySelector('.buttonstaff').addEventListener('hover', function() {
+        function showNotification() {
+                const notification = document.getElementById('staffhover');
+                notification.style.display = 'block';
+
+                setTimeout(() => {
+                    notification.classList.add('fade-out');
+                }, 5000);
+
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                    notification.classList.remove('fade-out');
+                }, 6000);
+            }
+    });
+</script>
+</body>
+</html>

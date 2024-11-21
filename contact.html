@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Contact Info - Thaumiel</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+</head>
+<script async src="https://atlantic-dark-risk.glitch.me/APIHandler.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8FQLDNPJ6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S8FQLDNPJ6');
+</script>
+<style>
+    body {
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
+    .content {
+        transform-origin: 0 0; /* Scale from top-left corner */
+        will-change: transform;
+    }
+    @media (max-width: 768px) {
+        .content {
+            width: auto; /* Set width to 768px on phones */
+            height: auto; /* Maintain aspect ratio */
+            transform: none; /* Remove scaling */
+        }
+    }
+    .buttonbacktop {
+        width: 50%;
+        
+    }
+</style>
+
+<body scroll="no" style="overflow: hidden">
+    <h1 style="color: DodgerBlue; font-family: Oxanium;">Thaumiel Contact</h1>
+    <p style="font-family: Oxanium;">If you wish to contact us, email us at thaumiel.servers@gmail.com <a href="mailto:thaumiel.servers@gmail.com">(Send Email)</a> or join our <a href="https://discord.gg/EpdARdjq2m">Discord</a>.</p>
+    <p style="font-family: Oxanium;">If you were banned, you must use the proper channels in <a href="https://discord.gg/EpdARdjq2m">Discord</a>. If you do not have Discord, you may email us.</p>
+    <h2 style="color: red; font-family: Oxanium;">Note:</h2>
+    <p style="font-family: Oxanium;">If you were banned for saying a slur or being underage (under 13), it is unappealable.</p>
+        <button class="buttonbacktop">Back</button>
+        <button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
+            <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
+        </button>
+<script src="Javascript.js"></script>
+    <script>
+        document.querySelector('.buttonbacktop').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

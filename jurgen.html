@@ -1,0 +1,85 @@
+
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Jurgen - Thaumiel</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+</head>
+<script async src="https://atlantic-dark-risk.glitch.me/APIHandler.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8FQLDNPJ6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-S8FQLDNPJ6');
+</script>
+<body>
+<style>
+body {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+    .buttonstaffback {
+        width: 24.2%;
+    }
+
+    .buttonhome {
+        width: 25%;
+    }
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        overflow: hidden;
+        width: auto;
+    }
+}
+    @media (min-width: 768px) {
+            body {
+                overflow: hidden;
+            }
+        }
+    @media only screen and (max-width: 600px) {
+        .jurtext {
+            display: flex;
+            text-align: center;
+            left: 2px;
+        }
+    }
+</style>
+    <button class="buttonstaffback">Back</button>
+    <button class="buttonhome">Home</button>
+<div>
+    <img src="jurgen.png" width="120" height="120" class="JurPFP" alt="Jurgen PFP">
+    <h1 class="jur" style="color: rgb(255, 30, 30); font-family: Oxanium;"><b>Jurgen</b></h1>
+    <p class="jurtitle" style="color: rgb(255, 111, 0); font-family: Oxanium;"><b>Staff Manager</b></p>
+</div>
+<div>
+    <p class="jurtext" style="font-family: Oxanium;">Jurgen the Staff Manager of Thaumiel. As staff manager, Jurgen monitors staff members' actions and takes action if they violate the staff rules. <br> Like many of the staff, he originates from The Shy Guy One, being one of the O5 council members in the server.</p>
+    <p class="jurtext" style="font-family: Oxanium;">As Staff Manager, he has the same permissions as the O5 council in the SCP: SL server.</p>
+</div>
+</body>
+<body>
+    <button class="buttonhide" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
+        <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
+    </button>
+<script>
+    document.querySelector('.buttonhome').addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
+    document.querySelector('.buttonstaffback').addEventListener('click', function() {
+        window.location.href = 'staff.html';
+    });
+</script>
+<script src="Javascript.js"></script>
+</body>
+</html>
