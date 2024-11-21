@@ -1,17 +1,11 @@
 function toggleIframe() {
-    var iframe = document.getElementById('iframe-display');
-
-    // Check if the user is on a mobile device
+    const iframe = document.getElementById('iframe-display');
+    if (!iframe) return;  // If its null return
+    
     if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        // Redirect to a different URL if on a phone
         window.location.href = 'https://forms.gle/kyjRRA4xEhLH1s3Z8';
     } else {
-        // Toggle iframe display for non-mobile devices
-        if (iframe.style.display === 'none') {
-            iframe.style.display = 'block';
-        } else {
-            iframe.style.display = 'none';
-        }
+        iframe.style.display = iframe.style.display === 'none' ? 'block' : 'none';
     }
 }
 
@@ -20,65 +14,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
 
-    // Function to set theme
+    if (!themeToggleButton || !themeIcon) return;  // If either is null return
+
     function setTheme(theme) {
         body.setAttribute('data-theme', theme);
         if (theme === 'dark') {
-            themeIcon.src = 'light.png'; // Show light icon for dark theme
+            themeIcon.src = 'light.png';
             themeToggleButton.setAttribute('aria-label', 'Switch to Light Theme');
         } else {
-            themeIcon.src = 'Dark.png'; // Show dark icon for light theme
+            themeIcon.src = 'Dark.png';
             themeToggleButton.setAttribute('aria-label', 'Switch to Dark Theme');
         }
         localStorage.setItem('theme', theme);
     }
 
-    // Check for a saved theme in localStorage and set it
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        setTheme(savedTheme);
-    } else {
-        // Default to light theme if no preference is saved
-        setTheme('light');
-    }
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
 
-    // Toggle theme on button click
     themeToggleButton.addEventListener('click', () => {
         const currentTheme = body.getAttribute('data-theme');
         setTheme(currentTheme === 'dark' ? 'light' : 'dark');
     });
+
+    const navButtons = {
+        '.buttonstaff': 'staff.html',
+        '.buttonsupport': 'support.html',
+        '.buttoncontact': 'contact.html',
+        '.buttoncredits': 'credits.html',
+        '.buttonhistory': 'History.html',
+        '.buttonbacktop': 'index.html',
+        '.buttonhome': 'index.html',
+        '.buttonstaffback': 'staff.html'
+    };
+
+    Object.entries(navButtons).forEach(([selector, url]) => {
+        document.querySelector(selector)?.addEventListener('click', () => window.location.href = url);
+    });
 });
-
-
-
-
-
-document.querySelector('.buttonstaff').addEventListener('click', function() {
-    window.location.href = 'staff.html';
-});
-document.querySelector('.buttonsupport').addEventListener('click', function() {
-    window.location.href = 'support.html';
-});
-document.querySelector('.buttoncontact').addEventListener('click', function() {
-    window.location.href = 'contact.html';
-});
-document.querySelector('.buttoncredits').addEventListener('click', function() {
-    window.location.href = 'credits.html';
-});
-document.querySelector('.buttonhistory').addEventListener('click', function() {
-    window.location.href = 'History.html';
-});
-
-document.querySelector('.buttonbacktop').addEventListener('click', function() {
-    window.location.href = 'index.html';
-});
-document.querySelector('.buttonhome').addEventListener('click', function() {
-    window.location.href = 'index.html';
-});
-document.querySelector('.buttonstaffback').addEventListener('click', function() {
-    window.location.href = 'staff.html';
-});
-
-
-
-

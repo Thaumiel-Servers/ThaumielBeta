@@ -87,6 +87,7 @@
 <script>
     function displayDate() {
         const dateElement = document.getElementById("current-date");
+        if (!dateElement) return;
         const currentDate = new Date();
         dateElement.textContent = currentDate.toLocaleDateString();
     }
