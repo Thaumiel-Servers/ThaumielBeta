@@ -20,10 +20,7 @@
 
     gtag('config', 'G-S8FQLDNPJ6');
 </script>
-
-<!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
 <style>
-
 body {
     display: flex;
     flex-direction: column;
@@ -37,7 +34,7 @@ body {
     padding: 15px;
     cursor: pointer;
     font-family: Oxanium;
-    font-size: .8em;
+    font-size: calc(1.8vw);
     color: var(--text-color);
     text-align: center;
     line-height: 1.2;
@@ -46,7 +43,12 @@ body {
     border-radius: 10px;
     position: relative;
 }
-
+@media (max-width: 768px) {
+    .dropdown-button {
+        font-size: calc(4.8vw) !important;
+        margin-left: 30px;
+    }
+}
 .button-text {
     position: absolute;
     bottom: -3vw;
@@ -59,10 +61,6 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: font-size 0.3s ease-in-out;
-}
-
-.dropdown-button:hover {
-    background: linear-gradient(to right, var(--header-color2), var(--header-color));
 }
 
 .button-container {
@@ -80,7 +78,6 @@ body {
     body {
         width: calc(100% - 10px); 
         height: calc(100% - 10px); 
-        overflow: hidden; 
     }
     button:not(.dropdown-button) {
         width: clamp(100px, 8vw, 180px) !important;
@@ -92,7 +89,6 @@ body {
     body {
         width: calc(100% - 15px); 
         height: calc(100% - 15px);
-        overflow: hidden; 
     }
     button:not(.dropdown-button) {
         width: clamp(60px, 15vw, 100px) !important;
@@ -104,7 +100,6 @@ body {
     body {
         width: calc(100% - 20px);
         height: calc(100% - 20px);
-        overflow: hidden;
     }
     button:not(.dropdown-button) {
         width: clamp(90px, 15vw, 130px) !important;
@@ -116,7 +111,6 @@ body {
     body {
         width: calc(100% - 25px); 
         height: calc(100% - 25px);
-        overflow: hidden;
     }
     button:not(.dropdown-button) {
         width: clamp(80px, 20vw, 110px) !important;
@@ -163,6 +157,14 @@ button {
     padding: 10px;
     background-color: var(--button-color);
 }
+button:not(.dropdown-button) {
+    height: calc(15vh) !important;
+    width: calc(10vw) !important;
+}
+button:not(.buttonhistory, .buttoncredits, .buttoncontact, .buttonsupport, .buttonstaff, .buttonSuggestion,.theme-toggle) {
+    height: calc(20vh) !important;
+    width: calc(80vw) !important;
+}
 
 button:hover {
     opacity: 0.8;
@@ -178,34 +180,6 @@ button:hover {
     margin-top: 10px;
     background-color: #ff4444;
     color: white;
-}
-
-.notification-popup {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 90%;
-    max-width: 600px;
-    padding: 15px;
-    border-radius: 15px;
-    background-color: #f44336;
-    color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-}
-
-.notification-popup.fade-out {
-    animation: fadeOut 1s forwards;
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 0.9;
-    }
-    to {
-        opacity: 0;
-    }
 }
 
 .modal, .changelog-modal {
@@ -384,11 +358,11 @@ button:hover {
     .title {
         top: 17px !important;
         left: 70px !important;
-        font-size: calc(4vw) !important;
+        font-size: calc(7vw) !important;
     }
     .title2 {
         left: 70px !important;
-        font-size: calc(4vw) !important;
+        font-size: calc(4.5vw) !important;
         margin-top: 15px !important;
     }
     .header-image {
@@ -409,7 +383,7 @@ button:hover {
         font-size: calc(4vw) !important;
     }
     .title2 {
-        font-size: calc(1.2vw) !important;
+        font-size: calc(1.6vw) !important;
         top: 20px !important;
     }
 }
@@ -417,6 +391,7 @@ button:hover {
     height: calc(5.7vh); 
     width: auto; 
     border-radius: 30px;
+    margin-top: 7px;
 }
 
 .title-text {
@@ -434,15 +409,15 @@ button:hover {
     text-shadow: 0 0 5px rgba(30, 144, 255, 0.8), 
                  0 0 10px rgba(30, 144, 255, 0.6), 
                  0 0 15px rgba(30, 144, 255, 0.4);
-    font-size: 20px !important;
+    font-size: calc(1.6vw);
     top: 12px;
 }
 
 .title2 {
     position: fixed; 
     color: gray;
-    font-size: calc(.7vw);
-    top: 33px;
+    font-size: calc(.9vw);
+    top: calc(5vh);
 }
 
 .dropdown-text {
@@ -456,13 +431,17 @@ button:hover {
     text-align: center;
     z-index: 999;
 }
+@media (max-width: 768px) {
+    .dropdown-text {
+        font-size: calc(3vw);
+    }
+}
 @media (min-width: 1200px) {
     .title2{
-
-        margin: 0;
+        margin-top: calc(.7vh);
     }
     .title{
-        font-size: .8vw;
+        font-size: calc(1.6vw);
         margin: 0;
     }
 }
@@ -484,12 +463,12 @@ button:hover {
 
 @media only screen and (max-width: 768px) {
     .theme-toggle {
-        bottom: 1px !important;
+        top: -1px !important;
         right: 4px !important;
+        position: fixed;
+        z-index: 9999;
     }
 }
-
-
 </style>
 <button class="theme-toggle" id="theme-toggle" style="border: none; background: none; padding: 0; overflow: hidden;">
     <img class="theme-toggle" id="theme-icon" src="light.png" alt="Toggle Theme" height="75" width="75" style="display: block;">
@@ -506,11 +485,6 @@ button:hover {
     </div>
 </div>
 
-<div id="notificationPopup" class="notification-popup">
-    <div class="notification-popup-text">
-    <p style="font-family: Oxanium;">Unable to fetch updates from GitHub. Please try again later.</p>
-    </div>
-</div>
 <div id="anniversaryModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeanniversaryModal()">&times;</span>
@@ -695,6 +669,10 @@ window.onclick = function(event) {
                 } catch (error) {
                     console.error('Error fetching GitHub data:', error);
                     showNotification();
+                }
+
+                if (!hasNewCommits) {
+                    console.log("No new updates");
                 }
             }
 
