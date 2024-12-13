@@ -1,3 +1,12 @@
+* {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, 
+                opacity 0.5s ease, transform 0.5s ease;
+}
+
+*.no-transition {
+    transition: none !important;
+}
+
 :root {
     --bg-start: #ffffff;
     --bg-middle: #aacfff;
@@ -15,6 +24,12 @@
     --header-color: rgba(0, 67, 377, 0.2);
     --header-color2: rgba(0, 67, 377, 0.1);
     --button-color: #dddddd;
+    --header-background: #3363ff63;
+    --header-border: black;
+    --buttonbackicon: url('darkback.png');
+    --backbuttoncolor: #111111;
+    --buttonhomeicon: url('home.png');
+ 
 }
 
 [data-theme='dark'] {
@@ -36,6 +51,11 @@
     --header-color: rgba(137, 0, 137, 0.2);
     --header-color2: rgba(137, 0, 137, 0.1);
     --button-color: #111111;
+    --header-background: #3300335f;
+    --header-border: grey;
+    --buttonbackicon: url('darkback.png');
+    --backbuttoncolor: #111111;
+    --buttonhomeicon: url('home.png');
 }
 
 
@@ -239,6 +259,7 @@ html, body {
 .buttonbacktop:hover {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    content: "Back button";
 }
 .buttonSuggestion:hover {
     background-color: #1982EA;
@@ -248,8 +269,27 @@ html, body {
     background-color: #1982EA;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.buttonbacktop {
+.buttonbacktop, .buttonstaffback{
     position: absolute; top: 0; /* sets the button to the top of the page */
+    background-image: var(--buttonbackicon);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+    height: 5%;
+    width: 4%;
+    background-color: var(--backbuttoncolor);
+    left: 0;
+}
+.buttonhome {
+    margin-left: 4%;
+    position: absolute; top: 0; /* sets the button to the top of the page */
+    background-image: var(--buttonhomeicon);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; 
+    height: 5%;
+    width: 4%;
+    background-color: var(--backbuttoncolor);
 }
 .buttonbackbottom:hover {
     background-color: #1982EA;
@@ -358,20 +398,20 @@ body {
     margin-bottom: -44.27%;
     right: 76%;
 }
-/* Beta stuffs remove before release */
-.beta-popup {
+/* Removed */
+/* .beta-popup {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* Black with 80% opacity */
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 15px;
-    border-radius: 10px; /* Rounded edges */
+    border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    z-index: 1000; /* Ensures the popup appears above other content */
-}
+    z-index: 1000; 
+} */
 p {
     font-family: Oxanium
 }
@@ -384,25 +424,25 @@ h2 {
 small {
     font-family: Oxanium
 }
-
+/* Removed
 .beta-popup p {
     margin: 0;
     margin-right: 10px;
 }
 
 .beta-popup button {
-    background-color: rgba(85, 85, 85, 0.8); /* Gray button with 80% opacity */
+    background-color: rgba(85, 85, 85, 0.8);
     color: white;
     border: none;
     padding: 5px 10px;
-    border-radius: 5px; /* Rounded button edges */
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .beta-popup button:hover {
-    background-color: rgba(119, 119, 119, 0.8); /* Lighter gray with 80% opacity */
+    background-color: rgba(119, 119, 119, 0.8);
 }
-
+*/
 /* Styles for devices with a max width of 768px (tablets and phones) */
 
 @media only screen and (max-width: 768px) {

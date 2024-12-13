@@ -20,7 +20,7 @@
 
     gtag('config', 'G-S8FQLDNPJ6');
 </script>
-    <button class="buttonbacktop">Back</button>
+    <button title="Back button" class="buttonbacktop"></button>
 <!--Button layouts, % of width. added buttons percentage must below 98.4% to not create a new line-->
 <style>
     body {
@@ -39,15 +39,6 @@
             width: auto; /* Set width to 768px on phones */
             height: auto; /* Maintain aspect ratio */
             transform: none; /* Remove scaling */
-        }
-    }
-    .buttonbacktop {
-        width: 24.2%;
-    }
-    
-    @media only screen and (max-width: 600px) {
-        .buttonbacktop {
-            width: 23.4%
         }
     }
     .history {
@@ -87,7 +78,6 @@
 <script>
     function displayDate() {
         const dateElement = document.getElementById("current-date");
-        if (!dateElement) return;
         const currentDate = new Date();
         dateElement.textContent = currentDate.toLocaleDateString();
     }
