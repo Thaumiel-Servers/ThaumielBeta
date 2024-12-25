@@ -26,9 +26,8 @@
     --button-color: #dddddd;
     --header-background: #3363ff63;
     --header-border: black;
-    --buttonbackicon: url('darkback.png');
-    --backbuttoncolor: #111111;
-    --buttonhomeicon: url('home.png');
+    --buttonbackicon: url('lightback.png');
+    --buttonhomeicon: url('lighthome.png');
  
 }
 
@@ -54,8 +53,7 @@
     --header-background: #3300335f;
     --header-border: grey;
     --buttonbackicon: url('darkback.png');
-    --backbuttoncolor: #111111;
-    --buttonhomeicon: url('home.png');
+    --buttonhomeicon: url('darkhome.png');
 }
 
 
@@ -277,7 +275,8 @@ html, body {
     background-position: center; 
     height: 5%;
     width: 4%;
-    background-color: var(--backbuttoncolor);
+    background-color: transparent;
+    border: none;
     left: 0;
 }
 .buttonhome {
@@ -289,7 +288,8 @@ html, body {
     background-position: center; 
     height: 5%;
     width: 4%;
-    background-color: var(--backbuttoncolor);
+    background-color: transparent;
+    border: none;
 }
 .buttonbackbottom:hover {
     background-color: #1982EA;
