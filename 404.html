@@ -46,6 +46,7 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     cursor: pointer;
+    font-family: 'Geist Mono', monospace;
 }
 
 .back-home:hover {
@@ -69,7 +70,7 @@ body {
         window.history.back();
     }
     const params = new URLSearchParams(window.location.search);
-    const missingFile = params.get('page') || "unknown.html"; // Default to "unknown.html" if no page param
+    const missingFile = window.location.pathname.split('/').pop();
     const errorMessage = document.getElementById('error-message');
     errorMessage.textContent = `Oops! The page "${missingFile}" wasn’t found. Please contact ender1992 on Discord if this issue persists.`;
 </script>
